@@ -1,0 +1,140 @@
+<head>
+  <title>grimlol.wtf</title>
+  <script src="https://kit.fontawesome.com/26d4a64054.js"
+  crossorigin="anonymous"></script>
+  <script src="title.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <link rel="stylesheet" href="./assets/css/custom.css" />
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+    <link rel="shortcut icon" type="image/jpg" href="./assets/logo.ico"/>
+  
+    <meta property="og:title" content="blank" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="" />
+    <meta name="theme-color" content="#AA8DFF">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> <!-- AOS CSS & JS-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+
+  </head>
+  
+  <body class="animate__animated animate__fadeIn">
+    <div id="wrapper">
+      <div id="particles-js"></div>
+      <script src="./assets/particles.js"></script> 
+      <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script> 
+      <div id="preload">
+        <h2 ><font color="#959fb4">click to continue</h2>
+      </div>
+      <div id="hidden">
+        <div id="main">
+          <div class="bass blur1">
+            <section>
+              
+              <div class='animate__animated animate__fadeInDown'>
+              <div class='center'>
+              <div class='hero-img'>
+              <i><img style="width: 100px; height: 100px;"src='assets/img/sosa.png'></i>
+              </div>
+              <div class='hero-text'>
+              <h1 style="font-size: 25px;">Grimrich</h1>
+              <a href='https://t.me/grimwtf/' target='_blank'><i class="fab fa-telegram"></i></a>
+              <a href='https://discord.gg/ballin' target='_blank'><i class='fab fa-discord'></i></a>
+              <a href='https://www.youtube.com/@GrimothyThe3rd' target='_blank'><i class="fa fa-youtube"></i></a>
+              <br>
+              <span class="span-off"></span>
+              </div>
+              </div>
+              </div>
+              </section>
+          </div>
+        </div>
+        </div>
+  
+        <div id="links">
+          <div class="menu">
+            <h5><font color="#AA8DFF">  </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="overlay-top-right"></div>
+  <div class="overlay-bottom-right"></div>
+  
+  
+    <audio
+      id="music"
+      class="music"
+      src="assets/song.mp3"
+      autoplay
+      loop
+      onplaying=""
+      style="display: none"
+    ></audio>
+    <script>
+      document.getElementById("music").pause();
+      document.getElementById("hidden").style = "opacity: 0; transition: 2s;";
+  
+      document.addEventListener("mousedown", handleMouseDown);
+  
+      function handleMouseDown() {
+        document.getElementById("music").play();
+        document.getElementById("preload").style =
+          "opacity: 0; transition: 0.6s;";
+  
+        document.getElementById("hidden").style = "opacity: 1; transition: 2s;";
+  
+        var rythm = new Rythm();
+        rythm.addRythm("blur1", "blur", 0, 250);
+        rythm.addRythm('bass', 'pulse', 0, 10, {
+                min: 0.6,
+                max: 0.8
+              })
+        rythm.connectExternalAudioElement(document.getElementById("music"));
+        rythm.setGain(0.07);
+        rythm.start();
+        document.getElementById("music").play();
+        document.removeEventListener("mousedown", handleMouseDown);
+      }
+    </script>
+
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script src="./assets/font.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+
+    <script>
+      var typed = new Typed('.span-off', {
+          strings: ['Buying Lims Pois Or Clean Dm'],
+          loop: true,
+          typeSpeed: 60,
+          backSpeed: 30,
+      });
+  </script>
+
+<style type="text/css" data-typed-js-css="true">
+  .typed-cursor{
+    opacity: 1;
+  }
+  .typed-cursor.typed-cursor--blink{
+    animation: typedjsBlink 0.7s infinite;
+    -webkit-animation: typedjsBlink 0.7s infinite;
+            animation: typedjsBlink 0.7s infinite;
+  }
+  @keyframes typedjsBlink{
+    50% { opacity: 0.0; }
+  }
+  @-webkit-keyframes typedjsBlink{
+    0% { opacity: 1; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1; }
+  }
+</style>
+  </body>
+  <!--https://www.grimlol.wtf/hidden.html-->
