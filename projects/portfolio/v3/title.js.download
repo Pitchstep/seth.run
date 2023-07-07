@@ -1,0 +1,25 @@
+﻿if (document.addEventListener) {
+    document.addEventListener("DOMContentLoaded", function () {
+        loaded();
+    });
+} else if (document.attachEvent) {
+    document.attachEvent("onreadystatechange", function () {
+        loaded();
+    });
+}
+
+function loaded() {
+
+    setInterval(loop, 400);
+
+}
+
+var x = 0;
+
+var titleText = ["g","gr","gri","grim","griml","grimlo.","grimlol","grimlol.","grimlol.w","grimlol.wt","grimlol.wtf","grimlol.wt","grimlol.w","grimlol.","grimlol","grimlo","griml","grim","gri","gr","g"];
+
+function loop() {
+
+    document.getElementsByTagName("title")[0].innerHTML = titleText[x++ % titleText.length];
+
+}
