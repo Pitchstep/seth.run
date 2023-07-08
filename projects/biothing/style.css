@@ -1,0 +1,122 @@
+body {
+    background: linear-gradient(135deg, #800080, #4B0082);
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.container {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px; /* Add padding for spacing */
+}
+
+.container.fade-in {
+    opacity: 1;
+}
+
+.header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+.name {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 20px; /* Add padding for spacing */
+    background-color: rgba(255, 255, 255, 0.2); /* Light-ish transparent background */
+    border-radius: 10px; /* Rounded corners */
+    margin-top: 40px; /* Adjust the margin top as per your preference */
+}
+
+.content {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out;
+}
+
+.container.fade-in .content {
+    opacity: 1;
+    visibility: visible;
+}
+
+.quote {
+    padding: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.2); /* Light-ish transparent background */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.icon {
+    width: 48px;
+    height: 48px;
+    background-color: #444;
+    border-radius: 50%;
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+    color: #fff;
+}
+
+.icon:hover {
+    background-color: transparent;
+}
+
+.icon#icon1:hover {
+    background-color: #C13584;
+}
+
+.icon#icon2:hover {
+    background-color: #7289DA;
+}
+
+.icon#icon3:hover {
+    background-color: #0070BA;
+}
+
+.center-text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 9999;
+}
+
+.fade-in {
+    visibility: visible;
+}
+
+@keyframes animate-gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
