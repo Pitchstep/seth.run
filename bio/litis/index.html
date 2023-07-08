@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@litis</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-xDbky4R6hpZLJPT7i3h+y6Udi+rHygYO4puygPi8HGr5uRUKXQZb8k2NwQ7SUL7AXz9R9jWGrGwRUCRZARtqwQ==" crossorigin="anonymous" />
+    <style>
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .tooltip .tooltip-text {
+            visibility: hidden;
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 5px;
+            border-radius: 6px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="center-text">click anywhere</div>
+    <div class="container">
+        <div class="header">
+            <h1 class="name">Alitus</h1>
+            <p class="username">
+                @litis
+                <span class="tooltip" data-tooltip="linkonly.">
+                    🤶
+                    <span class="tooltip-text">Certified Almost-40-year-old</span>
+                </span>
+            </p>
+            </p>
+            </p>
+        </div>
+        <div class="content">
+            <div class="quote">
+                <p>gets drunk often, always hungry, hates jesukai</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
