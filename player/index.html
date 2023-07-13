@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <div class="music-player">
+    <div class="player-controls">
+      <button class="player-button previous-button"><i class="fas fa-step-backward"></i></button>
+      <button class="player-button play-button"><i class="fas fa-play"></i><i class="fas fa-pause"></i></button>
+      <button class="player-button next-button"><i class="fas fa-step-forward"></i></button>
+    </div>
+    <div class="song-info">
+      <h2 class="song-title">Never Gonna Give You Up</h2>
+      <p class="song-artist">Rick Astley</p>
+    </div>
+    <div class="timer">0:00 / 0:00</div>
+    <div class="progress-bar">
+      <div class="progress-bar-fill"></div>
+    </div>
+  </div>
+  <audio id="audio-player" src="song.mp3"></audio>
+</body>
+</html>
