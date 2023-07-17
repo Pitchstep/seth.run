@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
   var playButton = document.querySelector('.play-button');
   var playIcon = playButton.querySelector('i');
   var timerElement = document.querySelector('.timer');
-  var audio = new Audio('song.mp3');
+  var audio = document.getElementById('audio-player');
+
 
   var isPlaying = false;
   var isSeeking = false; // Track seeking state
@@ -135,4 +136,65 @@ document.addEventListener('DOMContentLoaded', function() {
       guideElement.remove();
     }, 1000);
   }
+});
+document.addEventListener('DOMContentLoaded', function() {
+  var canvas = document.getElementById('sound-wave');
+  var ctx = canvas.getContext('2d');
+  var audio = document.getElementById('audio-player');
+  var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  var source = audioCtx.createMediaElementSource(audio);
+  var analyser = audioCtx.createAnalyser();
+
+  source.connect(analyser);
+  analyser.connect(audioCtx.destination);
+
+  analyser.fftSize = 2048;
+  var bufferLength = analyser.frequencyBinCount;
+  var dataArray = new Uint8Array(bufferLength);
+
+  var barWidth = 8;
+  var barSpacing = 10;
+  var barHeightMultiplier = 2;
+
+  var isPlaying = false;
+
+  function draw() {
+    var WIDTH = canvas.width;
+    var HEIGHT = canvas.height;
+
+    requestAnimationFrame(draw);
+
+    analyser.getByteFrequencyData(dataArray);
+
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+    ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+    var barCount = Math.floor((WIDTH - barSpacing) / (barWidth + barSpacing));
+
+    for (var i = 0; i < barCount; i++) {
+      var barX = i * (barWidth + barSpacing);
+      var barHeight = dataArray[i] * barHeightMultiplier;
+
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.6)';
+      ctx.fillRect(barX, HEIGHT - barHeight, barWidth, barHeight);
+    }
+  }
+
+  function handleUserGesture() {
+    if (!isPlaying) {
+      audioCtx.resume().then(function() {
+        audio.play();
+        isPlaying = true;
+        draw();
+      });
+    } else {
+      audio.pause();
+      isPlaying = false;
+    }
+  }
+
+  var playButton = document.querySelector('.play-button');
+  playButton.addEventListener('click', handleUserGesture);
+
+  draw();
 });
