@@ -24,6 +24,7 @@
             font-weight: bold;
             opacity: 0;
             animation: fadeIn 0.5s ease-in-out forwards;
+            cursor: pointer;
         }
 
         @keyframes fadeIn {
@@ -49,6 +50,21 @@
                 // Display the parameter value on the page with a fade-in effect
                 const displayResultElement = document.getElementById("displayResult");
                 displayResultElement.textContent = paramValue;
+                displayResultElement.addEventListener("click", function() {
+                    // Copy the parameter value to the clipboard
+                    const textArea = document.createElement("textarea");
+                    textArea.value = paramValue;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand("copy");
+                    document.body.removeChild(textArea);
+
+                    // Show a copied message (optional)
+                    displayResultElement.textContent = "Copied: " + paramValue;
+                    setTimeout(function() {
+                        displayResultElement.textContent = paramValue;
+                    }, 1500); // Show the original value after 1.5 seconds
+                });
             } else {
                 // Parameter not found
                 const displayResultElement = document.getElementById("displayResult");
