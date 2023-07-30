@@ -45,10 +45,10 @@
     </style>
 </head>
 <body>
-    <h1>URL Shortener</h1>
-    <p>Enter a long URL to get a shortened version:</p>
-    <input type="text" id="longURLInput" placeholder="Enter the long URL">
-    <button onclick="shortenURL()">Shorten</button>
+    <h1>url shortener</h1>
+    <p>enter a long url to get a shortened version.</p>
+    <input type="text" id="longURLInput" placeholder="type the long url here...">
+    <button onclick="shortenURL()">shorten</button>
     <p id="shortenedURL"></p>
 
     <script>
@@ -72,7 +72,7 @@
 
             // Validate if the input is not empty
             if (longURL === "") {
-                alert("Please enter a valid URL.");
+                alert("hey, you need to actually enter a url.");
                 return;
             }
 
