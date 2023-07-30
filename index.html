@@ -18,9 +18,10 @@
 
     <script>
         window.onload = function() {
-            // Get the value of the "p" parameter from the URL
-            const urlParams = new URLSearchParams(window.location.search);
-            const paramValue = urlParams.get("p");
+            // Get the value after "?" in the URL
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const paramValue = urlParams.get("");
 
             if (paramValue !== null) {
                 // Display the parameter value on the page
