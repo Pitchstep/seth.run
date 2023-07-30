@@ -1,9 +1,9 @@
 window.onload = function() {
     // Get the value of the "p" parameter from the URL
-    const url = window.location.href;
-    const paramStartIndex = url.indexOf("?p=");
-    if (paramStartIndex !== -1) {
-        const paramValue = url.substring(paramStartIndex + 3);
+    const urlParams = new URLSearchParams(window.location.search);
+    const paramValue = urlParams.get("p");
+
+    if (paramValue !== null) {
         // Display the parameter value on the page
         const displayResultElement = document.getElementById("displayResult");
         displayResultElement.textContent = paramValue;
