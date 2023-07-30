@@ -20,7 +20,7 @@
         }
 
         #displayResult {
-            font-size: 40px; /* Adjust the font size here */
+            font-size: 40px;
             font-weight: bold;
             opacity: 0;
             animation: fadeIn 0.5s ease-in-out forwards;
@@ -51,6 +51,8 @@
     <p id="copiedText">Copied!</p>
 
     <script>
+        let copyCount = 0;
+
         window.onload = function() {
             // Get the value after "?=" in the URL
             const queryString = window.location.search;
@@ -71,10 +73,21 @@
 
                     // Show the "Copied" message
                     const copiedTextElement = document.getElementById("copiedText");
+                    copyCount++;
+                    if (copyCount === 1) {
+                        copiedTextElement.textContent = "Copied!";
+                    } else if (copyCount === 2) {
+                        copiedTextElement.textContent = "Double Copied!";
+                    } else if (copyCount === 3) {
+                        copiedTextElement.textContent = "Triple Copied!";
+                    } else {
+                        copiedTextElement.textContent = copyCount + " Times Copied!";
+                    }
+
                     copiedTextElement.style.opacity = "1";
                     setTimeout(function() {
                         copiedTextElement.style.opacity = "0";
-                    }, 1500); // Hide the "Copied" message after 1.5 seconds
+                    }, 1500); // Hide the message after 1.5 seconds
                 });
             } else {
                 // Parameter not found
