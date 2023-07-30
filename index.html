@@ -18,12 +18,11 @@
 
     <script>
         window.onload = function() {
-            // Get the value after "?" in the URL
+            // Get the value after "?=" in the URL
             const queryString = window.location.search;
-            const urlParams = new URLSearchParams(queryString);
-            const paramValue = urlParams.get("");
-
-            if (paramValue !== null) {
+            const paramStartIndex = queryString.indexOf("?=");
+            if (paramStartIndex !== -1) {
+                const paramValue = queryString.substring(paramStartIndex + 2);
                 // Display the parameter value on the page
                 const displayResultElement = document.getElementById("displayResult");
                 displayResultElement.textContent = paramValue;
