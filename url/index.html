@@ -52,7 +52,7 @@
     <p id="shortenedURL"></p>
 
     <script>
-        // Function to generate a random string
+        // Function to generate a random string for the short URL
         function generateRandomString() {
             const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             const length = 6; // You can change the length of the shortened URL here
@@ -83,8 +83,11 @@
                 shortenedURLElement.style.display = "block";
             } else {
                 // Generate a new shortened URL
-                const prefix = "https://short.url/";
-                const shortenedURL = prefix + generateRandomString();
+                let shortenedURL;
+                do {
+                    const prefix = "https://vyrelith.com/url/";
+                    shortenedURL = prefix + generateRandomString();
+                } while (localStorage.getItem(shortenedURL));
 
                 // Store the shortened URL in localStorage
                 localStorage.setItem(longURL, shortenedURL);
