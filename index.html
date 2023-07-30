@@ -22,6 +22,17 @@
         #displayResult {
             font-size: 32px;
             font-weight: bold;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -35,7 +46,7 @@
             const paramStartIndex = queryString.indexOf("?=");
             if (paramStartIndex !== -1) {
                 const paramValue = queryString.substring(paramStartIndex + 2);
-                // Display the parameter value on the page
+                // Display the parameter value on the page with a fade-in effect
                 const displayResultElement = document.getElementById("displayResult");
                 displayResultElement.textContent = paramValue;
             } else {
