@@ -28,6 +28,14 @@
             user-select: none; /* Disable text selection */
         }
 
+        #copiedText {
+            font-size: 20px;
+            margin-top: 5px;
+            color: lightgreen;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -40,6 +48,7 @@
 </head>
 <body>
     <p id="displayResult"></p>
+    <p id="copiedText">Copied!</p>
 
     <script>
         window.onload = function() {
@@ -60,11 +69,12 @@
                     document.execCommand("copy");
                     document.body.removeChild(textArea);
 
-                    // Show a copied message
-                    displayResultElement.textContent = "Copied!";
+                    // Show the "Copied" message
+                    const copiedTextElement = document.getElementById("copiedText");
+                    copiedTextElement.style.opacity = "1";
                     setTimeout(function() {
-                        displayResultElement.textContent = paramValue;
-                    }, 1500); // Show the original value after 1.5 seconds
+                        copiedTextElement.style.opacity = "0";
+                    }, 1500); // Hide the "Copied" message after 1.5 seconds
                 });
             } else {
                 // Parameter not found
