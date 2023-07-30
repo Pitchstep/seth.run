@@ -16,6 +16,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            flex-direction: column;
         }
 
         h1 {
@@ -23,22 +24,16 @@
             margin-bottom: 20px;
         }
 
-        p {
-            font-size: 24px;
-        }
-
         #displayResult {
+            font-size: 24px;
             font-weight: bold;
             color: #007bff;
         }
     </style>
 </head>
 <body>
-    <div>
-        <h1>Display Parameter Value</h1>
-        <p>Parameter value after "?=":</p>
-        <p id="displayResult"></p>
-    </div>
+    <h1>Display Parameter Value</h1>
+    <p id="displayResult"></p>
 
     <script>
         window.onload = function() {
