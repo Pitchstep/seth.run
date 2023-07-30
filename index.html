@@ -50,25 +50,8 @@
             }
         }
 
-        .shake-1 {
-            animation: shake 0.5s infinite alternate;
-        }
-
-        .shake-2 {
-            animation: shake 0.5s infinite alternate-reverse;
-        }
-
-        .shake-3 {
-            animation: shake 0.5s infinite alternate;
-        }
-
-        @keyframes shake {
-            from {
-                transform: translateX(0);
-            }
-            to {
-                transform: translateX(5px);
-            }
+        .shake {
+            animation: shake 0.1s infinite alternate;
         }
 
         .red-text {
@@ -105,9 +88,7 @@
                     const copiedTextElement = document.getElementById("copiedText");
                     copyCount++;
                     if (copyCount >= 50) {
-                        // Add shaking and red text effect after the 50th click
-                        const shakeClass = copyCount % 3 === 0 ? "shake-1" : copyCount % 3 === 1 ? "shake-2" : "shake-3";
-                        copiedTextElement.classList.add(shakeClass);
+                        // Turn the text red after the 50th click
                         copiedTextElement.classList.add("red-text");
                     }
 
