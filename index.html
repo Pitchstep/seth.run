@@ -52,6 +52,7 @@
 
     <script>
         let copyCount = 0;
+        let isCooldownActive = false;
 
         window.onload = function() {
             // Get the value after "?=" in the URL
@@ -63,31 +64,35 @@
                 const displayResultElement = document.getElementById("displayResult");
                 displayResultElement.textContent = paramValue;
                 displayResultElement.addEventListener("click", function() {
-                    // Copy the parameter value to the clipboard
-                    const textArea = document.createElement("textarea");
-                    textArea.value = paramValue;
-                    document.body.appendChild(textArea);
-                    textArea.select();
-                    document.execCommand("copy");
-                    document.body.removeChild(textArea);
+                    if (!isCooldownActive) {
+                        // Copy the parameter value to the clipboard
+                        const textArea = document.createElement("textarea");
+                        textArea.value = paramValue;
+                        document.body.appendChild(textArea);
+                        textArea.select();
+                        document.execCommand("copy");
+                        document.body.removeChild(textArea);
 
-                    // Show the "Copied" message
-                    const copiedTextElement = document.getElementById("copiedText");
-                    copyCount++;
-                    if (copyCount === 1) {
-                        copiedTextElement.textContent = "Copied!";
-                    } else if (copyCount === 2) {
-                        copiedTextElement.textContent = "Double Copied!";
-                    } else if (copyCount === 3) {
-                        copiedTextElement.textContent = "Triple Copied!";
-                    } else {
-                        copiedTextElement.textContent = copyCount + " Times Copied!";
+                        // Show the "Copied" message
+                        const copiedTextElement = document.getElementById("copiedText");
+                        copyCount++;
+                        if (copyCount === 1) {
+                            copiedTextElement.textContent = "Copied!";
+                        } else if (copyCount === 2) {
+                            copiedTextElement.textContent = "Double Copied!";
+                        } else if (copyCount === 3) {
+                            copiedTextElement.textContent = "Triple Copied!";
+                        } else {
+                            copiedTextElement.textContent = copyCount + " Times Copied!";
+                        }
+
+                        copiedTextElement.style.opacity = "1";
+                        isCooldownActive = true;
+                        setTimeout(function() {
+                            copiedTextElement.style.opacity = "0";
+                            isCooldownActive = false;
+                        }, 1500); // Hide the message after 1.5 seconds
                     }
-
-                    copiedTextElement.style.opacity = "1";
-                    setTimeout(function() {
-                        copiedTextElement.style.opacity = "0";
-                    }, 1500); // Hide the message after 1.5 seconds
                 });
             } else {
                 // Parameter not found
