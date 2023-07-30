@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            max-width: 500px;
+            font-size: 16px;
+            padding: 10px;
+        }
+
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        #shortenedURL {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>URL Shortener</h1>
+    <p>Enter a long URL to get a shortened version:</p>
+    <input type="text" id="longURLInput" placeholder="Enter the long URL">
+    <button onclick="shortenURL()">Shorten</button>
+    <p id="shortenedURL"></p>
+
+    <script>
+        function shortenURL() {
+            const longURLInput = document.getElementById("longURLInput");
+            const shortenedURLElement = document.getElementById("shortenedURL");
+
+            // Get the long URL from the input field
+            const longURL = longURLInput.value.trim();
+
+            // Validate if the input is not empty
+            if (longURL === "") {
+                alert("Please enter a valid URL.");
+                return;
+            }
+
+            // You can implement the logic to shorten the URL here.
+            // For this example, we will simply add a prefix to the long URL.
+            const prefix = "https://short.url/";
+            const shortenedURL = prefix + generateRandomString();
+
+            // Display the shortened URL
+            shortenedURLElement.textContent = shortenedURL;
+            shortenedURLElement.style.display = "block";
+
+            // Clear the input field after displaying the shortened URL
+            longURLInput.value = "";
+        }
+
+        // Function to generate a random string
+        function generateRandomString() {
+            const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            const length = 6; // You can change the length of the shortened URL here
+            let randomString = "";
+            for (let i = 0; i < length; i++) {
+                randomString += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return randomString;
+        }
+    </script>
+</body>
+</html>
