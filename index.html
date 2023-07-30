@@ -34,6 +34,7 @@
             color: lightgreen;
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
+            user-select: none; /* Disable text selection */
         }
 
         .unclickable {
@@ -48,6 +49,31 @@
                 opacity: 1;
             }
         }
+
+        .shake-1 {
+            animation: shake 0.5s infinite alternate;
+        }
+
+        .shake-2 {
+            animation: shake 0.5s infinite alternate-reverse;
+        }
+
+        .shake-3 {
+            animation: shake 0.5s infinite alternate;
+        }
+
+        @keyframes shake {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(5px);
+            }
+        }
+
+        .red-text {
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -56,8 +82,6 @@
 
     <script>
         let copyCount = 0;
-        let isCooldownActive = false;
-        let resetTimeout;
 
         window.onload = function() {
             // Get the value after "?=" in the URL
@@ -69,40 +93,35 @@
                 const displayResultElement = document.getElementById("displayResult");
                 displayResultElement.textContent = paramValue;
                 displayResultElement.addEventListener("click", function() {
-                    if (!isCooldownActive) {
-                        // Copy the parameter value to the clipboard
-                        const textArea = document.createElement("textarea");
-                        textArea.value = paramValue;
-                        document.body.appendChild(textArea);
-                        textArea.select();
-                        document.execCommand("copy");
-                        document.body.removeChild(textArea);
+                    // Copy the parameter value to the clipboard
+                    const textArea = document.createElement("textarea");
+                    textArea.value = paramValue;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand("copy");
+                    document.body.removeChild(textArea);
 
-                        // Show the "Copied" message
-                        const copiedTextElement = document.getElementById("copiedText");
-                        copyCount++;
-                        if (copyCount === 1) {
-                            copiedTextElement.textContent = "Copied!";
-                        } else if (copyCount === 2) {
-                            copiedTextElement.textContent = "Double Copied!";
-                        } else if (copyCount === 3) {
-                            copiedTextElement.textContent = "Triple Copied!";
-                        } else {
-                            copiedTextElement.textContent = copyCount + " Times Copied!";
-                        }
-
-                        copiedTextElement.style.opacity = "1";
-                        isCooldownActive = true;
-                        displayResultElement.classList.add("unclickable"); // Disable clicking during cooldown
-                        clearTimeout(resetTimeout); // Clear any previous reset timeouts
-                        resetTimeout = setTimeout(function() {
-                            copiedTextElement.style.opacity = "0";
-                            isCooldownActive = false;
-                            displayResultElement.classList.remove("unclickable"); // Enable clicking after cooldown
-                            copyCount = 0; // Reset the copy count
-                            copiedTextElement.textContent = "Copied!"; // Reset the "Copied" message
-                        }, 2500); // Hide the message after 2.5 seconds
+                    // Show the "Copied" message
+                    const copiedTextElement = document.getElementById("copiedText");
+                    copyCount++;
+                    if (copyCount >= 50) {
+                        // Add shaking and red text effect after the 50th click
+                        const shakeClass = copyCount % 3 === 0 ? "shake-1" : copyCount % 3 === 1 ? "shake-2" : "shake-3";
+                        copiedTextElement.classList.add(shakeClass);
+                        copiedTextElement.classList.add("red-text");
                     }
+
+                    if (copyCount === 1) {
+                        copiedTextElement.textContent = "Copied!";
+                    } else {
+                        copiedTextElement.textContent = copyCount + " Times Copied!";
+                    }
+
+                    copiedTextElement.style.opacity = "1";
+
+                    setTimeout(function() {
+                        copiedTextElement.style.opacity = "0";
+                    }, 1500); // Hide the message after 1.5 seconds
                 });
             } else {
                 // Parameter not found
