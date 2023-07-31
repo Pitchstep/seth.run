@@ -34,25 +34,7 @@
         .badge {
             font-size: 24px;
             margin: 5px;
-        }
-
-        .box {
-            display: inline-block;
-            font-size: 16px;
-            padding: 10px 20px;
-            background-color: white;
-            color: black;
-            border-radius: 10px;
-            margin: 5px;
             cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
-            text-decoration: none;
-            position: relative;
-        }
-
-        .box:hover {
-            background-color: #007bff;
-            color: white;
         }
 
         .tooltip {
@@ -70,7 +52,7 @@
             transition: opacity 0.3s, visibility 0.3s;
         }
 
-        .box:hover .tooltip {
+        .badge:hover + .tooltip {
             visibility: visible;
             opacity: 1;
         }
@@ -90,39 +72,22 @@
 
     <div>
         <!-- Add your @username below -->
-        <a href="#" class="box">@yourusername
-            <!-- Add your badges (emojis) below -->
-            <span class="badge" title="Badge 1">🎉</span>
-            <span class="badge" title="Badge 2">🏆</span>
-            <span class="badge" title="Badge 3">🔥</span>
-        </a>
+        <span class="badge">@yourusername</span>
     </div>
 
     <h2>Skills</h2>
     <div>
-        <a href="#" class="box">HTML
-            <span class="tooltip">Hypertext Markup Language</span>
-        </a>
-        <a href="#" class="box">CSS
-            <span class="tooltip">Cascading Style Sheets</span>
-        </a>
-        <a href="#" class="box">JavaScript
-            <span class="tooltip">A high-level, interpreted scripting language</span>
-        </a>
-        <a href="#" class="box">React
-            <span class="tooltip">A JavaScript library for building user interfaces</span>
-        </a>
+        <span class="badge" title="Hypertext Markup Language (HTML)">🎉</span>
+        <span class="badge" title="Cascading Style Sheets (CSS)">🏆</span>
+        <span class="badge" title="JavaScript">🔥</span>
+        <span class="badge" title="React">🚀</span>
         <!-- Add more skills here -->
     </div>
 
     <h2>Projects</h2>
     <div>
-        <a href="#" class="box">Project 1
-            <span class="tooltip">Description of Project 1</span>
-        </a>
-        <a href="#" class="box">Project 2
-            <span class="tooltip">Description of Project 2</span>
-        </a>
+        <span class="badge" title="Description of Project 1">📁</span>
+        <span class="badge" title="Description of Project 2">📝</span>
         <!-- Add more projects here -->
     </div>
 </body>
