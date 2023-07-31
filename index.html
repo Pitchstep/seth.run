@@ -42,11 +42,32 @@
             cursor: pointer;
             transition: background-color 0.3s, color 0.3s;
             text-decoration: none;
+            position: relative;
         }
 
         .box:hover {
             background-color: #007bff;
             color: white;
+        }
+
+        .tooltip {
+            visibility: hidden;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: black;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        .box:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
         }
 
         img {
@@ -62,19 +83,39 @@
     <!-- Add your Memoji image below -->
     <img src="path/to/your/memoji.png" alt="Your Memoji">
 
+    <div>
+        <!-- Add your @username below -->
+        <a href="#" class="box">@yourusername
+            <!-- Add your hover text below -->
+            <span class="tooltip">Your Twitter username</span>
+        </a>
+    </div>
+
     <h2>Skills</h2>
     <div>
-        <a href="#" class="box">HTML</a>
-        <a href="#" class="box">CSS</a>
-        <a href="#" class="box">JavaScript</a>
-        <a href="#" class="box">React</a>
+        <a href="#" class="box">HTML
+            <span class="tooltip">Hypertext Markup Language</span>
+        </a>
+        <a href="#" class="box">CSS
+            <span class="tooltip">Cascading Style Sheets</span>
+        </a>
+        <a href="#" class="box">JavaScript
+            <span class="tooltip">A high-level, interpreted scripting language</span>
+        </a>
+        <a href="#" class="box">React
+            <span class="tooltip">A JavaScript library for building user interfaces</span>
+        </a>
         <!-- Add more skills here -->
     </div>
 
     <h2>Projects</h2>
     <div>
-        <a href="#" class="box">Project 1</a>
-        <a href="#" class="box">Project 2</a>
+        <a href="#" class="box">Project 1
+            <span class="tooltip">Description of Project 1</span>
+        </a>
+        <a href="#" class="box">Project 2
+            <span class="tooltip">Description of Project 2</span>
+        </a>
         <!-- Add more projects here -->
     </div>
 </body>
