@@ -31,41 +31,70 @@
             margin: 0 auto 20px;
         }
 
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .download-btn,
+        .info-btn {
+            font-size: 18px;
+            padding: 15px 30px;
+            background-color: black;
+            color: white;
+            border: 2px solid white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            text-decoration: none; /* Remove default anchor underline */
+            display: inline-block; /* Keep the buttons inline with the text */
+            margin: 10px;
+        }
+
+        .download-btn:hover,
+        .info-btn:hover {
+            background-color: #007bff;
+            color: black;
+        }
+
+        .mobile-message {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .mobile-explanation {
+            display: none;
+        }
+
         @media (max-width: 768px) {
-            h1, p {
+            h1, p, .button-container {
                 display: none;
             }
-            #mobile-message {
+
+            .mobile-message {
                 display: block;
-                font-size: 24px;
-                font-weight: bold;
-                margin-bottom: 20px;
+            }
+
+            .mobile-explanation {
+                display: block;
+                font-size: 16px;
+                margin: 0 auto 20px;
             }
         }
     </style>
 </head>
 <body>
     <h1>AI Image Generator</h1>
-    <p>
-        Welcome to the AI Image Generator! This is a powerful tool that uses artificial intelligence to create stunning images and visuals. Whether you need unique artwork for your projects or want to explore the possibilities of AI-generated images, this tool has got you covered.
-    </p>
-    <p>
-        To get started, simply download the Swyft Installer version 1.04 by clicking the "Download" button on the homepage. Once installed, you'll have access to the full range of AI-powered image generation options at your fingertips.
-    </p>
-    <p>
-        For more information and updates, please visit our website: <a href="https://vyrelith.com/ai" target="_blank">https://vyrelith.com/ai</a>.
-    </p>
+    <div class="button-container">
+        <a class="download-btn" href="https://vyrelith.com/d/swyft-installer_1.04.exe" target="_blank">Download</a>
+        <a class="info-btn" href="https://vyrelith.com/ai/info" target="_blank">Info</a>
+    </div>
 
-    <p id="mobile-message">Mobile not supported.</p>
-    <p id="mobile-explanation" style="display: none;">
+    <p class="mobile-message">Mobile not supported.</p>
+    <p class="mobile-explanation">
         We apologize for the inconvenience, but this page is not supported on mobile devices. The AI Image Generator requires certain features and resources that are not available on mobile platforms. Additionally, .exe files, such as the Swyft Installer version 1.04, are specifically designed for Windows operating systems and cannot be executed on mobile devices. For the best experience, please access this page from a desktop or laptop computer.
     </p>
-    <script>
-        // Show the mobile explanation when accessed on mobile
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            document.getElementById("mobile-message").style.display = "block";
-            document.getElementById("mobile-explanation").style.display = "block";
-        }
-    </script>
 </body>
 </html>
