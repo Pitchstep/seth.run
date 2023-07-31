@@ -28,16 +28,17 @@
         .download-btn {
             font-size: 18px;
             padding: 15px 30px;
-            background-color: #007bff;
+            background-color: black; /* Match with the background */
             color: white;
-            border: none;
-            cursor: pointer;
+            border: 2px solid white;
             border-radius: 10px;
-            transition: transform 0.3s ease;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .download-btn:hover {
-            transform: scale(1.1);
+            background-color: #007bff; /* New color on hover */
+            color: black;
         }
     </style>
 </head>
