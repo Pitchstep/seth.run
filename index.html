@@ -9,15 +9,10 @@
         body {
             font-family: 'Montserrat', sans-serif;
             text-align: center;
-            background-color: #f0f0f0;
-            color: #333;
-            margin: 0;
-        }
-
-        header {
-            padding: 20px;
-            background-color: #007bff;
+            background-color: black;
             color: white;
+            margin: 0;
+            padding: 20px;
         }
 
         h1 {
@@ -28,7 +23,7 @@
         h2 {
             font-size: 24px;
             font-weight: bold;
-            margin-top: 20px;
+            margin: 20px 0;
         }
 
         p {
@@ -37,62 +32,28 @@
             margin: 0 auto 20px;
         }
 
-        .skills {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        .skill {
+        .box {
+            display: inline-block;
             font-size: 16px;
             padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
+            background-color: white;
+            color: black;
             border-radius: 10px;
             margin: 5px;
-        }
-
-        .projects {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .project {
-            font-size: 18px;
-            padding: 10px 20px;
-            background-color: white;
-            color: #333;
-            border: 2px solid #007bff;
-            border-radius: 10px;
-            margin: 10px;
-            max-width: 300px;
-        }
-
-        .project a {
-            color: #007bff;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
             text-decoration: none;
         }
 
-        .project a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            padding: 20px;
+        .box:hover {
             background-color: #007bff;
             color: white;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Your Name</h1>
-        <p>Welcome to my portfolio!</p>
-    </header>
+    <h1>Your Name</h1>
+    <p>Welcome to my portfolio!</p>
 
     <h2>About Me</h2>
     <p>
@@ -100,29 +61,21 @@
     </p>
 
     <h2>Skills</h2>
-    <div class="skills">
-        <div class="skill">HTML</div>
-        <div class="skill">CSS</div>
-        <div class="skill">JavaScript</div>
-        <div class="skill">React</div>
+    <div>
+        <a href="#" class="box">HTML</a>
+        <a href="#" class="box">CSS</a>
+        <a href="#" class="box">JavaScript</a>
+        <a href="#" class="box">React</a>
         <!-- Add more skills here -->
     </div>
 
     <h2>Projects</h2>
-    <div class="projects">
-        <div class="project">
-            <a href="#">Project 1</a>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut eros enim. Nulla euismod libero sit amet augue vulputate, quis euismod mauris dignissim.</p>
-        </div>
-        <div class="project">
-            <a href="#">Project 2</a>
-            <p>Curabitur lacinia leo vitae risus rhoncus scelerisque. Nullam rutrum ipsum vel nisl cursus, id fermentum erat tincidunt.</p>
-        </div>
+    <div>
+        <a href="#" class="box">Project 1</a>
+        <a href="#" class="box">Project 2</a>
         <!-- Add more projects here -->
     </div>
 
-    <footer>
-        <p>Contact me at: your@email.com</p>
-    </footer>
+    <p>Contact me at: <a href="mailto:your@email.com" style="color: white;">your@email.com</a></p>
 </body>
 </html>
