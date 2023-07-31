@@ -25,7 +25,14 @@
             margin-bottom: 20px;
         }
 
-        .download-btn {
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .download-btn,
+        .info-btn {
             font-size: 18px;
             padding: 15px 30px;
             background-color: black;
@@ -35,17 +42,22 @@
             cursor: pointer;
             transition: background-color 0.3s, color 0.3s;
             text-decoration: none; /* Remove default anchor underline */
-            display: inline-block; /* Keep the button inline with the text */
+            display: inline-block; /* Keep the buttons inline with the text */
+            margin: 10px;
         }
 
-        .download-btn:hover {
+        .download-btn:hover,
+        .info-btn:hover {
             background-color: #007bff;
             color: black;
         }
     </style>
 </head>
 <body>
-    <h1>Swyft (ai image generator)</h1>
-    <a class="download-btn" href="https://vyrelith.com/d/swyft-installer_1.04.exe" target="_blank">download</a>
+    <h1>AI Image Generator</h1>
+    <div class="button-container">
+        <a class="download-btn" href="https://vyrelith.com/d/swyft-installer_1.04.exe" target="_blank">Download</a>
+        <a class="info-btn" href="https://vyrelith.com/ai/info" target="_blank">Info</a>
+    </div>
 </body>
 </html>
