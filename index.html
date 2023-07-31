@@ -23,6 +23,20 @@
         h1 {
             font-size: 36px;
             margin: 0;
+            background: linear-gradient(45deg, purple, cyan);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: textGradient 5s infinite alternate;
+        }
+
+        @keyframes textGradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
         }
 
         p {
