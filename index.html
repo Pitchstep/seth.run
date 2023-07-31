@@ -6,11 +6,9 @@
     <title>Seth</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <meta property="og:title" content="Seth">
-    <meta property="og:description" content="Check out my awesome bio page!! its like nothing but pls do it lol">
-    <meta property="og:image" content="https://raw.githubusercontent.com/sithydev/vyrelith-site/main/img/sethmoji.png">
-    <meta property="og:url" content="https://vyrelith.com.com">
     <style>
+        /* Your existing CSS styles here */
+
         body {
             font-family: 'Montserrat', sans-serif;
             text-align: center;
@@ -23,6 +21,14 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+        }
+
+        /* Center content within the body */
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         h1 {
@@ -91,25 +97,47 @@
         .link-icon[data-icon="fa-brands fa-discord"]:hover {
             color: #5865F2; /* Discord color */
         }
+
+        /* Prevent scrolling */
+        html, body {
+            overflow: hidden;
+        }
+
+        /* Additional styling for small text */
+        .small-text {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-top: 10px;
+        }
+
+        /* Copyright Footer */
+        footer {
+            font-size: 12px;
+            margin-top: auto;
+            opacity: 0.6;
+        }
     </style>
 </head>
 <body>
-    <h1>Seth</h1>
+    <div class="content-wrapper">
+        <h1>Seth</h1>
+        <img src="https://raw.githubusercontent.com/sithydev/vyrelith-site/main/img/sethmoji.png" alt="Your Memoji">
+        <p>web designer</p>
 
-    <!-- Add your Memoji image or profile picture below -->
-    <img src="https://raw.githubusercontent.com/sithydev/vyrelith-site/main/img/sethmoji.png" alt="Your Memoji">
+        <!-- Link Section -->
+        <div class="link-section">
+            <a href="https://instagram.com/sethdup" class="link-icon" data-icon="fab fa-instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/seth16k" class="link-icon" data-icon="fab fa-twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://youtube.com/@seth.4k" class="link-icon" data-icon="fab fa-youtube"><i class="fab fa-youtube"></i></a>
+            <a href="https://discordapp.com/users/920360162718519357" class="link-icon" data-icon="fa-brands fa-discord"><i class="fa-brands fa-discord"></i></a>
+        </div>
 
-    <p>
-        I am a boring person lol :(
-    </p>
+        <p class="small-text">By pressing these icons, you will be led outside of <b>www.vyrelith.com</b></p>
 
-    <!-- Link Section -->
-    <div class="link-section">
-        <a href="https://instagram.com/sethdup" class="link-icon" data-icon="fab fa-instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://twitter.com/seth16k" class="link-icon" data-icon="fab fa-twitter"><i class="fab fa-twitter"></i></a>
-        <a href="https://youtube.com/@seth.4k" class="link-icon" data-icon="fab fa-youtube"><i class="fab fa-youtube"></i></a>
-        <a href="https://discordapp.com/users/920360162718519357" class="link-icon" data-icon="fa-brands fa-discord"><i class="fa-brands fa-discord"></i></a>
-        <!-- Add more links and icons here -->
+        <!-- Copyright Footer -->
+        <footer>
+            &copy; 2023 Seth "4k" Harlow
+        </footer>
     </div>
 
     <!-- Load FontAwesome JavaScript -->
