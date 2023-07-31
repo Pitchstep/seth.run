@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Name - Portfolio</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <!-- Link to FontAwesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
@@ -51,13 +53,19 @@
             margin-top: 20px;
         }
 
-        .link-icon {
-            display: block;
-            font-size: 30px;
-            color: white;
+        .link-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin-top: 20px;
-            text-decoration: underline;
-            cursor: pointer;
+        }
+
+        .link-icon {
+            font-size: 24px;
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+            transition: color 0.3s;
         }
 
         .link-icon:hover {
@@ -75,7 +83,16 @@
         Add your biography or any description about yourself here. You can talk about your interests, skills, accomplishments, and anything else you'd like to share with the world!
     </p>
 
-    <!-- Add your link here -->
-    <a href="https://example.com" class="link-icon">Link to My Website</a>
+    <!-- Link Section -->
+    <div class="link-section">
+        <a href="https://example.com" class="link-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://example.com" class="link-icon"><i class="fab fa-twitter"></i></a>
+        <a href="https://example.com" class="link-icon"><i class="fab fa-youtube"></i></a>
+        <a href="https://example.com" class="link-icon"><i class="fas fa-globe"></i></a>
+        <!-- Add more links and icons here -->
+    </div>
+
+    <!-- Load FontAwesome JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 </body>
 </html>
