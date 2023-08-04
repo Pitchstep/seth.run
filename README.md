@@ -6,8 +6,8 @@ Wow, no way.
 www.Vyrelith.com is a website where I host my projects and such. ya thats it.
 
 ### Projects & games
-(Guess the Number)[www.vyrelith.com/numbers/] - A guess the number game.<br>
-(Music Player)[www.vyrelith.com/player/] - A music player which plays... music.<br>
+Guess the Number - A guess the number game. (www.vyrelith.com/numbers)<br>
+Music Player - A music player which plays... music. (www.vyrelith.com/player)<br>
 <i>I'll keep you updated on here, just keep on checking from time to time!</i>
 
 ### Copyright
