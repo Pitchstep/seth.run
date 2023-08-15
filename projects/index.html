@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seth's Projects</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Your existing CSS styles here */
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Use min-height to ensure content fits */
+        }
+
+        /* Center content within the body */
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1; /* Allow content to expand and push footer down */
+        }
+
+        h1 {
+            font-size: 36px;
+            margin: 20px 0; /* Add margin to provide space above and below */
+            background: linear-gradient(45deg, purple, cyan);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: textGradient 5s linear infinite;
+        }
+
+        /* Other CSS styles... */
+
+        /* Additional styling for project cards */
+        .project-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+
+    .check-button {
+        background-color: black;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        transition: background-color 0.3s;
+        text-decoration: none; /* Remove underline */
+    }
+
+    .check-button:hover {
+        background-color: #7289DA; /* Discord's "blurple" color */
+    }
+
+    .check-button-icon {
+        margin-left: 10px;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <h1>Projects</h1>
+
+<div class="project-card">
+    <h2 class="project-title">QR Code Maker</h2>
+    <p class="project-description">With this tool, you can generate your own QR codes with just 1 click!</p>
+    <a href="https://seth.run/qr" class="check-button">
+        Check it out!
+        <i class="fas fa-external-link-alt check-button-icon"></i>
+    </a>
+</div>
+
+<div class="project-card">
+    <h2 class="project-title">Guess the Number</h2>
+    <p class="project-description">In this very simple game, you have to guess a number within 1-100!</p>
+    <a href="https://seth.run/numbers" class="check-button">
+        Check it out!
+        <i class="fas fa-external-link-alt check-button-icon"></i>
+    </a>
+</div>
+
+    <!-- Copyright Footer -->
+    <footer>
+        &copy; 2023 Seth Harlow
+    </footer>
+
+    <!-- Load FontAwesome JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+</body>
+</html>
