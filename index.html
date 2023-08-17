@@ -15,12 +15,24 @@
             background-color: black;
             color: white;
             margin: 0;
-            padding: 20px;
+            padding: 0; /* Remove padding to avoid white space around video */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            position: relative; /* Required for video positioning */
+        }
+
+                #video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cover entire page */
+            z-index: -1; /* Place video behind other content */
+            opacity: 50%;
         }
 
         /* Center content within the body */
@@ -103,11 +115,11 @@
         }
 
         .link-icon[data-icon="images"]:hover {
-            color: 	#008000;
+            color:  #008000;
         }
 
         .link-icon[data-icon="codes"]:hover {
-            color: 	#00008B;
+            color:  #00008B;
         }
 
         .link-icon[data-icon="fa-solid fa-mug-hot":hover {
@@ -151,6 +163,11 @@
         </div>
 
         <p class="small-text"><b>Like what you see?</b><br>Click on the coffee icon to support me on Ko-fi!</p>
+
+<video autoplay muted loop id="video-background">
+    <source src="bg.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 
         <!-- Copyright Footer -->
         <footer>
