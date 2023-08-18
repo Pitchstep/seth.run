@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="sethrun_logo_transparent.png">
-    <image>src= https://seth.run/sethrun_logo_transparent.png</image>
+    <image>src=sethrun_logo_transparent.png </image>
     <style>
         /* Your existing CSS styles here */
 
@@ -32,6 +32,19 @@
             height: 100vh;
             position: relative; /* Required for video positioning */
         }
+
+
+        #intro-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 10;
+            opacity: 100%;
+          }
+
 
                 #video-background {
             position: absolute;
@@ -131,7 +144,7 @@
             color:  #00008B;
         }
 
-        .link-icon[data-icon="fa-solid fa-mug-hot":hover {
+        .link-icon[data-icon="fa-solid fa-mug-hot"]:hover {
             color: #00FFFF;
         }
 
@@ -148,9 +161,17 @@
             margin-top: auto;
             opacity: 0.6;
         }
-    </style>
+
+      </style>
 </head>
 <body>
+
+
+    <video autoplay="" muted="" id="intro-video">
+        <source src="intro.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
 
     <div class="content-wrapper">
         <h1>seth.run</h1>
@@ -160,6 +181,7 @@
             <a href="https://seth.run/projects/" class="link-icon" data-icon="codes"><i class="fa-solid fa-code fa-2xl"></i></a>
 
         <p>Hi, I'm Seth.<br>Otherwise known as Seth4k online. I'm a 14 year old from Norway and an amateur in web design & graphic design.<br><br>This is the first time I've created a website where I show off my projects and designs. To show and to improve my talent.<br>I also want to do commissions by creating logos, websites, and games.<br><br>The website will update frequently, and I would love your feedback on my work.<br>You can contact me via <b>email</b> or <b>Discord</b> (Icon below) for feedback and requests.</p>
+        </div>
 
         <!-- Link Section -->
         <div class="link-section">
@@ -184,5 +206,39 @@
 
     <!-- Load FontAwesome JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script>
+        const introVideo = document.getElementById('intro-video');
+
+        setTimeout(() => {
+            //introVideo.style.opacity = '50';
+            fade(introVideo);
+            console.log("opacity negative");
+
+            setTimeout(() => {
+                introVideo.style.display = 'none';
+                console.log("remove video");
+
+            }, 2000); // Hide the video after fading out
+        }, 3000); // Wait for 3 seconds before fading out
+
+
+    function fade(element) {
+    var op = 1;  // initial opacity
+    var timer = setInterval(function () {
+        if (op <= 0.1){
+            clearInterval(timer);
+            element.style.display = 'none';
+        }
+        element.style.opacity = op;
+        //element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op -= op * 0.1;
+    }, 50);
+}
+
+
+    </script>
+
+
+
 </body>
 </html>
