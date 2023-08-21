@@ -61,21 +61,31 @@
 
     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
     <script>
-        const qrContainer = document.getElementById('qrcode');
+const qrContainer = document.getElementById('qrcode');
 
-        function generateQRCode() {
-            const textInput = document.getElementById('textInput').value;
+function generateQRCode() {
+    const textInput = document.getElementById('textInput').value;
 
-            if (textInput.trim() !== '') {
-                qrContainer.innerHTML = ''; // Clear previous QR code
+    if (textInput.trim() !== '') {
+        qrContainer.innerHTML = ''; // Clear previous content
 
-                const qr = new QRCode(qrContainer, {
-                    text: textInput,
-                    width: 200,
-                    height: 200,
-                });
-            }
-        }
+        const qr = new QRCode(qrContainer, {
+            text: textInput,
+            width: 200,
+            height: 200,
+        });
+
+        // Add your logo
+        const logoImg = document.createElement('img');
+        logoImg.src = 'sethrun_logo_transparent.png'; // Path to your logo
+        logoImg.style.position = 'absolute';
+        logoImg.style.top = '50%';
+        logoImg.style.left = '50%';
+        logoImg.style.transform = 'translate(-50%, -50%)';
+        logoImg.style.maxWidth = '100px'; // Adjust the size of the logo
+        qrContainer.appendChild(logoImg);
+    }
+}
     </script>
 </body>
 </html>
