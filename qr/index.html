@@ -18,9 +18,20 @@
             color: #fff;
         }
 
-        .qr-container {
-            text-align: center;
-        }
+.qr-code-container {
+    position: relative;
+    display: inline-block;
+}
+
+.qr-code-container img.logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80px; /* Adjust the size of the logo */
+    pointer-events: none; /* Prevent the logo from being clickable */
+}
+
 
         #qrcode {
             width: 200px;
@@ -50,7 +61,7 @@
     </style>
 </head>
 <body>
-    <div class="qr-container">
+        <div id="qrcode" class="qr-code-container">
         <h1 style="color: #fff;">QR Code Creator</h1>
         <p>Enter text (up to 256 characters) and click the button to generate a QR code.<br>If you want to generate a link, make sure to put <b>https://</b> in front of it.</p>
         <input type="text" id="textInput" placeholder="Enter text">
@@ -76,15 +87,11 @@ function generateQRCode() {
         });
 
         // Add your logo
-        const logoImg = document.createElement('img');
-        logoImg.src = 'sethrun_logo_transparent.png'; // Path to your logo
-        logoImg.style.position = 'absolute';
-        logoImg.style.top = '50%';
-        logoImg.style.left = '50%';
-        logoImg.style.transform = 'translate(-50%, -50%)';
-        logoImg.style.maxWidth = '100px'; // Adjust the size of the logo
-        qrContainer.appendChild(logoImg);
-    }
+const logoImg = document.createElement('img');
+logoImg.src = 'sethrun_logo_transparent.png'; // Path to your logo
+logoImg.classList.add('logo'); // Add the 'logo' class to the image
+qrContainer.appendChild(logoImg);
+
 }
     </script>
 </body>
