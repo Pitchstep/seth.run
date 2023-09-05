@@ -1,6 +1,6 @@
 <?php
 // Define the correct password
-$correctPassword = "i love black oily men";
+$correctPassword = "the_c_is_sacred";
 
 // Check if the form has been submitted
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
