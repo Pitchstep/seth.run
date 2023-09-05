@@ -19,7 +19,7 @@
 
             if (enteredPassword === correctPassword) {
                 document.getElementById("message").innerHTML = "Logged in as <b>[elder administrator] seth</b>. Redirecting...";
-                // Redirect to the protected content or load it here
+                window.location.href = "https://seth.run/gdonline/files/game";
             } else {
                 document.getElementById("message").innerHTML = "Access Denied! Please try again.";
             }
