@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Geometry Dash Online</title>
+    <title>GD Online</title>
 </head>
 <body>
-    <h1>GD Online (PlayAnyway)</h1>
-    <p>This page is protected. Please enter the password to access the content.</p>
+    <h1>Geometry Dash</h1>
+    <p>Log in with your gdonline admin password</p>
 
-    <form action="check_password.php" method="post">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <input type="submit" value="Submit">
-    </form>
+    <input type="password" id="password" placeholder="Password...">
+    <button onclick="checkPassword()">submit</button>
+    
+    <div id="message"></div>
+
+    <script>
+        function checkPassword() {
+            var enteredPassword = document.getElementById("password").value;
+            var correctPassword = "this_is_the_password";
+
+            if (enteredPassword === correctPassword) {
+                document.getElementById("message").innerHTML = "Logged in. Redirecting...";
+                // Redirect to the protected content or load it here
+            } else {
+                document.getElementById("message").innerHTML = "Access Denied! Please try again.";
+            }
+        }
+    </script>
 </body>
 </html>
