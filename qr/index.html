@@ -23,15 +23,6 @@
     display: inline-block;
 }
 
-.qr-code-container img.logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 80px; /* Adjust the size of the logo */
-    pointer-events: none; /* Prevent the logo from being clickable */
-}
-
 
         #qrcode {
             width: 200px;
@@ -85,12 +76,6 @@ function generateQRCode() {
             width: 200,
             height: 200,
         });
-
-        // Add your logo
-const logoImg = document.createElement('img');
-logoImg.src = 'sethrun_logo_transparent.png'; // Path to your logo
-logoImg.classList.add('logo'); // Add the 'logo' class to the image
-qrContainer.appendChild(logoImg);
 
 }
     </script>
