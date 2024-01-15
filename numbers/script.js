@@ -1,4 +1,4 @@
-// JavaScript code to handle the Number Guessing Game logic
+// JavaScript code to handle the Number Guessing Game logic.
 const secretNumber = Math.floor(Math.random() * 100) + 1;
 let attempts = 0;
 
