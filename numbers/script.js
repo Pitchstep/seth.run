@@ -12,17 +12,17 @@ function handleGuess() {
   const userGuess = parseInt(userGuessInput.value);
 
   if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
-    messageElement.textContent = 'Please enter a valid number between 1 and 100.';
+    messageElement.textContent = 'The number has to be between 1 and 100!';
   } else {
     attempts++;
 
     if (userGuess === secretNumber) {
-      messageElement.textContent = `Congratulations! You guessed the secret number ${secretNumber} in ${attempts} attempts.`;
+      messageElement.textContent = `Congratulations! You guessed <b>${secretNumber}</b> in <b>${attempts}</b> attempts.`;
       disableInputAndButton();
     } else if (userGuess < secretNumber) {
-      messageElement.textContent = 'Try a higher number!';
+      messageElement.textContent = '<i>Higher!</i>';
     } else {
-      messageElement.textContent = 'Try a lower number!';
+      messageElement.textContent = '<i>Lower!</i>';
     }
   }
 
@@ -52,3 +52,5 @@ userGuessInput.addEventListener('keypress', function (event) {
 
 // Attach the toggleDarkMode function to the dark mode button's click event
 darkModeButton.addEventListener('click', toggleDarkMode);
+
+// So basically, this is the source code. Hello, world!
