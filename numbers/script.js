@@ -20,9 +20,9 @@ function handleGuess() {
       messageElement.textContent = `Congratulations! The secret number was ${secretNumber}! You took ${attempts} tries to find it.`;
       disableInputAndButton();
     } else if (userGuess < secretNumber) {
-      messageElement.textContent = '<i>Higher!</i>';
+      messageElement.textContent = 'The number is HIGHER than ${userGuess}!';
     } else {
-      messageElement.textContent = '<i>Lower!</i>';
+      messageElement.textContent = 'The number is LOWER than ${userGuess}!';
     }
   }
 
