@@ -17,7 +17,7 @@ function handleGuess() {
     attempts++;
 
     if (userGuess === secretNumber) {
-      messageElement.textContent = `Congratulations! You guessed <b>${secretNumber}</b> in <b>${attempts}</b> attempts.`;
+      messageElement.textContent = `Congratulations! The secret number was ${secretNumber}! You took ${attempts} tries to find it.`;
       disableInputAndButton();
     } else if (userGuess < secretNumber) {
       messageElement.textContent = '<i>Higher!</i>';
