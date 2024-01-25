@@ -19,6 +19,6 @@ This domain (seth.run) is for sale! Contact @pitchstep on Discord if you're inte
 **Funding** - "Litis"<br>
 **Special Thanks** "Osmo"<br>
 <br><br>
-**Created by** Seth Harlow<br>br>
+**Created by** Seth Harlow<br><br>
 
 _© 2024 seth.run - all rights reserved._
