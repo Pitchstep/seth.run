@@ -11,14 +11,14 @@ Seth.run is currently just a website where I post my stuff. Read more about Vers
 This domain (seth.run) is for sale! Contact @pitchstep on Discord if you're interested.
 
 ## Credits
-**Programming** - Seth Harlow
-**JavaScript** - Seth Harlow & "HÆPPY"
-**Styling** - Seth Harlow
-**Hosting** - GitHub & GoDaddy
-**Logo GFX** - "Sabified"
-**Funding** - "Litis"
-**Special Thanks** "Osmo"
-
-**Created by** Seth Harlow
+**Programming** - Seth Harlow<br>
+**JavaScript** - Seth Harlow & "HÆPPY"<br>
+**Styling** - Seth Harlow<br>
+**Hosting** - GitHub & GoDaddy<br>
+**Logo GFX** - "Sabified"<br>
+**Funding** - "Litis"<br>
+**Special Thanks** "Osmo"<br>
+<br><br>
+**Created by** Seth Harlow<br>br>
 
 _© 2024 seth.run - all rights reserved._
