@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boring clicker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="cookie-container">
+            <div id="cookie" onclick="clickCookie()"></div>
+            <div id="click-count">clicks: 0</div>
+            <div id="cookies-per-second">cookies per second: 0</div>
+            <div id="golden-cookie"></div>
+        </div>
+        <div id="store-container">
+            <h2>Store</h2>
+            <div class="store-item" onclick="buyUpgrade('clickMultiplier', 10)">Click Multiplier - Cost: 10</div>
+            <div class="store-item" onclick="buyUpgrade('autoClicker', 50)">Auto Clicker - Cost: 50</div>
+            <div class="store-item" onclick="buyUpgrade('timeWarp', 100)">Time Warp - Cost: 100</div>
+        </div>
+        <div id="achievements-container">
+            <h2>Achievements</h2>
+            <div class="achievement">Achievement 1</div>
+            <div class="achievement">Achievement 2</div>
+        </div>
+        <button onclick="saveGame()">Save Game</button>
+        <button onclick="loadGame()">Load Game</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
