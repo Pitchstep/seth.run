@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Chat Page</title>
+    <title>Boring Clicker</title>
 </head>
 <body>
-    <div class="chat-container">
-        <div class="chat-box" id="chat-box">
-            <!-- Chat messages will be displayed here -->
+    <div class="game-container">
+        <div class="cookie-container">
+            <img src="cookie.png" alt="Cookie" id="cookie" onclick="clickCookie()">
         </div>
-        <div class="input-container">
-            <input type="text" id="messageInput" placeholder="Type your message...">
-            <button onclick="sendMessage()">Send</button>
+        <div class="info-container">
+            <p id="click-count">Clicks: 0</p>
+            <p id="cookies-per-second">Cookies per second: 0</p>
+        </div>
+        <div class="store-container">
+            <h2>Store</h2>
+            <button onclick="buyUpgrade(1)">Upgrade 1 - Cost: <span id="upgrade1-cost">10</span></button>
+            <button onclick="buyUpgrade(2)">Upgrade 2 - Cost: <span id="upgrade2-cost">20</span></button>
         </div>
     </div>
 
