@@ -17,9 +17,10 @@
         </div>
         <div class="store-container">
             <h2>Store</h2>
-            <button onclick="buyUpgrade(1)">Upgrade 1 - Cost: <span id="upgrade1-cost">10</span></button>
-            <button onclick="buyUpgrade(2)">Upgrade 2 - Cost: <span id="upgrade2-cost">20</span></button>
+            <button onmouseover="showTooltip(1)" onmouseout="hideTooltip()" onclick="buyUpgrade(1)">Upgrade 1 - Cost: <span id="upgrade1-cost">10</span></button>
+            <button onmouseover="showTooltip(2)" onmouseout="hideTooltip()" onclick="buyUpgrade(2)">Upgrade 2 - Cost: <span id="upgrade2-cost">20</span></button>
         </div>
+        <div id="tooltip" class="hidden"></div>
     </div>
 
     <script src="script.js"></script>
