@@ -55,6 +55,7 @@ body {
     padding: 15px;
     margin-top: 10px;
     display: inline-block; /* Added to make the menus visible */
+    width: 48%; /* Adjusted width for better distribution */
 }
 
 .store-item,
