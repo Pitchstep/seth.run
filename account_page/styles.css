@@ -24,12 +24,18 @@ body {
 #cookie {
     width: 100px;
     height: 100px;
+    background-color: #fff; /* White circle */
+    border-radius: 50%;
     cursor: pointer;
     transition: transform 0.1s ease-in-out;
 }
 
 #cookie:hover {
     transform: scale(1.1);
+}
+
+.info-container {
+    margin-bottom: 20px;
 }
 
 .store-container {
@@ -49,4 +55,3 @@ button {
 button:hover {
     background-color: #45a049;
 }
-
