@@ -4,7 +4,6 @@ let cookiesPerSecond = 0;
 let upgrade1Cost = 10;
 let upgrade2Cost = 20;
 
-// Load game data from localStorage
 function loadGame() {
     if (localStorage.getItem("clickCount")) {
         clickCount = parseInt(localStorage.getItem("clickCount"));
@@ -16,7 +15,6 @@ function loadGame() {
     }
 }
 
-// Save game data to localStorage
 function saveGame() {
     localStorage.setItem("clickCount", clickCount);
     localStorage.setItem("cookiesPerClick", cookiesPerClick);
@@ -25,13 +23,11 @@ function saveGame() {
     localStorage.setItem("upgrade2Cost", upgrade2Cost);
 }
 
-// Clicking the boring cookie
 function clickCookie() {
     clickCount += cookiesPerClick;
     updateDisplay();
 }
 
-// Buying an upgrade from the store
 function buyUpgrade(upgradeNumber) {
     let upgradeCost;
     switch (upgradeNumber) {
@@ -64,7 +60,6 @@ function buyUpgrade(upgradeNumber) {
     }
 }
 
-// Start automatic cookie production from upgrades
 function startCookieProduction() {
     setInterval(() => {
         clickCount += cookiesPerSecond;
@@ -72,18 +67,15 @@ function startCookieProduction() {
     }, 1000);
 }
 
-// Update the display with the latest data
 function updateDisplay() {
     document.getElementById("click-count").textContent = `Clicks: ${clickCount}`;
     document.getElementById("cookies-per-second").textContent = `Cookies per second: ${cookiesPerSecond}`;
     document.getElementById("upgrade1-cost").textContent = upgrade1Cost;
     document.getElementById("upgrade2-cost").textContent = upgrade2Cost;
 
-    // Save game data on every update
     saveGame();
 }
 
-// Load the game on page load
 document.addEventListener("DOMContentLoaded", () => {
     loadGame();
     updateDisplay();
