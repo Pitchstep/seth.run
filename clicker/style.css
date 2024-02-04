@@ -43,6 +43,7 @@ body {
 #achievements-container {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .menu {
@@ -50,6 +51,7 @@ body {
     border-radius: 10px;
     padding: 15px;
     width: 40%;
+    margin: 10px;
 }
 
 .store-item,
