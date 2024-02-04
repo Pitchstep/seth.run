@@ -1,0 +1,63 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+}
+
+#game-container {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+#cookie-container {
+    text-align: center;
+}
+
+#cookie {
+    width: 200px;
+    height: 200px;
+    background-image: url('https://pngimg.com/d/cookie_PNG13656.png'); /* Add your cookie image URL here */
+    background-size: cover;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#click-count, #cookies-per-second {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+#store-container, #achievements-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.store-item, .achievement {
+    border: 2px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.store-item:hover, .achievement:hover {
+    background-color: #f5f5f5;
+}
+
+#golden-cookie {
+    width: 50px;
+    height: 50px;
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8069e131-cb5c-4d88-a1cd-024c01b23e9b/ddnhgpm-91037e50-9a74-4ef8-8812-138968c432f0.png/v1/fill/w_164,h_160/golden_cookie_by_destinedcosmo_ddnhgpm-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTYwIiwicGF0aCI6IlwvZlwvODA2OWUxMzEtY2I1Yy00ZDg4LWExY2QtMDI0YzAxYjIzZTliXC9kZG5oZ3BtLTkxMDM3ZTUwLTlhNzQtNGVmOC04ODEyLTEzODk2OGM0MzJmMC5wbmciLCJ3aWR0aCI6Ijw9MTY0In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.VRr59K8OyxOfc0_D3xI3_dffomQxUAPzygBXdVmBVb0'); /* Add your golden cookie image URL here */
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
