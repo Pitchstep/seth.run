@@ -76,6 +76,8 @@ body {
     transition: opacity 0.5s ease;
 }
 
+/* ... (other styles) */
+
 .notification-box {
     position: fixed;
     top: 100%;
@@ -87,9 +89,20 @@ body {
     border-radius: 5px;
     transition: top 0.5s ease, opacity 0.5s ease;
     pointer-events: none;
+    text-align: center; /* Center text */
 }
 
 .notification-box.active {
     top: 90%;
     opacity: 1;
+}
+
+.notification-box .title {
+    font-size: 18px; /* Adjust the font size as needed */
+    font-weight: bold; /* Make the title bold */
+    margin-bottom: 5px;
+}
+
+.notification-box .description {
+    margin-bottom: 5px;
 }
