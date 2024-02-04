@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collaborative Story</title>
+    <title>Local Chat</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="story-container">
-        <div id="story"></div>
-        <textarea id="user-input" placeholder="Add your sentence..."></textarea>
-        <button onclick="addSentence()">Add Sentence</button>
+    <div id="chat-container">
+        <div id="chat">
+            <ul id="messages"></ul>
+        </div>
+        <input id="message-input" type="text" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
     </div>
     <script src="script.js"></script>
 </body>
