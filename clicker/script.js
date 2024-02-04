@@ -57,7 +57,7 @@ function updateCookiesPerSecond() {
 function checkAchievements() {
     if (clickCount >= 10 && !achievements.includes('Achievement 1')) {
         achievements.push('Achievement 1');
-        showAchievementNotification('Achievement Unlocked: Achievement 1!');
+        showNotification('Achievement Unlocked!', 'Achievement 1');
     }
     // Add more complex achievement conditions as needed
     updateAchievements();
@@ -74,13 +74,17 @@ function updateAchievements() {
     }
 }
 
-function showAchievementNotification(message) {
-    const notification = document.createElement('div');
-    notification.classList.add('notification');
-    notification.innerText = message;
-    document.body.appendChild(notification);
+function showNotification(title, description) {
+    const notificationBox = document.getElementById('notification-box');
+    const titleElement = notificationBox.querySelector('.title');
+    const descriptionElement = notificationBox.querySelector('.description');
+
+    titleElement.innerText = title;
+    descriptionElement.innerText = description;
+
+    notificationBox.classList.add('active');
     setTimeout(() => {
-        notification.remove();
+        notificationBox.classList.remove('active');
     }, 3000);
 }
 
@@ -94,18 +98,6 @@ function checkGoldenCookie() {
     }
 }
 
-function toggleDarkMode() {
-    const body = document.body;
-    const gameContainer = document.getElementById('game-container');
-    const clickCountElement = document.getElementById('click-count');
-    const cookiesPerSecondElement = document.getElementById('cookies-per-second');
-
-    body.classList.toggle('dark-mode');
-    gameContainer.classList.toggle('dark-mode');
-    clickCountElement.classList.toggle('dark-mode');
-    cookiesPerSecondElement.classList.toggle('dark-mode');
-}
-
 function saveGame() {
     saveData = {
         clickCount,
@@ -114,7 +106,7 @@ function saveGame() {
         autoClickerCount,
         achievements
     };
-    showNotification('Game saved!');
+    showNotification('Game saved!', '');
 }
 
 function loadGame() {
@@ -127,20 +119,10 @@ function loadGame() {
         updateClickCount();
         updateCookiesPerSecond();
         updateAchievements();
-        showNotification('Game loaded!');
+        showNotification('Game loaded!', '');
     } else {
-        showNotification('No saved game found.');
+        showNotification('No saved game found.', '');
     }
-}
-
-function showNotification(message) {
-    const notification = document.createElement('div');
-    notification.classList.add('notification');
-    notification.innerText = message;
-    document.body.appendChild(notification);
-    setTimeout(() => {
-        notification.remove();
-    }, 3000);
 }
 
 setInterval(function () {
