@@ -106,7 +106,7 @@ function saveGame() {
         autoClickerCount,
         achievements
     };
-    showNotification('Game saved!', '');
+    showNotification('Game saved!', 'You can load your save file by clicking the Load Game button.');
 }
 
 function loadGame() {
@@ -119,9 +119,9 @@ function loadGame() {
         updateClickCount();
         updateCookiesPerSecond();
         updateAchievements();
-        showNotification('Game loaded!', '');
+        showNotification('Game loaded!', 'Progress restored!');
     } else {
-        showNotification('No saved game found.', '');
+        showNotification('No saved game found.', 'Did you refresh the page?');
     }
 }
 
