@@ -9,7 +9,7 @@ body {
     color: #333;
 }
 
-#story-container {
+#chat-container {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -18,14 +18,28 @@ body {
     text-align: center;
 }
 
-#story {
-    margin-bottom: 20px;
+#chat {
+    height: 200px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
 }
 
-textarea {
-    width: 100%;
+#messages {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#messages li {
+    margin-bottom: 5px;
+}
+
+input {
+    width: 70%;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-right: 10px;
 }
 
 button {
