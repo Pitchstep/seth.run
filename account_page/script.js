@@ -5,6 +5,7 @@ let upgrade1Level = 1;
 let upgrade2Level = 1;
 let upgrade1Cost = 10;
 let upgrade2Cost = 20;
+let resetConfirm = false;
 
 function loadGame() {
     if (localStorage.getItem("clickCount")) {
@@ -94,7 +95,6 @@ function showTooltip(upgradeNumber) {
     tooltip.innerHTML = upgradeDescription;
     tooltip.style.display = "block";
 
-    // Position the tooltip relative to the button
     let button = document.querySelector(`button[data-upgrade="${upgradeNumber}"]`);
     let rect = button.getBoundingClientRect();
     tooltip.style.top = rect.top - tooltip.offsetHeight - 10 + "px";
@@ -106,14 +106,28 @@ function hideTooltip() {
     tooltip.style.display = "none";
 }
 
-function updateDisplay() {
-    document.getElementById("click-count").textContent = `Clicks: ${clickCount}`;
-    document.getElementById("cookies-per-second").textContent = `Cookies per second: ${cookiesPerSecond}`;
-    document.getElementById("upgrade1-cost").textContent = upgrade1Cost;
-    document.getElementById("upgrade2-cost").textContent = upgrade2Cost;
+function confirmReset() {
+    if (!resetConfirm) {
+        resetConfirm = true;
+        setTimeout(() => {
+            resetConfirm = false;
+        }, 2000); // Reset confirmation timeout (2 seconds)
+    } else {
+        resetGame();
+    }
+}
 
-    // Save game data on every update
+function resetGame() {
+    clickCount = 0;
+    cookiesPerClick = 1;
+    cookiesPerSecond = 0;
+    upgrade1Level = 1;
+    upgrade2Level = 1;
+    upgrade1Cost = 10;
+    upgrade2Cost = 20;
+
     saveGame();
+    updateDisplay();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
