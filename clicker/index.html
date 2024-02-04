@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>clicker</title>
+    <title>Cookie Clicker Clone</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="game-container">
         <div id="cookie-container">
             <div id="cookie" onclick="clickCookie()"></div>
-            <div id="click-count">clicks: 0</div>
-            <div id="cookies-per-second">clicks per second: 0</div>
+            <div id="click-count">Clicks: 0</div>
+            <div id="cookies-per-second">Cookies per second: 0</div>
             <div id="golden-cookie"></div>
         </div>
         <div id="store-container" class="menu">
@@ -27,7 +27,12 @@
             <div class="achievement">Achievement 2</div>
             <!-- Add more achievements as needed -->
         </div>
-        <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+        <!-- Add the notification box here -->
+        <div id="notification-box" class="notification-box">
+            <div class="title"></div>
+            <div class="description"></div>
+        </div>
+        <!-- End of notification box -->
         <button onclick="saveGame()">Save Game</button>
         <button onclick="loadGame()">Load Game</button>
     </div>
