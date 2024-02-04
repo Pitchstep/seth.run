@@ -1,14 +1,19 @@
-function addSentence() {
-    const userInput = document.getElementById('user-input');
-    const storyContainer = document.getElementById('story');
+function sendMessage() {
+    const messageInput = document.getElementById('message-input');
+    const message = messageInput.value.trim();
 
-    const sentence = userInput.value.trim();
-    if (sentence !== '') {
-        const newParagraph = document.createElement('p');
-        newParagraph.textContent = sentence;
-        storyContainer.appendChild(newParagraph);
-
-        // Clear the input
-        userInput.value = '';
+    if (message !== '') {
+        showMessage('Me', message);
+        messageInput.value = '';
     }
+}
+
+function showMessage(who, msg) {
+    const messages = document.getElementById('messages');
+    const li = document.createElement('li');
+    li.textContent = who + ': ' + msg;
+    messages.appendChild(li);
+
+    // Scroll to the bottom of the chat
+    messages.scrollTop = messages.scrollHeight;
 }
