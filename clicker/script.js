@@ -10,10 +10,20 @@ function clickCookie() {
     clickCount += clickMultiplier;
     updateClickCount();
     checkGoldenCookie();
+    animateCookieClick();
+}
+
+function animateCookieClick() {
+    const cookie = document.getElementById('cookie');
+    cookie.style.transform = 'scale(1.1)';
+    setTimeout(() => {
+        cookie.style.transform = 'scale(1)';
+    }, 100);
 }
 
 function updateClickCount() {
-    document.getElementById('click-count').innerText = 'Clicks: ' + clickCount;
+    const clickCountElement = document.getElementById('click-count');
+    clickCountElement.innerText = 'Clicks: ' + clickCount;
     checkAchievements();
 }
 
@@ -39,14 +49,15 @@ function autoClick() {
 }
 
 function updateCookiesPerSecond() {
+    const cookiesPerSecondElement = document.getElementById('cookies-per-second');
     cookiesPerSecond = autoClickerCount * clickMultiplier;
-    document.getElementById('cookies-per-second').innerText = 'Cookies per second: ' + cookiesPerSecond;
+    cookiesPerSecondElement.innerText = 'Cookies per second: ' + cookiesPerSecond;
 }
 
 function checkAchievements() {
     if (clickCount >= 10 && !achievements.includes('Achievement 1')) {
         achievements.push('Achievement 1');
-        alert('Achievement Unlocked: Achievement 1!');
+        showAchievementNotification('Achievement Unlocked: Achievement 1!');
     }
     // Add more complex achievement conditions as needed
     updateAchievements();
@@ -63,6 +74,16 @@ function updateAchievements() {
     }
 }
 
+function showAchievementNotification(message) {
+    const notification = document.createElement('div');
+    notification.classList.add('notification');
+    notification.innerText = message;
+    document.body.appendChild(notification);
+    setTimeout(() => {
+        notification.remove();
+    }, 3000);
+}
+
 function checkGoldenCookie() {
     const goldenCookie = document.getElementById('golden-cookie');
     if (Math.random() < 0.02) { // 2% chance for a golden cookie to appear
@@ -73,6 +94,18 @@ function checkGoldenCookie() {
     }
 }
 
+function toggleDarkMode() {
+    const body = document.body;
+    const gameContainer = document.getElementById('game-container');
+    const clickCountElement = document.getElementById('click-count');
+    const cookiesPerSecondElement = document.getElementById('cookies-per-second');
+
+    body.classList.toggle('dark-mode');
+    gameContainer.classList.toggle('dark-mode');
+    clickCountElement.classList.toggle('dark-mode');
+    cookiesPerSecondElement.classList.toggle('dark-mode');
+}
+
 function saveGame() {
     saveData = {
         clickCount,
@@ -81,7 +114,7 @@ function saveGame() {
         autoClickerCount,
         achievements
     };
-    alert('Game saved!');
+    showNotification('Game saved!');
 }
 
 function loadGame() {
@@ -94,10 +127,20 @@ function loadGame() {
         updateClickCount();
         updateCookiesPerSecond();
         updateAchievements();
-        alert('Game loaded!');
+        showNotification('Game loaded!');
     } else {
-        alert('No saved game found.');
+        showNotification('No saved game found.');
     }
+}
+
+function showNotification(message) {
+    const notification = document.createElement('div');
+    notification.classList.add('notification');
+    notification.innerText = message;
+    document.body.appendChild(notification);
+    setTimeout(() => {
+        notification.remove();
+    }, 3000);
 }
 
 setInterval(function () {
