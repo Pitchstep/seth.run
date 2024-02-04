@@ -38,10 +38,10 @@ body {
     transition: color 0.5s ease;
 }
 
-#store-container, #achievements-container {
+#store-container,
+#achievements-container {
     margin-top: 20px;
     text-align: center;
-    display: none;
 }
 
 .menu {
@@ -49,6 +49,7 @@ body {
     border-radius: 10px;
     padding: 15px;
     margin-top: 10px;
+    display: inline-block; /* Added to make the menus visible */
 }
 
 .store-item, .achievement {
@@ -75,8 +76,6 @@ body {
     display: none;
     transition: opacity 0.5s ease;
 }
-
-/* ... (other styles) */
 
 .notification-box {
     position: fixed;
@@ -105,4 +104,9 @@ body {
 
 .notification-box .description {
     margin-bottom: 5px;
+}
+
+.dark-mode {
+    background-color: #111;
+    color: #fff;
 }
