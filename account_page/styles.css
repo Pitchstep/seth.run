@@ -1,18 +1,3 @@
-/* Add this style for tooltips */
-#tooltip {
-    position: absolute;
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    z-index: 1;
-}
-
-/* Add this style to show/hide the tooltip */
-.hidden {
-    display: none;
-}
-
 body {
     margin: 0;
     padding: 0;
@@ -30,7 +15,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    position: relative; /* Added to position the tooltip */
+    position: relative;
 }
 
 .cookie-container {
@@ -40,7 +25,7 @@ body {
 #cookie {
     width: 100px;
     height: 100px;
-    background-color: #fff; /* White square */
+    background-color: #fff;
     cursor: pointer;
     transition: transform 0.1s ease-in-out;
 }
@@ -58,7 +43,7 @@ body {
 }
 
 button {
-    position: relative; /* Added for tooltip positioning */
+    position: relative;
     padding: 10px;
     margin: 5px;
     cursor: pointer;
@@ -70,4 +55,34 @@ button {
 
 button:hover {
     background-color: #45a049;
+}
+
+#tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+.reset-container {
+    margin-top: 20px;
+}
+
+.reset-container button {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #FF4500;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.reset-container button:hover {
+    background-color: #FF6347;
 }
