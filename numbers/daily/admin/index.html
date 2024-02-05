@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers Game Admin Panel</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #terminal {
+            width: 400px;
+            padding: 20px;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            background-color: #333;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        input {
+            width: calc(100% - 20px);
+            padding: 5px;
+            margin-top: 10px;
+            border: none;
+            background-color: #666;
+            color: #fff;
+        }
+
+        #output {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="terminal">
+        <p>Welcome to the Daily Admin Panel!</p>
+        <p>Type "/help" for a list of commands</p>
+        <input type="text" id="commandInput" placeholder="Enter command">
+        <div id="output"></div>
+    </div>
+
+    <script>
+        function handleCommand(command) {
+            const outputDiv = document.getElementById('output');
+
+            switch (command) {
+                case '/help':
+                    outputDiv.innerHTML = '<p>Available commands:</p>' +
+                        '<ul>' +
+                        '<li>/status - Display current status</li>' +
+                        '<li>/setnumber [number] - Set the daily number</li>' +
+                        '</ul>';
+                    break;
+                case '/status':
+                    outputDiv.innerHTML = '<p>Admin Panel Status: Active</p>';
+                    break;
+                default:
+                    outputDiv.innerHTML = '<p>Unknown command. Type "/help" for a list of commands.</p>';
+            }
+        }
+
+        function handleInput() {
+            const inputElement = document.getElementById('commandInput');
+            const command = inputElement.value.trim();
+
+            if (command.startsWith('/')) {
+                handleCommand(command);
+            } else {
+                const outputDiv = document.getElementById('output');
+                outputDiv.innerHTML = '<p>Invalid command. Type "/help" for a list of commands.</p>';
+            }
+
+            inputElement.value = '';
+        }
+
+        document.getElementById('commandInput').addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+                handleInput();
+            }
+        });
+
+        // Check for the presence of #admin in the URL
+        if (window.location.hash === '#admin') {
+            document.getElementById('terminal').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
