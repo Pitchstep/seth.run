@@ -46,8 +46,7 @@
             resize: none;
         }
 
-        #saveButton,
-        #loadButton {
+        #saveButton {
             padding: 10px;
             background-color: #4caf50;
             color: #fff;
@@ -93,11 +92,9 @@
         <input type="text" id="noteContent" placeholder="Start typing your notes...">
 
         <button id="saveButton" onclick="saveNote()">Save Note</button>
-        <button id="loadButton" onclick="loadNote()">Load Note</button>
-
         <div id="loadCode">
             <input type="text" id="loadCodeInput" placeholder="Paste code here">
-            <button onclick="loadNoteFromCode()">Load</button>
+            <button onclick="loadNote()">Load Note</button>
         </div>
     </div>
 
@@ -142,17 +139,6 @@
                 } else {
                     showNotification('No note found with the provided code.');
                 }
-            } else {
-                showNotification('Please enter a valid code.');
-            }
-        }
-
-        function loadNoteFromCode() {
-            const loadCodeInput = document.getElementById('loadCodeInput');
-            loadCodeInput.value = loadCodeInput.value.trim();
-
-            if (loadCodeInput.value !== '') {
-                loadNote();
             } else {
                 showNotification('Please enter a valid code.');
             }
