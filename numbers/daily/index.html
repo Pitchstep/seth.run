@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>/numbers/daily</title>
+    <title>Numbers Game</title>
     <style>
         body {
             display: flex;
@@ -67,6 +67,12 @@
             margin-top: 20px;
         }
 
+        #timer {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #fff;
+        }
+
         .version {
             font-size: 12px;
             color: #ccc;
@@ -74,11 +80,6 @@
             bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
-        }
-
-        .footer {
-            font-size: 14px;
-            margin-top: 20px;
         }
 
         /* Dark mode styles */
@@ -95,25 +96,9 @@
         .dark-mode #userInput,
         .dark-mode #guessButton,
         .dark-mode #result,
-        .dark-mode .version,
-        .dark-mode .footer {
+        .dark-mode #timer,
+        .dark-mode .version {
             color: #fff;
-        }
-
-        /* Notification box styles */
-        .notification {
-            position: fixed;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-            text-align: center; /* Center the text */
         }
     </style>
 </head>
@@ -121,97 +106,97 @@
 
     <div class="container">
 
-        <h1>Numbers | Daily Mode (BETA)</h1>
+        <h1>Numbers Game</h1>
 
-        <p class="instructions">Enter your guess! 1-100</p>
+        <p class="instructions">Enter your guess (1-100): </p>
         <input type="number" id="userInput" min="1" max="100" onkeypress="handleKeyPress(event)">
-        <button id="guessButton" onclick="checkGuess()">Guess!</button>
+        <button id="guessButton" onclick="checkGuess()">Submit Guess</button>
 
         <p id="result"></p>
+        <p id="timer"></p>
 
     </div>
 
-    <div id="notificationBox" class="notification"></div>
-
-    <div id="footer" class="footer"></div>
-
     <script>
-        // Function to generate a random number between 1 and 100 for the daily mode
         function generateRandomNumber() {
             return Math.floor(Math.random() * 100) + 1;
         }
 
-        // Function to start a new round with a new random number
         function startNewRound() {
-            // Generate a new random number for the day
-            const dailyRandomNumber = generateRandomNumber();
-
-            // Save the random number and the date to local storage
-            localStorage.setItem('dailyRandomNumber', dailyRandomNumber);
+            localStorage.setItem('dailyRandomNumber', generateRandomNumber());
             localStorage.setItem('lastRoundDate', new Date().toLocaleDateString());
         }
 
-        // Function to show a notification box with a title and description
-        function showNotification(title, description) {
-            const notificationBox = document.getElementById('notificationBox');
-            notificationBox.innerHTML = `<strong>${title}</strong><br>${description}`;
-
-            // Fade in
-            notificationBox.style.opacity = 1;
-
-            // Fade out after 5 seconds
-            setTimeout(() => {
-                notificationBox.style.opacity = 0;
-            }, 5000);
+        function updateTimer(timeRemaining) {
+            const timerElement = document.getElementById('timer');
+            timerElement.textContent = `Time Remaining: ${timeRemaining} seconds`;
         }
 
-        // Function to handle Enter key press
         function handleKeyPress(event) {
             if (event.key === 'Enter') {
                 checkGuess();
             }
         }
 
-        // Function to check the user's guess
+        function handleSecretCommand(command) {
+            if (command === 'e+109') {
+                startNewRound();
+                showResult('Secret command executed. Number reset!', true);
+            }
+        }
+
         function checkGuess() {
-            // Get the user's guess from the input field
             const userInput = document.getElementById('userInput');
             const userGuess = parseInt(userInput.value);
 
-            // Check if the player has already guessed correctly today
-            const lastRoundDate = localStorage.getItem('lastRoundDate');
-            const currentDate = new Date().toLocaleDateString();
-
-            if (lastRoundDate === currentDate) {
-                showNotification('Hold up!', 'You can only guess once a day! The number will reset at 12:00 AM CEST.');
+            if (userInput.value.trim().toLowerCase() === 'e+109') {
+                handleSecretCommand(userInput.value.trim().toLowerCase());
+                userInput.value = '';
                 return;
             }
 
-            // Get the daily random number from local storage
             const dailyRandomNumber = parseInt(localStorage.getItem('dailyRandomNumber'));
-
-            // Check if the guess is correct
-            if (userGuess === dailyRandomNumber) {
-                showNotification('Good job!', 'You guessed the correct number!');
-                startNewRound(); // Start a new round
-
-                // Display the footer with the time of the new round
-                const footer = document.getElementById('footer');
-                const currentTime = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
-                footer.innerHTML = `New number selected at ${currentTime}!`;
-
+            if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
+                showResult('Please enter a valid guess (1-100).', false);
+            } else if (userGuess === dailyRandomNumber) {
+                showResult('Congratulations! You guessed the correct number.', true);
+                startNewRound();
             } else {
-                // Provide hints for higher or lower
-                const hint = userGuess < dailyRandomNumber ? 'higher' : 'lower';
-                showNotification('Wrong!', `The number is ${hint} than that!`);
+                const hint = userGuess < dailyRandomNumber ? 'Higher' : 'Lower';
+                showResult(`Incorrect! Try ${hint} next time.`, false);
             }
 
-            // Clear the input field
             userInput.value = '';
         }
 
-        // Call the startNewRound function to initialize the game when the page loads
+        function showResult(message, isCorrect) {
+            const resultElement = document.getElementById('result');
+            resultElement.textContent = message;
+
+            if (isCorrect) {
+                const currentTime = new Date().getTime();
+                const lastRoundTime = localStorage.getItem('lastRoundTime') || currentTime;
+                const timeElapsed = Math.floor((currentTime - lastRoundTime) / 1000);
+
+                updateTimer(10 - timeElapsed);
+
+                localStorage.setItem('lastRoundTime', currentTime);
+            }
+        }
+
         startNewRound();
+
+        setInterval(() => {
+            const currentTime = new Date().getTime();
+            const lastRoundTime = localStorage.getItem('lastRoundTime') || currentTime;
+            const timeElapsed = Math.floor((currentTime - lastRoundTime) / 1000);
+
+            if (timeElapsed < 10) {
+                updateTimer(10 - timeElapsed);
+            } else {
+                updateTimer(0);
+            }
+        }, 1000);
     </script>
 
 </body>
