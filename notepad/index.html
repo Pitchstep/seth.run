@@ -87,7 +87,8 @@
 <body>
 
     <div class="container">
-        <h1 id="noteTitle">Online Notepad</h1>
+        <!-- Replace the <h1> with an editable <input> -->
+        <input type="text" id="noteTitle" placeholder="Online Notepad">
         
         <input type="text" id="noteContent" placeholder="Start typing your notes...">
 
@@ -106,7 +107,7 @@
         }
 
         function saveNote() {
-            const noteTitle = document.getElementById('noteTitle').innerText;
+            const noteTitle = document.getElementById('noteTitle').value;
             const noteContent = document.getElementById('noteContent').value;
             
             if (noteTitle.trim() !== '' || noteContent.trim() !== '') {
@@ -133,7 +134,7 @@
 
                 if (storedNote) {
                     const note = JSON.parse(storedNote);
-                    document.getElementById('noteTitle').innerText = note.title;
+                    document.getElementById('noteTitle').value = note.title;
                     document.getElementById('noteContent').value = note.content;
                     showNotification('Note loaded successfully!');
                 } else {
