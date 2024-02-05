@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Numbers Game</title>
+    <title>/numbers/daily</title>
     <style>
         body {
             display: flex;
@@ -121,11 +121,11 @@
 
     <div class="container">
 
-        <h1>Numbers Game</h1>
+        <h1>Numbers | Daily Mode (BETA)</h1>
 
-        <p class="instructions">Enter your guess (1-100): </p>
+        <p class="instructions">Enter your guess! 1-100</p>
         <input type="number" id="userInput" min="1" max="100" onkeypress="handleKeyPress(event)">
-        <button id="guessButton" onclick="checkGuess()">Submit Guess</button>
+        <button id="guessButton" onclick="checkGuess()">Guess!</button>
 
         <p id="result"></p>
 
@@ -183,7 +183,7 @@
             const currentDate = new Date().toLocaleDateString();
 
             if (lastRoundDate === currentDate) {
-                showNotification('Already Guessed!', 'You can only guess once a day.');
+                showNotification('Hold up!', 'You can only guess once a day! The number will reset at 12:00 AM CEST.');
                 return;
             }
 
@@ -192,18 +192,18 @@
 
             // Check if the guess is correct
             if (userGuess === dailyRandomNumber) {
-                showNotification('Congratulations!', 'You guessed the correct number!');
+                showNotification('Good job!', 'You guessed the correct number!');
                 startNewRound(); // Start a new round
 
                 // Display the footer with the time of the new round
                 const footer = document.getElementById('footer');
                 const currentTime = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
-                footer.innerHTML = `New number selected at ${currentTime}`;
+                footer.innerHTML = `New number selected at ${currentTime}!`;
 
             } else {
                 // Provide hints for higher or lower
-                const hint = userGuess < dailyRandomNumber ? 'Higher' : 'Lower';
-                showNotification('Incorrect!', `Try ${hint} next time.`);
+                const hint = userGuess < dailyRandomNumber ? 'higher' : 'lower';
+                showNotification('Wrong!', `The number is ${hint} than that!`);
             }
 
             // Clear the input field
