@@ -107,6 +107,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
+            text-align: center; /* Center the text */
         }
     </style>
 </head>
@@ -117,7 +118,7 @@
         <h1>Numbers Game</h1>
 
         <p class="instructions">Enter your guess (1-100): </p>
-        <input type="number" id="userInput" min="1" max="100">
+        <input type="number" id="userInput" min="1" max="100" onkeypress="handleKeyPress(event)">
         <button id="guessButton" onclick="checkGuess()">Submit Guess</button>
 
         <p id="result"></p>
@@ -155,10 +156,18 @@
             }, 5000);
         }
 
+        // Function to handle Enter key press
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                checkGuess();
+            }
+        }
+
         // Function to check the user's guess
         function checkGuess() {
             // Get the user's guess from the input field
-            const userGuess = parseInt(document.getElementById('userInput').value);
+            const userInput = document.getElementById('userInput');
+            const userGuess = parseInt(userInput.value);
 
             // Get the daily random number from local storage
             const dailyRandomNumber = parseInt(localStorage.getItem('dailyRandomNumber'));
@@ -172,6 +181,9 @@
                 const hint = userGuess < dailyRandomNumber ? 'Higher' : 'Lower';
                 showNotification('Incorrect!', `Try ${hint} next time.`);
             }
+
+            // Clear the input field
+            userInput.value = '';
         }
 
         // Call the startNewRound function to initialize the game when the page loads
