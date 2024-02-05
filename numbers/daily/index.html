@@ -9,7 +9,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
             background-color: #000;
             font-family: 'Montserrat', sans-serif;
@@ -76,6 +76,11 @@
             transform: translateX(-50%);
         }
 
+        .footer {
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
         /* Dark mode styles */
         .dark-mode {
             background-color: #111;
@@ -90,7 +95,8 @@
         .dark-mode #userInput,
         .dark-mode #guessButton,
         .dark-mode #result,
-        .dark-mode .version {
+        .dark-mode .version,
+        .dark-mode .footer {
             color: #fff;
         }
 
@@ -127,6 +133,8 @@
 
     <div id="notificationBox" class="notification"></div>
 
+    <div id="footer" class="footer"></div>
+
     <script>
         // Function to generate a random number between 1 and 100 for the daily mode
         function generateRandomNumber() {
@@ -138,8 +146,9 @@
             // Generate a new random number for the day
             const dailyRandomNumber = generateRandomNumber();
 
-            // Save the random number to local storage
+            // Save the random number and the date to local storage
             localStorage.setItem('dailyRandomNumber', dailyRandomNumber);
+            localStorage.setItem('lastRoundDate', new Date().toLocaleDateString());
         }
 
         // Function to show a notification box with a title and description
@@ -169,6 +178,15 @@
             const userInput = document.getElementById('userInput');
             const userGuess = parseInt(userInput.value);
 
+            // Check if the player has already guessed correctly today
+            const lastRoundDate = localStorage.getItem('lastRoundDate');
+            const currentDate = new Date().toLocaleDateString();
+
+            if (lastRoundDate === currentDate) {
+                showNotification('Already Guessed!', 'You can only guess once a day.');
+                return;
+            }
+
             // Get the daily random number from local storage
             const dailyRandomNumber = parseInt(localStorage.getItem('dailyRandomNumber'));
 
@@ -176,6 +194,12 @@
             if (userGuess === dailyRandomNumber) {
                 showNotification('Congratulations!', 'You guessed the correct number!');
                 startNewRound(); // Start a new round
+
+                // Display the footer with the time of the new round
+                const footer = document.getElementById('footer');
+                const currentTime = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+                footer.innerHTML = `New number selected at ${currentTime}`;
+
             } else {
                 // Provide hints for higher or lower
                 const hint = userGuess < dailyRandomNumber ? 'Higher' : 'Lower';
