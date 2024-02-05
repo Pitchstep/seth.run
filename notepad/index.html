@@ -42,8 +42,9 @@
 
         #noteContent {
             font-family: 'Arial', sans-serif;
-            height: 150px;
-            resize: none;
+            min-height: 150px;
+            resize: vertical; /* Allow vertical resizing */
+            overflow: auto; /* Add a scrollbar when the content is too tall */
         }
 
         #saveButton {
@@ -87,10 +88,9 @@
 <body>
 
     <div class="container">
-        <!-- Replace the <h1> with an editable <input> -->
         <input type="text" id="noteTitle" placeholder="Online Notepad">
         
-        <input type="text" id="noteContent" placeholder="Start typing your notes...">
+        <textarea id="noteContent" placeholder="Start typing your notes..."></textarea>
 
         <button id="saveButton" onclick="saveNote()">Save Note</button>
         <div id="loadCode">
