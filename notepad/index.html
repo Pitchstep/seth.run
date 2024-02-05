@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>notepad</title>
+    <title>Online Notepad</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
     <style>
         body {
@@ -41,7 +41,9 @@
         }
 
         #noteContent {
+            font-family: 'Arial', sans-serif;
             height: 150px;
+            resize: none;
         }
 
         #saveButton,
@@ -86,20 +88,15 @@
 <body>
 
     <div class="container">
-        <h1>notepad</h1>
+        <h1 id="noteTitle">Online Notepad</h1>
         
-        <label for="noteTitle">title:</label>
-        <input type="text" id="noteTitle" placeholder="enter title...">
-
-        <label for="noteContent">content:</label>
-        <textarea id="noteContent" placeholder="enter your notes..."></textarea>
+        <input type="text" id="noteContent" placeholder="Start typing your notes...">
 
         <button id="saveButton" onclick="saveNote()">Save Note</button>
         <button id="loadButton" onclick="loadNote()">Load Note</button>
 
         <div id="loadCode">
-            <label for="loadCodeInput">Enter code:</label>
-            <input type="text" id="loadCodeInput" placeholder="Paste code here...">
+            <input type="text" id="loadCodeInput" placeholder="Paste code here">
             <button onclick="loadNoteFromCode()">Load</button>
         </div>
     </div>
@@ -112,7 +109,7 @@
         }
 
         function saveNote() {
-            const noteTitle = document.getElementById('noteTitle').value;
+            const noteTitle = document.getElementById('noteTitle').innerText;
             const noteContent = document.getElementById('noteContent').value;
             
             if (noteTitle.trim() !== '' || noteContent.trim() !== '') {
@@ -123,6 +120,7 @@
                 };
 
                 localStorage.setItem(uniqueCode, JSON.stringify(note));
+                copyToClipboard(uniqueCode);
                 showNotification(`Note saved! Your unique code is: ${uniqueCode}`);
             } else {
                 showNotification('Please enter a title or content before saving.');
@@ -138,7 +136,7 @@
 
                 if (storedNote) {
                     const note = JSON.parse(storedNote);
-                    document.getElementById('noteTitle').value = note.title;
+                    document.getElementById('noteTitle').innerText = note.title;
                     document.getElementById('noteContent').value = note.content;
                     showNotification('Note loaded successfully!');
                 } else {
@@ -168,6 +166,15 @@
             setTimeout(() => {
                 notificationElement.style.display = 'none';
             }, 5000); // Hide after 5 seconds
+        }
+
+        function copyToClipboard(text) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
         }
     </script>
 
