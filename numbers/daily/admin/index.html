@@ -36,35 +36,50 @@
 
         #output {
             margin-top: 10px;
+            list-style-type: none; /* Remove default list styling */
+            padding: 0; /* Remove default padding */
+        }
+
+        #output li {
+            margin-bottom: 5px;
         }
     </style>
 </head>
 <body>
 
     <div id="terminal">
-        <p>Welcome to the Daily Admin Panel!</p>
+        <p>Welcome to the Numbers Game Admin Panel</p>
         <p>Type "/help" for a list of commands</p>
         <input type="text" id="commandInput" placeholder="Enter command">
-        <div id="output"></div>
+        <ul id="output"></ul>
     </div>
 
     <script>
         function handleCommand(command) {
-            const outputDiv = document.getElementById('output');
+            const outputList = document.getElementById('output');
 
-            switch (command) {
+            switch (command.split(' ')[0]) {
                 case '/help':
-                    outputDiv.innerHTML = '<p>Available commands:</p>' +
-                        '<ul>' +
+                    outputList.innerHTML += '<li>Available commands:</li>' +
                         '<li>/status - Display current status</li>' +
-                        '<li>/setnumber [number] - Set the daily number</li>' +
-                        '</ul>';
+                        '<li>/setnumber [number] - Set the daily number</li>';
                     break;
                 case '/status':
-                    outputDiv.innerHTML = '<p>Admin Panel Status: Active</p>';
+                    outputList.innerHTML += `<li>Daily Number: ${dailyNumber}</li>` +
+                        `<li>Total Attempts: ${totalAttempts}</li>` +
+                        `<li>Correct Guesses: ${correctGuesses}</li>`;
+                    break;
+                case '/setnumber':
+                    const newNumber = parseInt(command.split(' ')[1]);
+                    if (!isNaN(newNumber)) {
+                        dailyNumber = newNumber;
+                        outputList.innerHTML += `<li>Daily Number set to: ${dailyNumber}</li>`;
+                    } else {
+                        outputList.innerHTML += '<li>Invalid number. Usage: /setnumber [number]</li>';
+                    }
                     break;
                 default:
-                    outputDiv.innerHTML = '<p>Unknown command. Type "/help" for a list of commands.</p>';
+                    outputList.innerHTML += '<li>Unknown command. Type "/help" for a list of commands.</li>';
             }
         }
 
@@ -75,8 +90,8 @@
             if (command.startsWith('/')) {
                 handleCommand(command);
             } else {
-                const outputDiv = document.getElementById('output');
-                outputDiv.innerHTML = '<p>Invalid command. Type "/help" for a list of commands.</p>';
+                const outputList = document.getElementById('output');
+                outputList.innerHTML += '<li>Invalid command. Type "/help" for a list of commands.</li>';
             }
 
             inputElement.value = '';
@@ -88,8 +103,8 @@
             }
         });
 
-        // Check for the presence of #admin in the URL
-        if (window.location.hash === '#admin') {
+        // Check for the presence of #admin in the URL path
+        if (window.location.pathname.includes('/admin/')) {
             document.getElementById('terminal').style.display = 'block';
         }
     </script>
