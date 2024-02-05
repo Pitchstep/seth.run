@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers Game</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-weight: 700;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .instructions {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        #userInput {
+            font-size: 18px;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #666;
+            color: #fff;
+            width: 80px;
+            text-align: center;
+        }
+
+        #guessButton {
+            font-size: 16px;
+            padding: 8px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            border: none;
+            background-color: #0084FF;
+            color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 132, 255, 0.3);
+        }
+
+        #guessButton:hover {
+            background-color: #0070cc;
+        }
+
+        #result {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .version {
+            font-size: 12px;
+            color: #ccc;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Dark mode styles */
+        .dark-mode {
+            background-color: #111;
+        }
+
+        .dark-mode .container {
+            background-color: #222;
+        }
+
+        .dark-mode h1,
+        .dark-mode .instructions,
+        .dark-mode #userInput,
+        .dark-mode #guessButton,
+        .dark-mode #result,
+        .dark-mode .version {
+            color: #fff;
+        }
+
+        /* Notification box styles */
+        .notification {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Numbers Game</h1>
+
+        <p class="instructions">Enter your guess (1-100): </p>
+        <input type="number" id="userInput" min="1" max="100">
+        <button id="guessButton" onclick="checkGuess()">Submit Guess</button>
+
+        <p id="result"></p>
+
+    </div>
+
+    <div id="notificationBox" class="notification"></div>
+
+    <script>
+        // Function to generate a random number between 1 and 100 for the daily mode
+        function generateRandomNumber() {
+            return Math.floor(Math.random() * 100) + 1;
+        }
+
+        // Function to start a new round with a new random number
+        function startNewRound() {
+            // Generate a new random number for the day
+            const dailyRandomNumber = generateRandomNumber();
+
+            // Save the random number to local storage
+            localStorage.setItem('dailyRandomNumber', dailyRandomNumber);
+        }
+
+        // Function to show a notification box with a title and description
+        function showNotification(title, description) {
+            const notificationBox = document.getElementById('notificationBox');
+            notificationBox.innerHTML = `<strong>${title}</strong><br>${description}`;
+
+            // Fade in
+            notificationBox.style.opacity = 1;
+
+            // Fade out after 5 seconds
+            setTimeout(() => {
+                notificationBox.style.opacity = 0;
+            }, 5000);
+        }
+
+        // Function to check the user's guess
+        function checkGuess() {
+            // Get the user's guess from the input field
+            const userGuess = parseInt(document.getElementById('userInput').value);
+
+            // Get the daily random number from local storage
+            const dailyRandomNumber = parseInt(localStorage.getItem('dailyRandomNumber'));
+
+            // Check if the guess is correct
+            if (userGuess === dailyRandomNumber) {
+                showNotification('Congratulations!', 'You guessed the correct number!');
+                startNewRound(); // Start a new round
+            } else {
+                // Provide hints for higher or lower
+                const hint = userGuess < dailyRandomNumber ? 'Higher' : 'Lower';
+                showNotification('Incorrect!', `Try ${hint} next time.`);
+            }
+        }
+
+        // Call the startNewRound function to initialize the game when the page loads
+        startNewRound();
+    </script>
+
+</body>
+</html>
