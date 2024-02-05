@@ -3,22 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Notepad</title>
+    <title>notepad</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000;
+            color: #fff;
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
 
         .container {
-            max-width: 600px;
-            margin: 20px auto;
-            background-color: #fff;
+            max-width: 400px;
+            width: 100%;
+            background-color: #111;
             padding: 20px;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            text-align: center;
         }
 
         #noteTitle,
@@ -26,13 +33,15 @@
             width: 100%;
             padding: 10px;
             margin-bottom: 10px;
-            border: 1px solid #ccc;
+            border: 1px solid #444;
             border-radius: 3px;
             box-sizing: border-box;
+            background-color: #222;
+            color: #fff;
         }
 
         #noteContent {
-            height: 200px;
+            height: 150px;
         }
 
         #saveButton,
@@ -48,36 +57,60 @@
         #loadCode {
             margin-top: 10px;
         }
+
+        #loadCodeInput {
+            width: calc(100% - 10px);
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #444;
+            border-radius: 3px;
+            box-sizing: border-box;
+            background-color: #222;
+            color: #fff;
+        }
+
+        #notification {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 3px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Online Notepad</h1>
+        <h1>notepad</h1>
         
-        <label for="noteTitle">Title:</label>
-        <input type="text" id="noteTitle" placeholder="Enter title">
+        <label for="noteTitle">title:</label>
+        <input type="text" id="noteTitle" placeholder="enter title...">
 
-        <label for="noteContent">Content:</label>
-        <textarea id="noteContent" placeholder="Enter your notes"></textarea>
+        <label for="noteContent">content:</label>
+        <textarea id="noteContent" placeholder="enter your notes..."></textarea>
 
         <button id="saveButton" onclick="saveNote()">Save Note</button>
         <button id="loadButton" onclick="loadNote()">Load Note</button>
 
         <div id="loadCode">
             <label for="loadCodeInput">Enter code:</label>
-            <input type="text" id="loadCodeInput" placeholder="Paste code here">
+            <input type="text" id="loadCodeInput" placeholder="Paste code here...">
             <button onclick="loadNoteFromCode()">Load</button>
         </div>
     </div>
 
+    <div id="notification"></div>
+
     <script>
-        // Function to generate a unique code for each note
         function generateUniqueCode() {
             return Math.random().toString(36).substring(2, 8);
         }
 
-        // Function to save the current note
         function saveNote() {
             const noteTitle = document.getElementById('noteTitle').value;
             const noteContent = document.getElementById('noteContent').value;
@@ -90,13 +123,12 @@
                 };
 
                 localStorage.setItem(uniqueCode, JSON.stringify(note));
-                alert(`Note saved! Your unique code is: ${uniqueCode}`);
+                showNotification(`Note saved! Your unique code is: ${uniqueCode}`);
             } else {
-                alert('Please enter a title or content before saving.');
+                showNotification('Please enter a title or content before saving.');
             }
         }
 
-        // Function to load a note using a unique code
         function loadNote() {
             const loadCodeInput = document.getElementById('loadCodeInput');
             const uniqueCode = loadCodeInput.value.trim();
@@ -108,16 +140,15 @@
                     const note = JSON.parse(storedNote);
                     document.getElementById('noteTitle').value = note.title;
                     document.getElementById('noteContent').value = note.content;
-                    alert('Note loaded successfully!');
+                    showNotification('Note loaded successfully!');
                 } else {
-                    alert('No note found with the provided code.');
+                    showNotification('No note found with the provided code.');
                 }
             } else {
-                alert('Please enter a valid code.');
+                showNotification('Please enter a valid code.');
             }
         }
 
-        // Function to load a note using a unique code without user interaction
         function loadNoteFromCode() {
             const loadCodeInput = document.getElementById('loadCodeInput');
             loadCodeInput.value = loadCodeInput.value.trim();
@@ -125,8 +156,18 @@
             if (loadCodeInput.value !== '') {
                 loadNote();
             } else {
-                alert('Please enter a valid code.');
+                showNotification('Please enter a valid code.');
             }
+        }
+
+        function showNotification(message) {
+            const notificationElement = document.getElementById('notification');
+            notificationElement.textContent = message;
+            notificationElement.style.display = 'block';
+
+            setTimeout(() => {
+                notificationElement.style.display = 'none';
+            }, 5000); // Hide after 5 seconds
         }
     </script>
 
