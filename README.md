@@ -1,7 +1,11 @@
-# seth.run - version 1.12
+# seth.run - version 1.121
 Hi, I'm Seth and this is my website. I update this from time to time.
 
 ## Update notes
+
+### V1.121 notes
+Added a Twitter icon.<br>
+Removed the Ko-Fi icon.
 
 ### V1.12 notes
 Added new projects.<br>
