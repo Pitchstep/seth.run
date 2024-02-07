@@ -1,8 +1,12 @@
 # seth.run - version 1.11
 Hi, I'm Seth and this is my website. I update this from time to time.
 
+### V1.12 notes
+Added new projects.<br>
+Added a link to the projects page on the home page.
+
 ### V1.11 notes
-Bugfixes and minor changes<br>
+Bugfixes and minor changes.<br>
 Added GitHub button that leads to this repository.<br>
 New stuff in /projects.
 
