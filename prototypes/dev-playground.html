@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developer's Playground</title>
+    <title>Bio-Link Page</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
             text-align: center;
-            background-color: #282c34;
-            color: #61dafb;
+            background-color: #f5f5f5;
+            color: #333;
             margin: 0;
             display: flex;
             flex-direction: column;
@@ -20,72 +19,59 @@
             height: 100vh;
         }
 
-        .content-wrapper {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        .bio-wrapper {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
         }
 
         h1 {
-            font-size: 36px;
+            font-size: 24px;
             margin: 0;
-            color: #61dafb;
+            color: #333;
         }
 
         p {
-            font-size: 18px;
+            font-size: 16px;
             line-height: 1.6;
-            margin: 20px 0;
+            margin: 10px 0;
         }
 
-        .link-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .social-links {
             margin-top: 20px;
         }
 
-        .link-icon {
+        .social-icon {
             font-size: 24px;
-            color: #61dafb;
-            margin: 10px;
+            color: #333;
+            margin: 0 10px;
             text-decoration: none;
             transition: color 0.3s;
         }
 
-        .link-icon:hover {
-            color: #ff8c00; /* Orange on hover */
-        }
-
-        footer {
-            font-size: 12px;
-            margin-top: auto;
-            opacity: 0.6;
+        .social-icon:hover {
+            color: #007bff; /* Blue on hover */
         }
     </style>
 </head>
 <body>
 
-    <div class="content-wrapper">
-        <h1>Developer's Playground</h1>
+    <div class="bio-wrapper">
+        <h1>John Doe</h1>
 
         <p>
-            Welcome to the playground for developers! Explore and experiment with code, create cool projects, and have fun in the coding world.
+            Hi, I'm John! I'm a developer passionate about creating cool things with code. Connect with me and explore my projects!
         </p>
 
-        <div class="link-section">
-            <a href="https://github.com/your-username" class="link-icon" data-icon="fa-brands fa-github"><i class="fa-brands fa-github"></i></a>
-            <a href="https://codepen.io/your-pen" class="link-icon" data-icon="fa-brands fa-codepen"><i class="fa-brands fa-codepen"></i></a>
-            <a href="https://dev.to/your-username" class="link-icon" data-icon="fa-brands fa-dev"><i class="fa-brands fa-dev"></i></a>
+        <div class="social-links">
+            <a href="https://twitter.com/johndoe" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/johndoe" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/johndoe" class="social-icon"><i class="fab fa-linkedin"></i></a>
         </div>
-
-        <footer>
-            © 2024 Your Name<br>
-            All rights reserved. Keep coding and building amazing things!
-        </footer>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 </body>
 </html>
