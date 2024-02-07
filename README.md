@@ -29,7 +29,9 @@ Version 2 will include lots of features. Such as a chat, larger projects, more d
 Notes can **only** be loaded on the **device you saved the note on**. In Version 2, you will be able to save the codes and use them on other devices on the internet.
 
 ### Advertisements
-So I'm selling out... well, not really. I'm adding a few advertisements to seth.run to earn a little. Don't worry though, the ads will not interfere with your experience! If they happen to do so, please let me know by contacting me on Discord!
+So I'm selling out... well, not really. I'm adding a few advertisements to seth.run to earn a little. Don't worry though, the ads will not interfere with your experience! If they happen to do so, please let me know by contacting me on Discord!<br>
+Ads are currently not rolled out, but they will start appearing over time.<br>
+_Keep in mind! You just looking at the adverts supports my work a ton! Thank you._
 
 ### About
 Seth.run is currently just a website where I post my stuff. Read more about Version 2 above :)
