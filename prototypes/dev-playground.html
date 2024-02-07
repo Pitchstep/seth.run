@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bio-Link Page</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             text-align: center;
             background-color: #1e1e1e;
             color: #fff;
@@ -33,6 +33,9 @@
             font-size: 24px;
             margin: 0;
             color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         p {
@@ -82,17 +85,17 @@
 
         .tooltip-text {
             visibility: hidden;
-            width: 160px;
+            width: 200px;
             background-color: #333;
             color: #fff;
             text-align: center;
             border-radius: 6px;
-            padding: 5px;
+            padding: 10px;
             position: absolute;
             z-index: 1;
             bottom: 125%;
             left: 50%;
-            margin-left: -80px;
+            margin-left: -100px;
             opacity: 0;
             transition: opacity 0.3s;
         }
@@ -100,6 +103,11 @@
         .badge-tooltip:hover .tooltip-text {
             visibility: visible;
             opacity: 1;
+        }
+
+        .tooltip-title {
+            font-weight: bold;
+            margin-bottom: 5px;
         }
     </style>
 </head>
@@ -111,7 +119,33 @@
     </div>
 
     <div class="bio-wrapper">
-        <h1>John Doe</h1>
+        <h1>
+            John Doe
+            <!-- Badges -->
+            <span class="badge-tooltip">
+                <span class="badge">&#x1F60D;</span>
+                <div class="tooltip-text">
+                    <div class="tooltip-title">Friendly Coder</div>
+                    Spread positivity and help others in the coding community.
+                </div>
+            </span>
+
+            <span class="badge-tooltip">
+                <span class="badge">&#x1F4BB;</span>
+                <div class="tooltip-text">
+                    <div class="tooltip-title">Code Explorer</div>
+                    Curious coder exploring various programming languages and technologies.
+                </div>
+            </span>
+
+            <span class="badge-tooltip">
+                <span class="badge">&#x1F680;</span>
+                <div class="tooltip-text">
+                    <div class="tooltip-title">Innovator</div>
+                    Inventive thinker, always looking for creative solutions to problems.
+                </div>
+            </span>
+        </h1>
 
         <p>
             Hi, I'm John! I'm a developer passionate about creating cool things with code. Connect with me and explore my projects!
@@ -122,23 +156,6 @@
             <a href="https://github.com/johndoe" class="social-icon"><i class="fab fa-github"></i></a>
             <a href="https://linkedin.com/in/johndoe" class="social-icon"><i class="fab fa-linkedin"></i></a>
         </div>
-
-        <!-- Badges -->
-        <div class="badge-tooltip">
-            <span class="badge">&#x1F60D;</span>
-            <div class="tooltip-text">Friendly Coder</div>
-        </div>
-
-        <div class="badge-tooltip">
-            <span class="badge">&#x1F4BB;</span>
-            <div class="tooltip-text">Code Explorer</div>
-        </div>
-
-        <div class="badge-tooltip">
-            <span class="badge">&#x1F680;</span>
-            <div class="tooltip-text">Innovator</div>
-        </div>
-
     </div>
 
     <script>
