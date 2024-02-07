@@ -147,7 +147,7 @@
 
                 localStorage.setItem(uniqueCode, JSON.stringify(note));
                 copyToClipboard(uniqueCode);
-                showNotification(`Note saved! Your unique code is: ${uniqueCode}`);
+                showNotification(`Note saved! ${uniqueCode} has been copied to your clipboard. Keep in mind however, you can only load this note on THIS device.`);
             } else {
                 showNotification('Please enter a title or content before saving.');
             }
