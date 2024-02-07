@@ -54,5 +54,5 @@ This domain (seth.run) is currently for sale! Contact @pitchstep on Discord or X
 
 _All social media icons are not owned by me. Trademarks go to their representative owners._<br>
 _Icons are delivered by www.FontAwesome.com._
-<br>
+<br><br>
 _© 2022-2024 Seth Harlow - All rights reserved._
