@@ -30,6 +30,17 @@ I've also added a privacy policy page to show you what private data I collect. C
 ### v2.0 information
 Version 2 will include lots of features. Such as a chat, larger projects, more designs, new and optimized pages, major bugfixes & more! I don't have a release date for it yet, but I work on this part-time when I'm (mostly) bored.
 
+## /projects
+
+### Notepad v0.3 notes
+Added a live word count.
+
+### Developer's Playground v24.2.8 notes
+Bio page example.
+
+### Numbers v1.1 notes
+Improved refresh rate.
+
 ## More info
 
 ### Important about Notepad project
