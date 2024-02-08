@@ -1,5 +1,6 @@
 # seth.run - version 1.121
-Hi, I'm Seth and this is my website. I update this from time to time.
+Hi, I'm Seth and this is my website. I update this from time to time.<br>
+If you came to see my /projects updates, scroll down.
 
 ## Update notes
 
