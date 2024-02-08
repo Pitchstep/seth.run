@@ -106,21 +106,21 @@
 <body>
 
     <div class="container">
-        <h1>Online Notepad</h1>
-        <p>Write and save your notes online. Access them anytime, anywhere.</p>
+        <h1>notepad</h1>
+        <p><b>NEW:</b> Live Word Count</p>
         <input type="text" id="noteTitle" placeholder="Title (optional)">
         
         <div class="styling-options">
             <!-- Removed styling options -->
         </div>
 
-        <textarea id="noteContent" placeholder="Start typing your notes..." oninput="updateWordCount()"></textarea>
-        <div id="wordCount">Word count: 0</div>
+        <textarea id="noteContent" placeholder="start typing your notes... or paste your plagiarism" oninput="updateWordCount()"></textarea>
+        <div id="wordCount">words: 0</div>
 
-        <button id="saveButton" onclick="saveNote()">Save Note</button>
+        <button id="saveButton" onclick="saveNote()">save note</button>
         <div id="loadCode">
-            <input type="text" id="loadCodeInput" placeholder="Paste code here">
-            <button onclick="loadNote()">Load Note</button>
+            <input type="text" id="loadCodeInput" placeholder="paste code here...">
+            <button onclick="loadNote()">load note</button>
         </div>
     </div>
 
@@ -144,9 +144,9 @@
 
                 localStorage.setItem(uniqueCode, JSON.stringify(note));
                 copyToClipboard(uniqueCode);
-                showNotification(`Note saved! ${uniqueCode} has been copied to your clipboard. Keep in mind however, you can only load this note on THIS device.`);
+                showNotification(`note saved! [${uniqueCode}] has been copied to your clipboard.`);
             } else {
-                showNotification('Please enter a title or content before saving.');
+                showNotification('please enter a title or content before saving.');
             }
         }
 
@@ -161,12 +161,12 @@
                     const note = JSON.parse(storedNote);
                     document.getElementById('noteTitle').value = note.title;
                     document.getElementById('noteContent').value = note.content;
-                    showNotification('Note loaded successfully!');
+                    showNotification('note loaded successfully!');
                 } else {
-                    showNotification('No note found with the provided code.');
+                    showNotification('no note found with the provided code.');
                 }
             } else {
-                showNotification('Please enter a valid code.');
+                showNotification('please enter a valid code.');
             }
         }
 
@@ -192,7 +192,7 @@
         function updateWordCount() {
             const content = document.getElementById('noteContent').value;
             const wordCount = content.split(/\s+/).filter(word => word !== '').length;
-            document.getElementById('wordCount').textContent = `Word count: ${wordCount}`;
+            document.getElementById('wordCount').textContent = `words: ${wordCount}`;
         }
     </script>
 
