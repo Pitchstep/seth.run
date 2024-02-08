@@ -28,6 +28,12 @@
             text-align: center;
         }
 
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
         #noteTitle,
         #noteContent {
             width: 100%;
@@ -84,22 +90,6 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        /* Styling for styling options */
-        .styling-options {
-            display: flex;
-            justify-content: space-around;
-        }
-
-        .styling-button {
-            padding: 8px;
-            margin: 5px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-
         /* Media query for responsiveness */
         @media only screen and (max-width: 600px) {
             .container {
@@ -111,13 +101,9 @@
 <body>
 
     <div class="container">
+        <h1>Online Notepad</h1>
         <input type="text" id="noteTitle" placeholder="Online Notepad">
         
-        <div class="styling-options">
-            <button class="styling-button" onclick="toggleBold()">Bold</button>
-            <button class="styling-button" onclick="toggleItalic()">Italic</button>
-        </div>
-
         <textarea id="noteContent" placeholder="Start typing your notes..."></textarea>
 
         <button id="saveButton" onclick="saveNote()">Save Note</button>
@@ -190,14 +176,6 @@
             textArea.select();
             document.execCommand('copy');
             document.body.removeChild(textArea);
-        }
-
-        function toggleBold() {
-            document.execCommand('bold', false, null);
-        }
-
-        function toggleItalic() {
-            document.execCommand('italic', false, null);
         }
     </script>
 
