@@ -18,11 +18,6 @@
             min-height: 100vh;
         }
 
-        .dark-mode {
-            background-color: #111;
-            color: #fff;
-        }
-
         .container {
             max-width: 80%; /* Adjusted width for better responsiveness */
             width: 100%;
@@ -95,30 +90,9 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        /* Dark mode toggle */
-        #darkModeToggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            cursor: pointer;
-            font-size: 24px;
-            color: #fff;
-        }
-
-        /* Styling for styling options */
-        .styling-options {
-            display: flex;
-            justify-content: space-around;
-        }
-
-        .styling-button {
-            padding: 8px;
-            margin: 5px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
+        #wordCount {
+            font-size: 16px;
+            margin-top: 10px;
         }
 
         /* Media query for responsiveness */
@@ -131,22 +105,17 @@
 </head>
 <body>
 
-    <!-- Dark mode toggle -->
-    <div id="darkModeToggle" onclick="toggleDarkMode()">
-        🌙
-    </div>
-
     <div class="container">
         <h1>Online Notepad</h1>
         <p>Write and save your notes online. Access them anytime, anywhere.</p>
         <input type="text" id="noteTitle" placeholder="Title (optional)">
         
         <div class="styling-options">
-            <button class="styling-button" onclick="toggleBold()">Bold</button>
-            <button class="styling-button" onclick="toggleItalic()">Italic</button>
+            <!-- Removed styling options -->
         </div>
 
-        <textarea id="noteContent" placeholder="Start typing your notes..."></textarea>
+        <textarea id="noteContent" placeholder="Start typing your notes..." oninput="updateWordCount()"></textarea>
+        <div id="wordCount">Word count: 0</div>
 
         <button id="saveButton" onclick="saveNote()">Save Note</button>
         <div id="loadCode">
@@ -158,12 +127,6 @@
     <div id="notification"></div>
 
     <script>
-        // Dark mode toggle
-        function toggleDarkMode() {
-            const body = document.body;
-            body.classList.toggle('dark-mode');
-        }
-
         function generateUniqueCode() {
             return Math.random().toString(36).substring(2, 8);
         }
@@ -226,12 +189,10 @@
             document.body.removeChild(textArea);
         }
 
-        function toggleBold() {
-            document.execCommand('bold', false, null);
-        }
-
-        function toggleItalic() {
-            document.execCommand('italic', false, null);
+        function updateWordCount() {
+            const content = document.getElementById('noteContent').value;
+            const wordCount = content.split(/\s+/).filter(word => word !== '').length;
+            document.getElementById('wordCount').textContent = `Word count: ${wordCount}`;
         }
     </script>
 
