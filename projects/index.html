@@ -53,33 +53,69 @@
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             width: 80%;
             max-width: 600px;
+            position: relative; /* Position for absolute icons */
         }
 
-    .check-button {
-        background-color: black;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-weight: bold;
-        font-family: 'Montserrat', sans-serif;
-        font-size: 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto;
-        transition: background-color 0.3s;
-        text-decoration: none; /* Remove underline */
-    }
+        .project-icons {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+        }
 
-    .check-button:hover {
-        background-color: #7289DA; /* Discord's "blurple" color */
-    }
+        .project-icons i {
+            font-size: 24px;
+            color: #fff;
+            margin-right: 5px;
+            cursor: pointer;
+            position: relative;
+        }
 
-    .fa-solid fa-link-icon {
-        margin-left: 10px;
-    }
+        .tooltip {
+            visibility: hidden;
+            position: fixed;
+            background-color: #000;
+            color: #fff;
+            border-radius: 5px;
+            padding: 5px;
+            text-align: center;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 14px;
+            pointer-events: none; /* Allow interaction with elements beneath the tooltip */
+        }
+
+        .project-icons i:hover + .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .check-button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            transition: background-color 0.3s;
+            text-decoration: none; /* Remove underline */
+        }
+
+        .check-button:hover {
+            background-color: #7289DA; /* Discord's "blurple" color */
+        }
+
+        .fa-solid fa-link-icon {
+            margin-left: 10px;
+        }
 
     </style>
 </head>
@@ -87,33 +123,58 @@
     <div class="content-wrapper">
         <h1>Projects</h1>
 
-<div class="project-card">
-    <h2 class="project-title">Developer's Playground</h2>
-    <p class="project-description">Random stuff I make when I'm bored gets added here. Don't expect any of this to be continued!<br><i>This is a Prototype Project. It may receive large changes or get removed at any time.</i></p>
-    <a href="https://seth.run/prototypes/dev-playground" class="check-button">
-        View
-        <i class="fa-solid fa-link"></i>
-    </a>
-</div>
+        <div class="project-card">
+            <div class="project-icons">
+                <i class="fas fa-star" title="Featured Project">
+                    <div class="tooltip">Featured Project</div>
+                </i>
+                <i class="fas fa-thumbtack" title="Pinned Project">
+                    <div class="tooltip">Pinned Project</div>
+                </i>
+                <i class="fas fa-hammer" title="Prototype Project">
+                    <div class="tooltip">Prototype Project</div>
+                </i>
+            </div>
+            <h2 class="project-title">Developer's Playground</h2>
+            <p class="project-description">Random stuff I make when I'm bored gets added here. Don't expect any of this to be continued!<br><i>This is a Prototype Project. It may receive large changes or get removed at any time.</i></p>
+            <a href="https://seth.run/prototypes/dev-playground" class="check-button">
+                View
+                <i class="fas fa-link"></i>
+            </a>
+        </div>
 
-        
-<div class="project-card">
-    <h2 class="project-title">Notepad v0.3</h2>
-    <p class="project-description">Write, save & load different notepads!<br><i>This is a Prototype Project. It may receive large changes or get removed at any time.</i></p>
-    <a href="https://seth.run/notepad" class="check-button">
-        View
-        <i class="fa-solid fa-link"></i>
-    </a>
-</div>
+        <div class="project-card">
+            <div class="project-icons">
+                <i class="fas fa-thumbtack" title="Pinned Project">
+                    <div class="tooltip">Pinned Project</div>
+                </i>
+                <i class="fas fa-hammer" title="Prototype Project">
+                    <div class="tooltip">Prototype Project</div>
+                </i>
+            </div>
+            <h2 class="project-title">Notepad v0.3</h2>
+            <p class="project-description">Write, save & load different notepads!<br><i>This is a Prototype Project. It may receive large changes or get removed at any time.</i></p>
+            <a href="https://seth.run/notepad" class="check-button">
+                View
+                <i class="fas fa-link"></i>
+            </a>
+        </div>
 
-<div class="project-card">
-    <h2 class="project-title">Numbers v1.1</h2>
-    <p class="project-description">In this very simple game, you have to guess a number between 1 and 100!</p>
-    <a href="https://seth.run/numbers" class="check-button">
-        View
-        <i class="fa-solid fa-link"></i>
-    </a>
-</div>
+        <div class="project-card">
+            <div class="project-icons">
+                <i class="fas fa-hammer" title="Prototype Project">
+                    <div class="tooltip">Prototype Project</div>
+                </i>
+            </div>
+            <h2 class="project-title">Numbers v1.1</h2>
+            <p class="project-description">In this very simple game, you have to guess a number between 1 and 100!</p>
+            <a href="https://seth.run/numbers" class="check-button">
+                View
+                <i class="fas fa-link"></i>
+            </a>
+        </div>
+
+    </div>
 
     <!-- Load FontAwesome JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
