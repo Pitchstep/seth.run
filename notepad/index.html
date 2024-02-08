@@ -90,6 +90,32 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
+        /* Dark mode toggle */
+        #darkModeToggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 24px;
+            color: #fff;
+        }
+
+        /* Styling for styling options */
+        .styling-options {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .styling-button {
+            padding: 8px;
+            margin: 5px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
         /* Media query for responsiveness */
         @media only screen and (max-width: 600px) {
             .container {
@@ -100,10 +126,21 @@
 </head>
 <body>
 
+    <!-- Dark mode toggle -->
+    <div id="darkModeToggle" onclick="toggleDarkMode()">
+        🌙
+    </div>
+
     <div class="container">
         <h1>Online Notepad</h1>
-        <input type="text" id="noteTitle" placeholder="Online Notepad">
+        <p>Write and save your notes online. Access them anytime, anywhere.</p>
+        <input type="text" id="noteTitle" placeholder="Title (optional)">
         
+        <div class="styling-options">
+            <button class="styling-button" onclick="toggleBold()">Bold</button>
+            <button class="styling-button" onclick="toggleItalic()">Italic</button>
+        </div>
+
         <textarea id="noteContent" placeholder="Start typing your notes..."></textarea>
 
         <button id="saveButton" onclick="saveNote()">Save Note</button>
@@ -116,6 +153,12 @@
     <div id="notification"></div>
 
     <script>
+        // Dark mode toggle
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+        }
+
         function generateUniqueCode() {
             return Math.random().toString(36).substring(2, 8);
         }
@@ -176,6 +219,14 @@
             textArea.select();
             document.execCommand('copy');
             document.body.removeChild(textArea);
+        }
+
+        function toggleBold() {
+            document.execCommand('bold', false, null);
+        }
+
+        function toggleItalic() {
+            document.execCommand('italic', false, null);
         }
     </script>
 
