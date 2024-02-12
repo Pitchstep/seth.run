@@ -1,8 +1,11 @@
-# seth.run - version 1.121
+# seth.run - version 1.122
 Hi, I'm Seth and this is my website. I update this from time to time.<br>
 If you came to see my /projects updates, scroll down.
 
 ## Update notes
+
+### V1.122 notes
+Updated 404 page.
 
 ### V1.121 notes
 Added a Twitter icon.<br>
