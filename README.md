@@ -2,6 +2,9 @@
 Hi, I'm Seth and this is my website. I update this from time to time.<br>
 If you came to see my /projects updates, scroll down.
 
+### Special Event
+Celebrating **500 commits**!
+
 ## Update notes
 
 ### V1.122 notes
