@@ -1,11 +1,14 @@
-# seth.run - version 1.122
+# seth.run - version 1.2
 Hi, I'm Seth and this is my website. I update this from time to time.<br>
 If you came to see my /projects updates, scroll down.
 
-### Special Event
-Celebrating **500 commits**!
-
 ## Update notes
+
+### V1.2 Major Update
+You can now submit _your_ designs for a chance for them to be displayed on /designs!<br>
+More projects are now being added! May take a while though, GitHub is so slow lol.<br>
+Fixed a LOT of bugs!<br>
+Tweaks to pages to ensure your experience is even more magical!
 
 ### V1.122 notes
 Updated 404 page.
@@ -38,14 +41,14 @@ Version 2 will include lots of features. Such as a chat, larger projects, more d
 
 ## /projects
 
-### Notepad v0.3 notes
-Added a live word count.
+### [PROTOTYPE] Notepad v0.3
+A notepad with live word count!
 
-### Developer's Playground v24.2.8 notes
-Bio page example.
+### [PROTOTYPE] Developer's Playground v24.2.8
+Currently, it's just a biography example.
 
-### Numbers v1.1 notes
-Improved refresh rate.
+### Numbers v1.1
+Guess the number between 1-100!
 
 ## More info
 
