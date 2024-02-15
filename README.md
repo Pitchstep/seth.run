@@ -3,7 +3,10 @@ Hi, I'm Seth and this is my website. I update this from time to time.<br>
 If you came to see my /projects updates, scroll down.
 <br><br>
 **IMPORTANT NOTICE:**<br>
-Some of the designs on /designs has been removed. You can still access them by typing in the website patch as they are still in the directory.
+Some of the designs on /designs has been removed. You can still access them by typing in the website patch as they are still in the directory.<br>
+<br>
+**ADDRESSED ISSUE:**<br>
+On some devices, pages seem to flash the FontAwesome logo. I'm currently trying to find out what causes this and eventually releasing a fix.
 
 ## Update notes
 
