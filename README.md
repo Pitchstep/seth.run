@@ -1,4 +1,4 @@
-# seth.run - version 1.2
+# seth.run - version 1.201
 Hi, I'm Seth and this is my website. I update this from time to time.<br>
 If you came to see my /projects updates, scroll down.
 <br><br>
@@ -7,39 +7,43 @@ Some of the designs on /designs has been removed. You can still access them by t
 
 ## Update notes
 
+### V1.201 Patch
+Removed "Support me on Ko-Fi!" from all pages.<br>
+Added credits button in the footer of home page.
+
 ### V1.2 Major Update
 You can now submit _your_ designs for a chance for them to be displayed on /designs!<br>
 More projects are now being added! May take a while though, GitHub is so slow lol.<br>
 Fixed a LOT of bugs!<br>
 Tweaks to pages to ensure your experience is even more magical!
 
-### V1.122 notes
+### V1.122 Patch
 Updated 404 page.
 
-### V1.121 notes
+### V1.121 Patch
 Added a Twitter icon.<br>
 Removed the Ko-Fi icon.<br>
 Updated the email icon to look better.<br>
 Optimized hover colors for the icons.
 
-### V1.12 notes
+### V1.12 Minor Update
 Added new projects.<br>
 Added a link to the projects page on the home page.<br>
 I've also updated this README.md file so you can read more about seth.run's upcoming features!
 
-### V1.11 notes
+### V1.11 Minor Update
 Bugfixes and minor changes.<br>
 Added GitHub button that leads to this repository.<br>
 New stuff in /projects.
 
-### V1.101 patch notes
+### V1.101 Patch
 Bugfixes and minor changes.
 
-### v1.1 notes
+### v1.1 Major Update
 I've added advertisements to the website to make a lil bit of cash every now and then. It will not mess with your seth.run experience. ;)<br>
 I've also added a privacy policy page to show you what private data I collect. Check it out at https://seth.run/privacy.
 
-### v2.0 information
+### v2.0 Information
 Version 2 will include lots of features. Such as a chat, larger projects, more designs, new and optimized pages, major bugfixes & more! I don't have a release date for it yet, but I work on this part-time when I'm (mostly) bored.
 
 ## /projects
