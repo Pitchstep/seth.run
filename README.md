@@ -1,6 +1,9 @@
 # seth.run - version 1.2
 Hi, I'm Seth and this is my website. I update this from time to time.<br>
 If you came to see my /projects updates, scroll down.
+<br><br>
+**IMPORTANT NOTICE:**<br>
+Some of the designs on /designs has been removed. You can still access them by typing in the website patch as they are still in the directory.
 
 ## Update notes
 
