@@ -10,6 +10,10 @@ On some devices, pages seem to flash the FontAwesome logo. I'm currently trying 
 
 ## Update notes
 
+### V1.201.1 Patch
+[/deisngs] Renamed "View image" to "View".<br>
+[/projects] Renamed "CHECK IT OUT!" to "Open".
+
 ### V1.201 Patch
 Removed "Support me on Ko-Fi!" from all pages.<br>
 Added credits button in the footer of home page.
