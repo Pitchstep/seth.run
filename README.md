@@ -6,7 +6,10 @@ If you came to see my /projects updates, scroll down.
 Some of the designs on /designs has been removed. You can still access them by typing in the original link as they are still in the directory.<br>
 <br>
 **ADDRESSED ISSUE:**<br>
-On some devices, pages seem to flash the FontAwesome logo. I'm currently trying to find out what causes this and eventually releasing a fix.
+On some devices, pages seem to flash some random FontAwesome symbols. I'm currently trying to find out what causes this and eventually releasing a fix.<br>
+<br>
+### Status
+🟢 Everything is operational!
 
 ## Update notes
 
