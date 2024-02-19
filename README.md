@@ -94,9 +94,7 @@ Seth.run is currently just a website where I post my stuff. Read more about Vers
 This domain (seth.run) is currently for sale! Contact @pitchstep on Discord or X (Twitter) f you're interested.
 
 ## Credits
-**Lead HTML & Styling Programmer** - Seth Harlow<br>
-**Supporting JavaScript Programmer** - "HÆPPY"<br>
-**Hosting** - GitHub & GoDaddy<br>
+Moved to https://seth.run/credits.
 <br><br>
 **Created by** Seth Harlow<br><br>
 
