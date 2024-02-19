@@ -16,6 +16,10 @@ On some devices, pages seem to flash some random FontAwesome symbols. I'm curren
 
 ## Update notes
 
+### V1.201 Tiny Patch #2
+[/credits] Added some more credits. Thank you for contributing!
+[New Page] Added a page that redirects you to the Alpha Site. https://seth.run/alpha
+
 ### V1.201 Tiny Patch #1
 [/designs] Renamed "View image" to "View".<br>
 [/projects] Renamed "CHECK IT OUT!" to "Open".<br>
