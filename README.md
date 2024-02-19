@@ -1,6 +1,6 @@
 # seth.run - version 1.201
 Hi, I'm Seth and this is my website. I update this from time to time.<br>
-If you came to see my /projects updates, scroll down.
+If you came to see my /projects updates, scroll down.<br
 <br>
 **ALPHA SITE RELEASED:**<br>
 seth.run's Alpha site is now live! CHeck it out at https://seth.run/alpha.
