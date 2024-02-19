@@ -1,6 +1,9 @@
 # seth.run - version 1.201
 Hi, I'm Seth and this is my website. I update this from time to time.<br>
 If you came to see my /projects updates, scroll down.
+<br>
+**ALPHA SITE RELEASED:**<br>
+seth.run's Alpha site is now live! CHeck it out at https://seth.run/alpha.
 <br><br>
 **IMPORTANT NOTICE:**<br>
 Some of the designs on /designs has been removed. You can still access them by typing in the original link as they are still in the directory.<br>
