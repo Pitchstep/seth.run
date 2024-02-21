@@ -13,8 +13,11 @@ On some devices, pages seem to flash some random FontAwesome symbols. I'm curren
 <br>
 ### Status
 🟢 Everything is operational!
-
 ## Update notes
+
+### V1.201 Tiny Patch #4
+[General] Overall performance changes and small tweaks to code.
+
 ### V1.201 Tiny Patch #3
 [Home Page] Moved version number to the bottom of the page.
 
