@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Notepad</title>
+    <title>/projects/notepad</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
     <style>
         body {
@@ -107,17 +107,17 @@
 
     <div class="container">
         <h1>notepad</h1>
-        <p><b>NEW:</b> Live Word Count</p>
-        <input type="text" id="noteTitle" placeholder="Title (optional)">
+        <p>write notes online! codes can only be loaded on the device you saved it on.</p>
+        <input type="text" id="noteTitle" placeholder="title (optional)">
         
         <div class="styling-options">
-            <!-- Removed styling options -->
+            <!-- coming soon... ;) -->
         </div>
 
-        <textarea id="noteContent" placeholder="start typing your notes... or paste your plagiarism" oninput="updateWordCount()"></textarea>
-        <div id="wordCount">words: 0</div>
+        <textarea id="noteContent" placeholder="type something..." oninput="updateWordCount()"></textarea>
+        <div id="wordCount">no input detected! (start writing to update word count)</div>
 
-        <button id="saveButton" onclick="saveNote()">save note</button>
+        <button id="saveButton" onclick="saveNote()">save note (copies id)</button>
         <div id="loadCode">
             <input type="text" id="loadCodeInput" placeholder="paste code here...">
             <button onclick="loadNote()">load note</button>
@@ -144,9 +144,9 @@
 
                 localStorage.setItem(uniqueCode, JSON.stringify(note));
                 copyToClipboard(uniqueCode);
-                showNotification(`note saved! [${uniqueCode}] has been copied to your clipboard.`);
+                showNotification(`note saved! ${uniqueCode} has been copied.`);
             } else {
-                showNotification('please enter a title or content before saving.');
+                showNotification('there isn''t anything to save yet!');
             }
         }
 
@@ -161,12 +161,12 @@
                     const note = JSON.parse(storedNote);
                     document.getElementById('noteTitle').value = note.title;
                     document.getElementById('noteContent').value = note.content;
-                    showNotification('note loaded successfully!');
+                    showNotification('note loaded!');
                 } else {
-                    showNotification('no note found with the provided code.');
+                    showNotification('that note doesn''t seem to exist!');
                 }
             } else {
-                showNotification('please enter a valid code.');
+                showNotification('that''s not a valid id!');
             }
         }
 
