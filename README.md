@@ -102,4 +102,4 @@ _All social media icons are not owned by me. Trademarks go to their representati
 _Icons are delivered by www.FontAwesome.com._
 <br><br>
 _© 2022-2024 Seth Harlow - All rights reserved._<br>
-_Privacy Policy: seth.run/privacy_
+_Privacy Policy: www.seth.run/privacy_
