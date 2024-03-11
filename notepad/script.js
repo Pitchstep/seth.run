@@ -21,6 +21,8 @@
             }
         }
 
+// update plz
+
               function loadNote() {
             const loadCodeInput = document.getElementById('loadCodeInput');
               const uniqueCode = loadCodeInput.value.trim();
