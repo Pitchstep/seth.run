@@ -15,9 +15,9 @@
 
               localStorage.setItem(uniqueCode, JSON.stringify(note));
               copyToClipboard(uniqueCode);
-              showNotification(`note saved! ${uniqueCode} has been copied.`);
+              showNotification(`Your note ID ${uniqueCode} has been copied to your clipboard!`);
             } else {
-                showNotification('there isnt anything to save yet!');
+                showNotification('There isnt anything to save yet, write something!');
             }
         }
 
@@ -32,12 +32,12 @@
                     const note = JSON.parse(storedNote);
               document.getElementById('noteTitle').value = note.title;
               document.getElementById('noteContent').value = note.content;
-              showNotification('note loaded!');
+              showNotification('Note loaded!');
                 } else {
-                showNotification('that note doesnt seem to exist!');
+                showNotification('That note ID doesnt seem to exist!');
                 }
             } else {
-                showNotification('thats not a valid id!');
+                showNotification('That isnt a valid note ID!');
             }
         }
 
@@ -63,5 +63,5 @@
               function updateWordCount() {
             const content = document.getElementById('noteContent').value;
             const wordCount = content.split(/\s+/).filter(word => word !== '').length;
-              document.getElementById('wordCount').textContent = `words: ${wordCount}`;
+              document.getElementById('wordCount').textContent = `Words: ${wordCount}`;
         }
