@@ -65,5 +65,11 @@
               function updateWordCount() {
             const content = document.getElementById('noteContent').value;
             const wordCount = content.split(/\s+/).filter(word => word !== '').length;
-              document.getElementById('wordCount').textContent = `Words: ${wordCount}/2,000,000`;
+              document.getElementById('wordCount').textContent = `Words: ${wordCount}/∞`;
+        }
+
+              function updateCharCount() {
+            const content = document.getElementById('noteContent').value;
+            const charCount = content.split(/\s+/).filter(char => char !== ''.length;
+              document.getElementById('charCount').textContent = `Characters: ${charCount}/2,000,000`;
         }
