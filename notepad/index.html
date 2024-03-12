@@ -13,20 +13,20 @@
     <div class="container">
         <h1>Notepad</h1>
         <p>Write notes online with this simple page.</p>
-        <input type="text" id="noteTitle" maxlength="100" placeholder="title (optional, max 100 chars))">
+        <input type="text" id="noteTitle" maxlength="100" placeholder="title (optional, max 100 chars)">
         
         <div class="styling-options">
             <!-- coming soon... ;) -->
         </div>
 
-        <textarea id="noteContent" placeholder="type something..." maxlength="2000000" oninput="updateWordCount()" oninput="updateCharCount()"></textarea>
-        <div id="wordCount">Words: 0/∞</div>
-        <div id="charCount">Characters: 0/2,000,000</div>
+        <textarea id="noteContent" placeholder="Type something..." maxlength="2000000" oninput="updateWordCount()" oninput="updateCharCount()"></textarea>
+        <div id="wordCount">Words: 0</div>
+        <div id="charCount">Characters: <b>COMING SOON</b></div>
 
         <button id="saveButton" onclick="saveNote()">Copy ID</button>
         <div id="loadCode">
-            <input type="text" id="loadCodeInput" placeholder="Paste code here...">
-            <button onclick="loadNote()" id="loadCodeBtn">Load note from ID</button>
+            <input type="text" id="loadCodeInput" placeholder="Paste code here, then click Load ID...">
+            <button onclick="loadNote()" id="loadCodeBtn">Load ID</button>
         </div>
     </div>
 
