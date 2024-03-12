@@ -28,8 +28,10 @@
     }
 
     #noteTitle {
-      font-size: 46px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: calc(1vw+1vh);
       font-weight: black;
+      text-align: center;
       width: 100%
       padding: 10x;
       margin-bottom: 10px;
