@@ -64,5 +64,5 @@
               function updateWordCount() {
             const content = document.getElementById('noteContent').value;
             const wordCount = content.split(/\s+/).filter(word => word !== '').length;
-              document.getElementById('wordCount').textContent = `Words: ${wordCount}/∞`;
+              document.getElementById('wordCount').textContent = `Words: ${wordCount}`;
         }
