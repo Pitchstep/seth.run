@@ -67,17 +67,18 @@
             const wordCount = content.split(/\s+/).filter(word => word !== '').length;
               document.getElementById('wordCount').textContent = `Words: ${wordCount}/∞`;
         }
+// Character counter: Coming soon! :)
 
-function updateCharCount() {
-    const content = document.getElementById('noteContent').value;
-    const charCount = content.length;
-    const maxCharLimit = 2000000;
+//function updateCharCount() {
+    //const content = document.getElementById('noteContent').value;
+    //const charCount = content.length;
+    //const maxCharLimit = 2000000;
 
-    document.getElementById('charCount').textContent = `Characters: ${charCount}/${maxCharLimit}`;
+    //document.getElementById('charCount').textContent = `Characters: ${charCount}/${maxCharLimit}`;
 
     // check to see if limit is exceeded
-    if (charCount > maxCharLimit) {
+    //if (charCount > maxCharLimit) {
         // handle case where the character limit is exceeded
-        alert('[debug - browser alert]Character limit exceeded!');
-    }
+        //alert('[debug - browser alert]Character limit exceeded!');
+    //}
 }
