@@ -55,6 +55,15 @@
       cursor: pointer;
     }
 
+    #loadButton {
+      padding: 10px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
     #loadCode {
       margin-top: 10px;
     }
@@ -86,6 +95,11 @@
     #wordCount {
       font-size: 16px;
       margin-top: 10px;
+    }
+
+    #charCount {
+     font-size: 16px;
+     margin-top: 10px;
     }
 
     /* Media query for responsiveness */
