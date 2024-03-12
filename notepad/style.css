@@ -56,8 +56,8 @@
     }
 
     #loadCodeBtn {
-      padding: 10px;
-      background-color: #4caf50;
+      padding: 12px;
+      background-color: #5539cc;
       color: #fff;
       border: none;
       border-radius: 3px;
@@ -84,6 +84,7 @@
       position: fixed;
       bottom: 20px;
       left: 50%;
+      right: 50%;
       transform: translateX(-50%);
       background-color: #333;
       color: #fff;
@@ -98,7 +99,7 @@
     }
 
     #charCount {
-     font-size: 16px;
+     font-size: 13px;
      margin-top: 10px;
     }
 
