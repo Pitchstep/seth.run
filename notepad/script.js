@@ -20,7 +20,6 @@
                 showNotification('There isnt anything to save yet, write something!');
             }
         }
-
 // update plz
 
               function loadNote() {
@@ -67,36 +66,3 @@
             const wordCount = content.split(/\s+/).filter(word => word !== '').length;
               document.getElementById('wordCount').textContent = `Words: ${wordCount}/∞`;
         }
-
-document.addEventListener('keydown', function(event) {
-  // Check if the pressed key is 'g' (key code 71)
-  if (event.keyCode === 71) {
-    showNotification('You pressed the letter G!');
-  }
-});
-
-function showNotification(message) {
-  const notificationElement = document.getElementById('notification');
-  notificationElement.textContent = message;
-  notificationElement.style.display = 'block';
-
-  setTimeout(() => {
-    notificationElement.style.display = 'none';
-  }, 5000); // hide notif after 5 sec
-}
-
-// Character counter: Coming soon! :)
-
-//function updateCharCount() {
-    //const content = document.getElementById('noteContent').value;
-    //const charCount = content.length;
-    //const maxCharLimit = 2000000;
-
-    //document.getElementById('charCount').textContent = `Characters: ${charCount}/${maxCharLimit}`;
-
-    // check to see if limit is exceeded
-    //if (charCount > maxCharLimit) {
-        // handle case where the character limit is exceeded
-        //alert('[debug - browser alert]Character limit exceeded!');
-    //}
-}
