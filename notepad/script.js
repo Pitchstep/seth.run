@@ -50,7 +50,7 @@
 
             setTimeout(() => {
                 notificationElement.style.display = 'none';
-            }, 5000); // Hide after 5 seconds
+            }, 5000); // hide notif after 5 sec
         }
 
               function copyToClipboard(text) {
@@ -65,5 +65,5 @@
               function updateWordCount() {
             const content = document.getElementById('noteContent').value;
             const wordCount = content.split(/\s+/).filter(word => word !== '').length;
-              document.getElementById('wordCount').textContent = `Words: ${wordCount}`;
+              document.getElementById('wordCount').textContent = `Words: ${wordCount}/2000000`;
         }
