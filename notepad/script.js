@@ -71,5 +71,5 @@
               function updateCharCount() {
             const content = document.getElementById('noteContent').value;
             const charCount = content.split(/\s+/).filter(char => char !== ''.length;
-              document.getElementById('noteContent').textContent = `Characters: ${charCount}/2,000,000`;
+              document.getElementById('charCount').textContent = `Characters: ${charCount}/2,000,000`;
         }
