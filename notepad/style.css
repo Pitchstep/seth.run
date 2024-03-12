@@ -30,7 +30,7 @@
     #noteTitle {
       font-family: 'Montserrat', sans-serif;
       font-size: calc(1vw + 1vh);
-      font-weight: black;
+      font-weight: 600;
       text-align: center;
       width: 100%;
       padding: 10x;
