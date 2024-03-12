@@ -1,4 +1,4 @@
-# seth.run - version 1.201
+# seth.run - version 1.202
 Hi, I'm Seth and this is my website. I update this from time to time.<br>
 If you came to see my /projects updates, scroll down.<br>
 <br>
@@ -8,15 +8,19 @@ seth.run's Alpha site is now live! Check it out at https://seth.run/alpha.
 **IMPORTANT NOTICE:**<br>
 Some of the designs on /designs has been removed. You can still access them by typing in the original link as they are still in the directory.<br>
 <br>
-**ADDRESSED ISSUE:**<br>
-On some devices, pages seem to flash some random FontAwesome symbols. I'm currently trying to find out what causes this and eventually releasing a fix.<br><br>Latest update: This issue seems to only occur on the Safari browser (iPhone, iPad, Mac, Vision Pro, etc.) and on Chromebook devices. I am still investigating the issue and will soon release a patch.
+**ISSUE RESOLVED:**<br>
+FontAwesome issue was fixed in update 1.202.
+
 <br>
 ### Status
 🟢 Main site<br>
 🟢 Pages<br>
 🔴 Ads<br>
-🔴 seth.run local web server
+🔴 seth.run global web server
 ## Update notes
+
+### V1.202
+[General Bugfix] Fixed FontAwesome icons appearing and disappearing.
 
 ### V1.201 Tiny Patch #4
 [General] Overall performance changes and small tweaks to code.
