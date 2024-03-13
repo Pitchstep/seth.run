@@ -12,7 +12,7 @@ Some of the designs on /designs has been removed. You can still access them by t
 FontAwesome issue was fixed in update 1.202.
 
 <br>
-### Status
+### Status 
 🟢 Main site<br>
 🟢 Pages<br>
 🔴 Ads<br>
