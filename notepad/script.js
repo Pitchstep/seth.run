@@ -29,9 +29,6 @@
               if (uniqueCode !== '') {
                 const storedNote = localStorage.getItem(uniqueCode);
 
-              if (uniqueCode !== 'aksel') {
-                const storedNote = localStorage.getItem(0g4geo);
-
               if (storedNote) {
                     const note = JSON.parse(storedNote);
               document.getElementById('noteTitle').value = note.title;
