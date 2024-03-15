@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>/projects/notepad</title>
+    <title>Notepad</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
@@ -12,8 +12,7 @@
 
     <div class="container">
         <h1>Notepad</h1>
-        <p>Write notes online with this simple page.</p>
-        <input type="text" id="noteTitle" maxlength="100" placeholder="title (optional, max 100 chars)">
+        <input type="text" id="noteTitle" maxlength="100" placeholder="Title... (Not required!)">
         
         <div class="styling-options">
             <!-- coming soon... ;) -->
@@ -23,13 +22,13 @@
         <div id="wordCount">Words: 0</div>
         <div id="charCount">Characters: <b>COMING SOON</b></div>
 
-        <button id="saveButton" onclick="saveNote()">Copy ID</button>
+        <button id="saveButton" onclick="saveNote()">Save ID</button>
         <div id="loadCode">
             <input type="text" id="loadCodeInput" placeholder="Paste code here, then click Load ID...">
             <button onclick="loadNote()" id="loadCodeBtn">Load ID</button>
         </div>
     </div>
-
+        <!-- "create" or "load" the notification div -->
     <div id="notification"></div>
 
 </body>
