@@ -12,7 +12,7 @@ Some of the designs on /designs has been removed. You can still access them by t
 Sometimes the navigation bar (introduced in v1.3) doesn't look centered. I am investigating this issue and soon publishing a fix.<br>
 
 ### V1.3
-[General] Added a navigation system to easily browse through the website.
+[General] Added a navigation system to all main pages to easily browse through the website.
 
 ### V1.202
 [General Bugfix] Fixed FontAwesome icons appearing and disappearing.
@@ -65,22 +65,16 @@ Sometimes the navigation bar (introduced in v1.3) doesn't look centered. I am in
 [General] Bugfixes and minor changes.
 
 ### v1.1 Major Update
-[General] I've added advertisements to the website to make a lil bit of cash every now and then. It will not mess with your seth.run experience. ;)<br>
-[Privacy Policy] I've also added a privacy policy page to show you what private data I collect. Check it out at https://seth.run/privacy.
+[General] Added advertisements to the website. They may not show up yet due to Google issues.<br>
+[Privacy Policy] Added a privacy policy page to show you what private data I collect. Check it out at https://seth.run/privacy.
 
 ### v2.0 Information
 Version 2 will include lots of features. Such as a chat, larger projects, more designs, new and optimized pages, major bugfixes & more! I don't have a release date for it yet, but I work on this part-time when I'm (mostly) bored.
 
-## /projects
+## Projects Info
 
-### [PROTOTYPE] Notepad v0.3
+### Notepad v0.6
 A notepad with live word count!
-
-### [PROTOTYPE] Developer's Playground v24.2.8
-Currently, it's just a biography example.
-
-### Numbers v1.1
-Guess the number between 1-100!
 
 ## More info
 
@@ -90,7 +84,7 @@ Notes can **only** be loaded on the **device you saved the note on**. In Version
 ### Advertisements
 So I'm selling out... well, not really. I'm adding a few advertisements to seth.run to earn a little. Don't worry though, the ads will not interfere with your experience! If they happen to do so, please let me know by contacting me on Discord!<br>
 Ads are currently not rolled out, but they will start appearing over time.<br>
-_Keep in mind! You just looking at the adverts supports my work a ton! Thank you._
+_Keep in mind, just looking at the adverts supports my work a ton. Thank you!_
 
 ### About
 Seth.run is currently just a website where I post my stuff. Read more about Version 2 above :)
@@ -107,4 +101,4 @@ _All social media icons are not owned by me. Trademarks go to their representati
 _Icons are delivered by www.FontAwesome.com._
 <br><br>
 _© 2022-2024 Seth Harlow - All rights reserved._<br>
-_Privacy Policy: www.seth.run/privacy_
+_www.seth.run/privacy_
