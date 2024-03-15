@@ -47,8 +47,13 @@ function showNotification(message) {
     notificationElement.textContent = message;
     notificationElement.style.display = 'block';
 
+    // Trigger reflow to apply initial state
+    notificationElement.offsetHeight; // eslint-disable-line no-unused-expressions
+
+    notificationElement.classList.remove('hidden');
+
     setTimeout(() => {
-        notificationElement.style.display = 'none';
+        notificationElement.classList.add('hidden');
     }, 5000); // hide notif after 5 sec
 }
 
