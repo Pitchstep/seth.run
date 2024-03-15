@@ -3,125 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- boring meta stuff -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://seth.run" />
-<meta property="og:title" content="seth.run" />
-<meta property="og:description" content="Welcome to seth.run, my website. Look at my designs, projects & more!" />
-<meta property="og:image" content="i.imgur.com/tz5PmPg.png" />
+    <!-- boring meta stuff -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://seth.run" />
+    <meta property="og:title" content="seth.run" />
+    <meta property="og:description" content="Welcome to seth.run, my website. Look at my designs, projects & more!" />
+    <meta property="og:image" content="i.imgur.com/tz5PmPg.png" />
     <!-- title and stuff -->
     <title>seth.run</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="i.imgur.com/XFXmzua.png"> <!-- doesnt work for some reason? probably needs to be in directory -->
-    
-      <style>
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            text-align: center;
-            background-color: black;
-            color: white;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-
-
-        /* center content within the body */
-        .content-wrapper {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        h1 {
-            font-size: 36px;
-            margin: 0;
-            background: linear-gradient(45deg, purple, cyan);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: textGradient 5s linear infinite;
-        }
-
-        @keyframes textGradient {
-            0% {
-                background-position: 0% 50%;
-            }
-            100% {
-                background-position: 100% 50%;
-            }
-        }
-
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-            margin: 20px 0;
-        }
-
-        .link-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px;
-        }
-
-        .link-icon {
-            font-size: 24px;
-            color: white;
-            margin: 10px;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .link-icon[data-icon="fa-brands fa-twitter"]:hover {
-            color: #1da1f2; /* twitter hover color */
-        }
-
-
-        .link-icon[data-icon="fa-brands fa-discord"]:hover {
-            color: #5865F2; /* discord hover color */
-        }
-
-        .link-icon[data-icon="fa-solid fa-inbox"]:hover {
-            color: #004f9f; /* email hover color */
-        }
-
-        .link-icon[data-icon="fa-brands fa-github"]:hover {
-            color: #6e5494; /* github hover color */
-        }
-
-        /* additional styling for small text */
-        .small-text {
-            font-size: 12px;
-            opacity: 0.8;
-            margin-top: 10px;
-        }
-
-        /* footer styling */
-        footer {
-            font-size: 12px;
-            margin-top: auto;
-            opacity: 0.6;
-        }
-
-      </style>
+    <link rel="stylesheet" href="styles.css"> <!-- Add external CSS file -->
 </head>
 <body>
+    <!-- Navigation bar -->
+    <nav class="navbar">
+        <div class="logo">seth.run</div>
+        <ul class="nav-links">
+            <li><a href="#designs">Designs</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#submit">Submit Designs</a></li>
+        </ul>
+    </nav>
 
     <div class="content-wrapper">
         <h1>seth.run</h1>
-
-
         <div class="link-buttons">
-        <p> <br><b>Hi, I'm Seth!</b><br>I've always been a fan of digital art, so I made some and put them on this site. <a href="https://www.seth.run/designs">View them by clicking here!</a><br>Oh, and I also have a projects page where I upload projects I make! <a href="https://www.seth.run/projects">Check them out too!</a><br><br><b>Would you like to contact me?</b><br>Click the icons below! I'm mostly active on Discord but you can contact me using email too.<br>I'll try to reply to everyone!</b><br><br><b>NEW! Submit your own designs!</b><br>Soon there will be a page to upload your designs, but for now you'll need to contact me on Discord. Click the icon below or add me as a friend! My username is <b>@pitchstep</b>.</p>
+            <p> <br><b>Hi, I'm Seth!</b><br>I've always been a fan of digital art, so I made some and put them on this site. <a href="https://www.seth.run/designs">View them by clicking here!</a><br>Oh, and I also have a projects page where I upload projects I make! <a href="https://www.seth.run/projects">Check them out too!</a><br><br><b>Would you like to contact me?</b><br>Click the icons below! I'm mostly active on Discord but you can contact me using email too.<br>I'll try to reply to everyone!</b><br><br><b>NEW! Submit your own designs!</b><br>Soon there will be a page to upload your designs, but for now you'll need to contact me on Discord. Click the icon below or add me as a friend! My username is <b>@pitchstep</b>.</p>
         </div>
 
         <!-- link section (div) -->
@@ -140,8 +50,5 @@
 
     <!-- load fontawesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
-
-
-
 </body>
 </html>
