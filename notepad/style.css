@@ -61,6 +61,7 @@
     }
 
     #saveButton {
+      margin-top: 10px;
       padding: 10px;
       background-color: #4caf50;
       color: #fff;
@@ -70,7 +71,8 @@
     }
 
     #loadCodeBtn {
-      padding: 12px;
+      margin-top: 10px;
+      padding: 15px;
       background-color: #5539cc;
       color: #fff;
       border: none;
