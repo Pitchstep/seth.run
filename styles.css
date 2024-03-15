@@ -6,12 +6,6 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    width: 100%;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
 }
 
 .nav-links {
@@ -35,6 +29,7 @@
     color: purple; /* Change color on hover */
 }
 
+/* Body styles */
 body {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
@@ -48,7 +43,6 @@ body {
     height: 100vh;
 }
 
-/* center content within the body */
 .content-wrapper {
     display: flex;
     flex-direction: column;
@@ -100,7 +94,6 @@ p {
     color: #1da1f2; /* twitter hover color */
 }
 
-
 .link-icon[data-icon="fa-brands fa-discord"]:hover {
     color: #5865F2; /* discord hover color */
 }
@@ -113,14 +106,12 @@ p {
     color: #6e5494; /* github hover color */
 }
 
-/* additional styling for small text */
 .small-text {
     font-size: 12px;
     opacity: 0.8;
     margin-top: 10px;
 }
 
-/* footer styling */
 footer {
     font-size: 12px;
     margin-top: auto;
