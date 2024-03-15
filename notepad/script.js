@@ -44,17 +44,29 @@ function loadNote() {
 
 function showNotification(message) {
     const notificationElement = document.getElementById('notification');
-    notificationElement.textContent = message;
-    notificationElement.style.display = 'block';
+    const wordCountElement = document.getElementById('wordCount');
 
-    // Trigger reflow to apply initial state
-    notificationElement.offsetHeight; // eslint-disable-line no-unused-expressions
+    // Check if notification is already shown
+    if (notificationElement.classList.contains('show-notification')) {
+        // Update message and add pulse effect
+        notificationElement.textContent = message;
+        notificationElement.classList.add('word-pulse');
 
-    notificationElement.classList.remove('hidden');
+        // Remove pulse effect after short delay
+        setTimeout(() => {
+            notificationElement.classList.remove('word-pulse');
+        }, 300);
 
+    } else {
+        // Set message and show notification
+        notificationElement.textContent = message;
+        notificationElement.classList.add('show-notification');
+    }
+
+    // Hide notification after 5 seconds
     setTimeout(() => {
-        notificationElement.classList.add('hidden');
-    }, 5000); // hide notif after 5 sec
+        notificationElement.classList.remove('show-notification');
+    }, 5000);
 }
 
 function copyToClipboard(text) {
