@@ -33,6 +33,7 @@
                     const note = JSON.parse(storedNote);
               document.getElementById('noteTitle').value = note.title;
               document.getElementById('noteContent').value = note.content;
+              document.getElementById('wordCount').textContent = `Edit the loaded note to get updated word count.`;
               showNotification('Note loaded!');
                 } else {
                 showNotification('That note ID doesnt seem to exist!');
