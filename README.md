@@ -9,15 +9,7 @@ seth.run's Alpha site is now live! Check it out at https://seth.run/alpha.
 Some of the designs on /designs has been removed. You can still access them by typing in the original link as they are still in the directory.<br>
 <br>
 **ISSUE NOTED:**<br>
-Sometimes the navigation bar (introduced in v1.3) doesn't look centered. I am investigating this issue and soon publishing a fix.
-
-<br>
-### Status <br>
-🟢 Main site<br>
-🟢 Pages<br>
-🔴 Ads<br>
-🔴 seth.run global web server
-## Update notes
+Sometimes the navigation bar (introduced in v1.3) doesn't look centered. I am investigating this issue and soon publishing a fix.<br>
 
 ### V1.3
 [General] Added a navigation system to easily browse through the website.
