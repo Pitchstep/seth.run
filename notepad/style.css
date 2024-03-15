@@ -98,19 +98,34 @@ h1 {
 .notification {
     display: none;
     position: fixed;
-    bottom: 20px;
+    bottom: 0;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, 100%);
+    opacity: 0;
     background-color: #333;
     color: #fff;
     padding: 10px;
     border-radius: 3px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-.hidden {
-    transform: translateY(100%);
+.show-notification {
+    transform: translate(-50%, 0%);
+    opacity: 1;
+}
+
+.word-pulse {
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 #wordCount {
