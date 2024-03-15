@@ -12,7 +12,8 @@ Some of the designs on /designs has been removed. You can still access them by t
 Sometimes the navigation bar (introduced in v1.3) doesn't look centered. I am investigating this issue and soon publishing a fix.<br>
 
 ### V1.3
-[General] Added a navigation system to all main pages to easily browse through the website.
+[General] Added a navigation system to all main pages to easily browse through the website.<br>
+[Home Page] Updated the text to a simpler version than previously.
 
 ### V1.202
 [General Bugfix] Fixed FontAwesome icons appearing and disappearing.
