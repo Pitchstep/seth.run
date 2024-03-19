@@ -15,9 +15,9 @@ function saveNote() {
 
         localStorage.setItem(uniqueCode, JSON.stringify(note));
         copyToClipboard(uniqueCode);
-        showNotification(`Your note ID ${uniqueCode} has been copied to your clipboard!`);
+        showNotification('Success', `Your note ID ${uniqueCode} has been copied to your clipboard!`);
     } else {
-        showNotification('There isnt anything to save yet, write something!');
+        showNotification('Error', 'There isn\'t anything to save yet, write something!');
     }
 }
 
@@ -33,23 +33,23 @@ function loadNote() {
             document.getElementById('noteTitle').value = note.title;
             document.getElementById('noteContent').value = note.content;
             updateWordCount(); // Update word count when loading note
-            showNotification('Note loaded!');
+            showNotification('Success', 'Note loaded!');
         } else {
-            showNotification('That note ID doesnt seem to exist!');
+            showNotification('Error', 'That note ID doesn\'t seem to exist!');
         }
     } else {
-        showNotification('That isnt a valid note ID!');
+        showNotification('Error', 'That isn\'t a valid note ID!');
     }
 }
 
-function showNotification(message) {
+function showNotification(title, message) {
     const notificationElement = document.getElementById('notification');
     const wordCountElement = document.getElementById('wordCount');
 
     // Check if notification is already shown
     if (notificationElement.classList.contains('show-notification')) {
-        // Update message and add pulse effect
-        notificationElement.textContent = message;
+        // Update title and message and add pulse effect
+        notificationElement.innerHTML = `<div class="notification-title">${title}</div>${message}`;
         notificationElement.classList.add('word-pulse');
 
         // Remove pulse effect after short delay
@@ -58,8 +58,8 @@ function showNotification(message) {
         }, 300);
 
     } else {
-        // Set message and show notification
-        notificationElement.textContent = message;
+        // Set title and message and show notification
+        notificationElement.innerHTML = `<div class="notification-title">${title}</div>${message}`;
         notificationElement.classList.add('show-notification');
     }
 
