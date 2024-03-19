@@ -95,12 +95,29 @@ button {
     cursor: pointer;
 }
 
-.confirmation-buttons button.primary {
+.confirmation-buttons button.primary { /* Green (yes) */
     background-color: #4caf50;
     color: #fff;
 }
 
-.confirmation-buttons button.secondary {
+.confirmation-buttons button.secondary { /* Red  (no) */
     background-color: #ff3c3c;
     color: #fff;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e0e0e0; /* Brighter color on hover */
+}
+
+button:active {
+    background-color: #ccc; /* Darker color when clicked */
 }
