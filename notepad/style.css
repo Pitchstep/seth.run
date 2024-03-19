@@ -175,3 +175,60 @@ h1 {
     }
 }
 
+#deleteButton {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #ff3c3c;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#deleteButton:hover {
+    background-color: #ff0000;
+}
+
+.confirmation-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.confirmation-modal h2 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.confirmation-modal p {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.confirmation-buttons {
+    text-align: center;
+}
+
+.confirmation-buttons button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.confirmation-buttons button.primary {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.confirmation-buttons button.secondary {
+    background-color: #ff3c3c;
+    color: #fff;
+}
