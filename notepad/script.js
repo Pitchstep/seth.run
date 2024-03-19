@@ -15,9 +15,9 @@ function saveNote() {
 
         localStorage.setItem(uniqueCode, JSON.stringify(note));
         copyToClipboard(uniqueCode);
-        showNotification('Success', `Your note ID ${uniqueCode} has been copied to your clipboard!`);
+        showNotification('ID copied', `"${uniqueCode}" has been copied to your clipboard!`);
     } else {
-        showNotification('Error', 'There isn\'t anything to save yet, write something!');
+        showNotification('Nothing to save', 'There isn\'t anything to save yet, write something!');
     }
 }
 
@@ -33,12 +33,12 @@ function loadNote() {
             document.getElementById('noteTitle').value = note.title;
             document.getElementById('noteContent').value = note.content;
             updateWordCount(); // Update word count when loading note
-            showNotification('Success', 'Note loaded!');
+            showNotification('Loaded', 'Your note was loaded!');
         } else {
-            showNotification('Error', 'That note ID doesn\'t seem to exist!');
+            showNotification('ID not found', 'That note ID doesn\'t seem to exist!');
         }
     } else {
-        showNotification('Error', 'That isn\'t a valid note ID!');
+        showNotification('Invalid', 'That isn\'t a valid note ID! They are formatted like this: "abc1a1".');
     }
 }
 
@@ -69,6 +69,7 @@ function copyToClipboard(text) {
 function updateWordCount() {
     const content = document.getElementById('noteContent').value;
     const wordCount = content.split(/\s+/).filter(word => word !== '').length;
+    const titleSuffix = wordCount === 1 ? 'word' : 'words'; // Determine singular or plural
     document.getElementById('wordCount').textContent = `Words: ${wordCount}`;
-    document.title = `Notepad | Words: ${wordCount}`; // Update document title with word count
+    document.title = `Notepad | ${wordCount} ${titleSuffix}`; // Update document title with word count
 }
