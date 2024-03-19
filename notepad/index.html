@@ -17,8 +17,9 @@
             <!-- coming soon... ;) -->
         </div>
 
-        <textarea id="noteContent" placeholder="Type something... (Max 10,000)" maxlength="10000" oninput="updateWordCount()"></textarea>
+        <textarea id="noteContent" placeholder="Type something... (Max 10,000)" maxlength="10000" oninput="updateWordCount(); updateCharCount()"></textarea>
         <div id="wordCount">Words: 0</div>
+        <div id="charCount">Characters: 0</div>
 
         <button id="saveButton" onclick="saveNote()">Save ID</button>
         <div id="loadCode">
@@ -27,6 +28,6 @@
         </div>
     </div>
     <!-- Notification div -->
-    <div id="notification" class="notification"></div>
+    <div id="notification" class="notification hidden"></div>
 </body>
 </html>
