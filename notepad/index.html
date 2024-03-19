@@ -9,9 +9,8 @@
 <body>
     <div class="container">
         <h1>Notepad</h1>
-        <input type="text" id="noteTitle" placeholder="Note Title">
+        <input type="text" id="noteTitle" placeholder="Note Title...">
         <textarea id="noteContent" placeholder="Type something..."></textarea>
-        <div id="wordCount">Words: 0</div>
         <button id="saveButton">Save Note</button>
         <button id="loadButton">Load Note</button>
         <button id="deleteButton">Delete Note</button>
@@ -20,9 +19,9 @@
     <div id="notification" class="notification"></div>
     <div id="confirmationModal" class="confirmation-modal">
         <h2>Delete Note</h2>
-        <p>Are you sure you want to delete this note?</p>
+        <p>Are you sure you want to permanently delete this note?<br>This will also delete the note ID so it can no longer be loaded.</p>
         <div class="confirmation-buttons">
-            <button id="confirmDelete" class="primary">Yes</button>
+            <button id="confirmDelete" class="primary">Yes, do it!</button>
             <button id="cancelDelete" class="secondary">Cancel</button>
         </div>
     </div>
