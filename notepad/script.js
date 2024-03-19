@@ -7,7 +7,7 @@ function generateUniqueCode() {
 
 function saveNote() {
     if (cooldownTime > 0) {
-        showNotification('Cooldown', `Please wait ${cooldownTime}s before doing this again!`);
+        showNotification('Cooldown', `Please wait ${cooldownTime} seconds before saving again.`);
         return;
     }
 
@@ -32,7 +32,7 @@ function saveNote() {
 
 function loadNote() {
     if (cooldownTime > 0) {
-        showNotification('Cooldown', `Please wait ${cooldownTime}s before doing this again!`);
+        showNotification('Cooldown', `Please wait ${cooldownTime} seconds before loading again.`);
         return;
     }
 
@@ -108,7 +108,7 @@ function updateCharCount() {
     const charLimit = 10000;
 
     if (charCount > charLimit) {
-        showNotification('Character Limit Exceeded', `You have exceeded the character limit of ${charLimit}!`);
+        showNotification('Character Limit Exceeded', `You have exceeded the character limit of ${charLimit}.`);
         document.getElementById('noteContent').classList.add('input-error');
         return;
     }
