@@ -1,8 +1,15 @@
+let cooldownTime = 0;
+
 function generateUniqueCode() {
     return Math.random().toString(36).substring(2, 8);
 }
 
 function saveNote() {
+    if (cooldownTime > 0) {
+        showNotification('Cooldown', `Please wait ${cooldownTime} seconds before saving again.`);
+        return;
+    }
+
     const noteTitle = document.getElementById('noteTitle').value;
     const noteContent = document.getElementById('noteContent').value;
 
@@ -16,12 +23,18 @@ function saveNote() {
         localStorage.setItem(uniqueCode, JSON.stringify(note));
         copyToClipboard(uniqueCode);
         showNotification('ID copied', `"${uniqueCode}" has been copied to your clipboard!`);
+        startCooldown(3); // Start a 3-second cooldown
     } else {
         showNotification('Nothing to save', 'There isn\'t anything to save yet, write something!');
     }
 }
 
 function loadNote() {
+    if (cooldownTime > 0) {
+        showNotification('Cooldown', `Please wait ${cooldownTime} seconds before loading again.`);
+        return;
+    }
+
     const loadCodeInput = document.getElementById('loadCodeInput');
     const uniqueCode = loadCodeInput.value.trim();
 
@@ -34,12 +47,23 @@ function loadNote() {
             document.getElementById('noteContent').value = note.content;
             updateWordCount(); // Update word count when loading note
             showNotification('Loaded', 'Your note was loaded!');
+            startCooldown(3); // Start a 3-second cooldown
         } else {
             showNotification('ID not found', 'That note ID doesn\'t seem to exist!');
         }
     } else {
         showNotification('Invalid', 'That isn\'t a valid note ID! They are formatted like this: "abc1a1".');
     }
+}
+
+function startCooldown(seconds) {
+    cooldownTime = seconds;
+    const cooldownInterval = setInterval(() => {
+        cooldownTime--;
+        if (cooldownTime <= 0) {
+            clearInterval(cooldownInterval);
+        }
+    }, 1000);
 }
 
 function showNotification(title, message) {
