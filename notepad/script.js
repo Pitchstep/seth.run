@@ -1,4 +1,5 @@
 let cooldownTime = 0;
+let notificationTimeout;
 
 function generateUniqueCode() {
     return Math.random().toString(36).substring(2, 8);
@@ -75,8 +76,11 @@ function showNotification(title, message) {
     // Show notification
     notificationElement.classList.add('show-notification');
 
+    // Clear existing timeout
+    clearTimeout(notificationTimeout);
+
     // Hide notification after 5 seconds
-    setTimeout(() => {
+    notificationTimeout = setTimeout(() => {
         notificationElement.classList.remove('show-notification');
     }, 5000);
 }
@@ -96,4 +100,19 @@ function updateWordCount() {
     const titleSuffix = wordCount === 1 ? 'word' : 'words'; // Determine singular or plural
     document.getElementById('wordCount').textContent = `Words: ${wordCount}`;
     document.title = `Notepad | ${wordCount} ${titleSuffix}`; // Update document title with word count
+}
+
+function updateCharCount() {
+    const content = document.getElementById('noteContent').value;
+    const charCount = content.length;
+    const charLimit = 10000;
+
+    if (charCount > charLimit) {
+        showNotification('Character Limit Exceeded', `You have exceeded the character limit of ${charLimit}.`);
+        document.getElementById('noteContent').classList.add('input-error');
+        return;
+    }
+
+    document.getElementById('charCount').textContent = `Characters: ${charCount}`;
+    document.getElementById('noteContent').classList.remove('input-error');
 }
