@@ -44,24 +44,23 @@ function loadNote() {
 
 function showNotification(title, message) {
     const notificationElement = document.getElementById('notification');
-    const wordCountElement = document.getElementById('wordCount');
 
-    // Check if notification is already shown
-    if (notificationElement.classList.contains('show-notification')) {
-        // Update title and message and add pulse effect
-        notificationElement.innerHTML = `<div class="notification-title">${title}</div>${message}`;
-        notificationElement.classList.add('word-pulse');
+    // Create a div for the title
+    const titleDiv = document.createElement('div');
+    titleDiv.classList.add('notification-title');
+    titleDiv.textContent = title;
 
-        // Remove pulse effect after short delay
-        setTimeout(() => {
-            notificationElement.classList.remove('word-pulse');
-        }, 300);
+    // Create a div for the message
+    const messageDiv = document.createElement('div');
+    messageDiv.textContent = message;
 
-    } else {
-        // Set title and message and show notification
-        notificationElement.innerHTML = `<div class="notification-title">${title}</div>${message}`;
-        notificationElement.classList.add('show-notification');
-    }
+    // Clear existing content and append new elements
+    notificationElement.innerHTML = '';
+    notificationElement.appendChild(titleDiv);
+    notificationElement.appendChild(messageDiv);
+
+    // Show notification
+    notificationElement.classList.add('show-notification');
 
     // Hide notification after 5 seconds
     setTimeout(() => {
