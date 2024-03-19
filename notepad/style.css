@@ -12,6 +12,7 @@ body {
 
 .container {
     max-width: 80%;
+    /* Adjusted width for better responsiveness */
     width: 100%;
     background-color: #111;
     padding: 20px;
@@ -95,26 +96,36 @@ h1 {
 }
 
 .notification {
+    display: none;
     position: fixed;
-    bottom: 20px;
+    bottom: 0;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, 100%);
+    opacity: 0;
     background-color: #333;
     color: #fff;
     padding: 10px;
     border-radius: 3px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out; /* Smooth transition */
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 .show-notification {
+    transform: translate(-50%, 0%);
     opacity: 1;
 }
 
-.notification-title {
-    font-size: 1.2em; /* Slightly larger font size */
-    font-weight: bold; /* Bold font weight */
+.word-pulse {
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 #wordCount {
@@ -123,8 +134,12 @@ h1 {
 }
 
 #charCount {
-    font-size: 13px;
+    font-size: 16px;
     margin-top: 8px;
+}
+
+.input-error {
+    border-color: red;
 }
 
 /* Media query for responsiveness */
@@ -132,17 +147,4 @@ h1 {
     .container {
         max-width: 90%;
     }
-}
-
-.input-error {
-    border-color: red !important;
-    animation: shake 0.3s ease-in-out;
-}
-
-@keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-5px); }
-    100% { transform: translateX(0); }
 }
