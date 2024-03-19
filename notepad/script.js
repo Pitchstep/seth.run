@@ -110,9 +110,8 @@ function updateCharCount() {
     if (charCount > charLimit) {
         showNotification('Character Limit Exceeded', `You have exceeded the character limit of ${charLimit}.`);
         document.getElementById('noteContent').classList.add('input-error');
-        return;
+    } else {
+        document.getElementById('charCount').textContent = `Characters: ${charCount}`;
+        document.getElementById('noteContent').classList.remove('input-error');
     }
-
-    document.getElementById('charCount').textContent = `Characters: ${charCount}`;
-    document.getElementById('noteContent').classList.remove('input-error');
 }
