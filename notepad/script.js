@@ -1,109 +1,104 @@
-function generateUniqueCode() {
-    return Math.random().toString(36).substring(2, 8);
-}
-
-function saveNote() {
-    const noteTitle = document.getElementById('noteTitle').value;
-    const noteContent = document.getElementById('noteContent').value;
-
-    if (noteTitle.trim() !== '' || noteContent.trim() !== '') {
-        const uniqueCode = generateUniqueCode();
-        const note = {
-            title: noteTitle,
-            content: noteContent
-        };
-
-        localStorage.setItem(uniqueCode, JSON.stringify(note));
-        copyToClipboard(uniqueCode);
-        showNotification('ID copied', `"${uniqueCode}" has been copied to your clipboard!`);
-    } else {
-        showNotification('Nothing to save', 'There isn\'t anything to save yet, write something!');
-    }
-}
-
-function loadNote() {
+document.addEventListener("DOMContentLoaded", function() {
+    const noteTitle = document.getElementById('noteTitle');
+    const noteContent = document.getElementById('noteContent');
+    const wordCount = document.getElementById('wordCount');
+    const saveButton = document.getElementById('saveButton');
+    const loadButton = document.getElementById('loadButton');
+    const deleteButton = document.getElementById('deleteButton');
     const loadCodeInput = document.getElementById('loadCodeInput');
-    const uniqueCode = loadCodeInput.value.trim();
+    const notification = document.getElementById('notification');
+    const confirmationModal = document.getElementById('confirmationModal');
+    const confirmDelete = document.getElementById('confirmDelete');
+    const cancelDelete = document.getElementById('cancelDelete');
 
-    if (uniqueCode !== '') {
-        const storedNote = localStorage.getItem(uniqueCode);
+    saveButton.addEventListener('click', saveNote);
+    loadButton.addEventListener('click', loadNote);
+    deleteButton.addEventListener('click', showConfirmationModal);
+    confirmDelete.addEventListener('click', deleteNote);
+    cancelDelete.addEventListener('click', hideConfirmationModal);
+    noteContent.addEventListener('input', updateWordCount);
 
-        if (storedNote) {
-            const note = JSON.parse(storedNote);
-            document.getElementById('noteTitle').value = note.title;
-            document.getElementById('noteContent').value = note.content;
-            updateWordCount(); // Update word count when loading note
-            showNotification('Loaded', 'Your note was loaded!');
-        } else {
-            showNotification('ID not found', 'That note ID doesn\'t seem to exist!');
-        }
-    } else {
-        showNotification('Invalid', 'That isn\'t a valid note ID! They are formatted like this: "abc1a1".');
-    }
-}
+    function saveNote() {
+        const title = noteTitle.value.trim();
+        const content = noteContent.value.trim();
 
-function deleteNote() {
-    const loadCodeInput = document.getElementById('loadCodeInput');
-    const uniqueCode = loadCodeInput.value.trim();
-
-    if (uniqueCode !== '') {
-        const storedNote = localStorage.getItem(uniqueCode);
-
-        if (storedNote) {
-            // Show confirmation modal
-            const confirmationModal = document.getElementById('confirmationModal');
-            confirmationModal.style.display = 'block';
-
-            // Handle confirmation
-            const confirmButton = document.getElementById('confirmDelete');
-            confirmButton.onclick = function() {
-                localStorage.removeItem(uniqueCode);
-                document.getElementById('noteTitle').value = '';
-                document.getElementById('noteContent').value = '';
-                updateWordCount(); // Update word count to 0
-                showNotification('Note Deleted', 'The note has been successfully deleted.');
-                confirmationModal.style.display = 'none'; // Hide modal
+        if (title !== '' || content !== '') {
+            const uniqueCode = generateUniqueCode();
+            const note = {
+                title: title,
+                content: content
             };
 
-            const cancelButton = document.getElementById('cancelDelete');
-            cancelButton.onclick = function() {
-                confirmationModal.style.display = 'none'; // Hide modal
-            };
+            localStorage.setItem(uniqueCode, JSON.stringify(note));
+            copyToClipboard(uniqueCode);
+            showNotification('ID Copied', `"${uniqueCode}" has been copied to your clipboard!`);
         } else {
-            showNotification('ID not found', 'That note ID doesn\'t seem to exist!');
+            showNotification('Nothing to Save', 'There isn\'t anything to save yet, write something!');
         }
-    } else {
-        showNotification('Invalid', 'Please provide a valid note ID to delete.');
     }
-}
 
-function showNotification(title, message) {
-    const notificationElement = document.getElementById('notification');
+    function loadNote() {
+        const uniqueCode = loadCodeInput.value.trim();
 
-    // Set title and message
-    notificationElement.innerHTML = `<div class="notification-title">${title}</div>${message}`;
+        if (uniqueCode !== '') {
+            const storedNote = localStorage.getItem(uniqueCode);
 
-    // Show notification
-    notificationElement.classList.add('show-notification');
+            if (storedNote) {
+                const note = JSON.parse(storedNote);
+                noteTitle.value = note.title;
+                noteContent.value = note.content;
+                updateWordCount();
+                showNotification('Note Loaded', 'Your note was loaded!');
+            } else {
+                showNotification('ID Not Found', 'That note ID doesn\'t seem to exist!');
+            }
+        } else {
+            showNotification('Invalid ID', 'Please provide a valid note ID to load.');
+        }
+    }
 
-    // Hide notification after 5 seconds
-    setTimeout(() => {
-        notificationElement.classList.remove('show-notification');
-    }, 5000);
-}
+    function deleteNote() {
+        const uniqueCode = loadCodeInput.value.trim();
+        localStorage.removeItem(uniqueCode);
+        noteTitle.value = '';
+        noteContent.value = '';
+        updateWordCount();
+        showNotification('Note Deleted', 'The note has been successfully deleted.');
+        hideConfirmationModal();
+    }
 
-function copyToClipboard(text) {
-    const textArea = document.createElement('textarea');
-    textArea.value = text;
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand('copy');
-    document.body.removeChild(textArea);
-}
+    function showConfirmationModal() {
+        confirmationModal.style.display = 'block';
+    }
 
-function updateWordCount() {
-    const content = document.getElementById('noteContent').value;
-    const wordCount = content.split(/\s+/).filter(word => word !== '').length;
-    document.getElementById('wordCount').textContent = `Words: ${wordCount}`;
-    document.title = `Notepad | Words: ${wordCount}`; // Update document title with word count
-}
+    function hideConfirmationModal() {
+        confirmationModal.style.display = 'none';
+    }
+
+    function showNotification(title, message) {
+        notification.innerHTML = `<div class="notification-title">${title}</div>${message}`;
+        notification.style.display = 'block';
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 5000);
+    }
+
+    function generateUniqueCode() {
+        return Math.random().toString(36).substring(2, 8);
+    }
+
+    function copyToClipboard(text) {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+    }
+
+    function updateWordCount() {
+        const content = noteContent.value.trim();
+        const wordCount = content.split(/\s+/).filter(word => word !== '').length;
+        wordCount.textContent = `Words: ${wordCount}`;
+    }
+});
