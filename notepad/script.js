@@ -42,6 +42,27 @@ function loadNote() {
     }
 }
 
+function deleteNote() {
+    const loadCodeInput = document.getElementById('loadCodeInput');
+    const uniqueCode = loadCodeInput.value.trim();
+
+    if (uniqueCode !== '') {
+        const storedNote = localStorage.getItem(uniqueCode);
+
+        if (storedNote) {
+            localStorage.removeItem(uniqueCode);
+            document.getElementById('noteTitle').value = '';
+            document.getElementById('noteContent').value = '';
+            updateWordCount(); // Update word count to 0
+            showNotification('Note Deleted', 'The note has been successfully deleted.');
+        } else {
+            showNotification('ID not found', 'That note ID doesn\'t seem to exist!');
+        }
+    } else {
+        showNotification('Invalid', 'Please provide a valid note ID to delete.');
+    }
+}
+
 function showNotification(title, message) {
     const notificationElement = document.getElementById('notification');
 
@@ -69,31 +90,6 @@ function copyToClipboard(text) {
 function updateWordCount() {
     const content = document.getElementById('noteContent').value;
     const wordCount = content.split(/\s+/).filter(word => word !== '').length;
-    const titleSuffix = wordCount === 1 ? 'word' : 'words'; // Determine singular or plural
     document.getElementById('wordCount').textContent = `Words: ${wordCount}`;
-    document.title = `Notepad | ${wordCount} ${titleSuffix}`; // Update document title with word count
-}
-
-function changeTextColor() {
-    const color = document.getElementById('colorPicker').value;
-    document.getElementById('noteContent').style.color = color;
-}
-
-function changeFontWeight() {
-    const fontWeight = document.getElementById('fontWeight').value;
-    document.getElementById('noteContent').style.fontWeight = fontWeight;
-}
-
-function applyAnimation() {
-    const animation = document.getElementById('animationSelect').value;
-    const textArea = document.getElementById('noteContent');
-    
-    // Remove previous animation class if present
-    textArea.classList.remove('bounce', 'fade-in');
-    
-    if (animation === 'bounce') {
-        textArea.classList.add('bounce');
-    } else if (animation === 'fadeIn') {
-        textArea.classList.add('fade-in');
-    }
+    document.title = `Notepad | Words: ${wordCount}`; // Update document title with word count
 }
