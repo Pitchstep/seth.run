@@ -1,16 +1,8 @@
-let cooldownTime = 0;
-let notificationTimeout;
-
 function generateUniqueCode() {
     return Math.random().toString(36).substring(2, 8);
 }
 
 function saveNote() {
-    if (cooldownTime > 0) {
-        showNotification('Cooldown', `Please wait ${cooldownTime} seconds before saving again.`);
-        return;
-    }
-
     const noteTitle = document.getElementById('noteTitle').value;
     const noteContent = document.getElementById('noteContent').value;
 
@@ -24,18 +16,12 @@ function saveNote() {
         localStorage.setItem(uniqueCode, JSON.stringify(note));
         copyToClipboard(uniqueCode);
         showNotification('ID copied', `"${uniqueCode}" has been copied to your clipboard!`);
-        startCooldown(3); // Start a 3-second cooldown
     } else {
         showNotification('Nothing to save', 'There isn\'t anything to save yet, write something!');
     }
 }
 
 function loadNote() {
-    if (cooldownTime > 0) {
-        showNotification('Cooldown', `Please wait ${cooldownTime} seconds before loading again.`);
-        return;
-    }
-
     const loadCodeInput = document.getElementById('loadCodeInput');
     const uniqueCode = loadCodeInput.value.trim();
 
@@ -48,23 +34,12 @@ function loadNote() {
             document.getElementById('noteContent').value = note.content;
             updateWordCount(); // Update word count when loading note
             showNotification('Loaded', 'Your note was loaded!');
-            startCooldown(3); // Start a 3-second cooldown
         } else {
             showNotification('ID not found', 'That note ID doesn\'t seem to exist!');
         }
     } else {
         showNotification('Invalid', 'That isn\'t a valid note ID! They are formatted like this: "abc1a1".');
     }
-}
-
-function startCooldown(seconds) {
-    cooldownTime = seconds;
-    const cooldownInterval = setInterval(() => {
-        cooldownTime--;
-        if (cooldownTime <= 0) {
-            clearInterval(cooldownInterval);
-        }
-    }, 1000);
 }
 
 function showNotification(title, message) {
@@ -76,11 +51,8 @@ function showNotification(title, message) {
     // Show notification
     notificationElement.classList.add('show-notification');
 
-    // Clear existing timeout
-    clearTimeout(notificationTimeout);
-
     // Hide notification after 5 seconds
-    notificationTimeout = setTimeout(() => {
+    setTimeout(() => {
         notificationElement.classList.remove('show-notification');
     }, 5000);
 }
@@ -102,16 +74,26 @@ function updateWordCount() {
     document.title = `Notepad | ${wordCount} ${titleSuffix}`; // Update document title with word count
 }
 
-function updateCharCount() {
-    const content = document.getElementById('noteContent').value;
-    const charCount = content.length;
-    const charLimit = 10000;
+function changeTextColor() {
+    const color = document.getElementById('colorPicker').value;
+    document.getElementById('noteContent').style.color = color;
+}
 
-    if (charCount > charLimit) {
-        showNotification('Character Limit Exceeded', `You have exceeded the character limit of ${charLimit}.`);
-        document.getElementById('noteContent').classList.add('input-error');
-    } else {
-        document.getElementById('charCount').textContent = `Characters: ${charCount}`;
-        document.getElementById('noteContent').classList.remove('input-error');
+function changeFontWeight() {
+    const fontWeight = document.getElementById('fontWeight').value;
+    document.getElementById('noteContent').style.fontWeight = fontWeight;
+}
+
+function applyAnimation() {
+    const animation = document.getElementById('animationSelect').value;
+    const textArea = document.getElementById('noteContent');
+    
+    // Remove previous animation class if present
+    textArea.classList.remove('bounce', 'fade-in');
+    
+    if (animation === 'bounce') {
+        textArea.classList.add('bounce');
+    } else if (animation === 'fadeIn') {
+        textArea.classList.add('fade-in');
     }
 }
