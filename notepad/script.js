@@ -50,11 +50,25 @@ function deleteNote() {
         const storedNote = localStorage.getItem(uniqueCode);
 
         if (storedNote) {
-            localStorage.removeItem(uniqueCode);
-            document.getElementById('noteTitle').value = '';
-            document.getElementById('noteContent').value = '';
-            updateWordCount(); // Update word count to 0
-            showNotification('Note Deleted', 'The note has been successfully deleted.');
+            // Show confirmation modal
+            const confirmationModal = document.getElementById('confirmationModal');
+            confirmationModal.style.display = 'block';
+
+            // Handle confirmation
+            const confirmButton = document.getElementById('confirmDelete');
+            confirmButton.onclick = function() {
+                localStorage.removeItem(uniqueCode);
+                document.getElementById('noteTitle').value = '';
+                document.getElementById('noteContent').value = '';
+                updateWordCount(); // Update word count to 0
+                showNotification('Note Deleted', 'The note has been successfully deleted.');
+                confirmationModal.style.display = 'none'; // Hide modal
+            };
+
+            const cancelButton = document.getElementById('cancelDelete');
+            cancelButton.onclick = function() {
+                confirmationModal.style.display = 'none'; // Hide modal
+            };
         } else {
             showNotification('ID not found', 'That note ID doesn\'t seem to exist!');
         }
