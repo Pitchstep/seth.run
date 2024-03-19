@@ -1,135 +1,74 @@
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #000;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+function generateUniqueCode() {
+    return Math.random().toString(36).substring(2, 8);
 }
 
-.container {
-    max-width: 80%;
-    width: 100%;
-    background-color: #111;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-    text-align: center;
-}
+function saveNote() {
+    const noteTitle = document.getElementById('noteTitle').value;
+    const noteContent = document.getElementById('noteContent').value;
 
-h1 {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
+    if (noteTitle.trim() !== '' || noteContent.trim() !== '') {
+        const uniqueCode = generateUniqueCode();
+        const note = {
+            title: noteTitle,
+            content: noteContent
+        };
 
-#noteTitle {
-    font-family: 'Montserrat', sans-serif;
-    font-size: calc(1vw + 1vh);
-    font-weight: 600;
-    text-align: center;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #444;
-    border-radius: 3px;
-    box-sizing: border-box;
-    background-color: #222;
-    color: #fff;
-}
-
-#noteContent {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #444;
-    border-radius: 3px;
-    box-sizing: border-box;
-    background-color: #222;
-    color: #fff;
-}
-
-#noteContent {
-    font-family: 'Arial', sans-serif;
-    min-height: 150px;
-    resize: vertical;
-    overflow: auto;
-}
-
-#saveButton {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-#loadCodeBtn {
-    margin-top: 10px;
-    padding: 15px;
-    background-color: #5539cc;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-#loadCode {
-    margin-top: 10px;
-}
-
-#loadCodeInput {
-    width: calc(100% - 10px);
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #444;
-    border-radius: 3px;
-    box-sizing: border-box;
-    background-color: #222;
-    color: #fff;
-}
-
-.notification {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    border-radius: 3px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out; /* Smooth transition */
-}
-
-.show-notification {
-    opacity: 1;
-}
-
-.notification-title {
-    font-size: 1.2em; /* Slightly larger font size */
-    font-weight: bold; /* Bold font weight */
-}
-
-#wordCount {
-    font-size: 16px;
-    margin-top: 10px;
-}
-
-#charCount {
-    font-size: 13px;
-    margin-top: 8px;
-}
-
-/* Media query for responsiveness */
-@media only screen and (max-width: 600px) {
-    .container {
-        max-width: 90%;
+        localStorage.setItem(uniqueCode, JSON.stringify(note));
+        copyToClipboard(uniqueCode);
+        showNotification('Success', `Your note ID ${uniqueCode} has been copied to your clipboard!`);
+    } else {
+        showNotification('Error', 'There isn\'t anything to save yet, write something!');
     }
+}
+
+function loadNote() {
+    const loadCodeInput = document.getElementById('loadCodeInput');
+    const uniqueCode = loadCodeInput.value.trim();
+
+    if (uniqueCode !== '') {
+        const storedNote = localStorage.getItem(uniqueCode);
+
+        if (storedNote) {
+            const note = JSON.parse(storedNote);
+            document.getElementById('noteTitle').value = note.title;
+            document.getElementById('noteContent').value = note.content;
+            updateWordCount(); // Update word count when loading note
+            showNotification('Success', 'Note loaded!');
+        } else {
+            showNotification('Error', 'That note ID doesn\'t seem to exist!');
+        }
+    } else {
+        showNotification('Error', 'That isn\'t a valid note ID!');
+    }
+}
+
+function showNotification(title, message) {
+    const notificationElement = document.getElementById('notification');
+
+    // Set title and message
+    notificationElement.innerHTML = `<div class="notification-title">${title}</div>${message}`;
+
+    // Show notification
+    notificationElement.classList.add('show-notification');
+
+    // Hide notification after 5 seconds
+    setTimeout(() => {
+        notificationElement.classList.remove('show-notification');
+    }, 5000);
+}
+
+function copyToClipboard(text) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+}
+
+function updateWordCount() {
+    const content = document.getElementById('noteContent').value;
+    const wordCount = content.split(/\s+/).filter(word => word !== '').length;
+    document.getElementById('wordCount').textContent = `Words: ${wordCount}`;
+    document.title = `Notepad | Words: ${wordCount}`; // Update document title with word count
 }
