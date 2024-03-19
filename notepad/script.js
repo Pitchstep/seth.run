@@ -45,19 +45,8 @@ function loadNote() {
 function showNotification(title, message) {
     const notificationElement = document.getElementById('notification');
 
-    // Create a div for the title
-    const titleDiv = document.createElement('div');
-    titleDiv.classList.add('notification-title');
-    titleDiv.textContent = title;
-
-    // Create a div for the message
-    const messageDiv = document.createElement('div');
-    messageDiv.textContent = message;
-
-    // Clear existing content and append new elements
-    notificationElement.innerHTML = '';
-    notificationElement.appendChild(titleDiv);
-    notificationElement.appendChild(messageDiv);
+    // Set title and message
+    notificationElement.innerHTML = `<div class="notification-title">${title}</div>${message}`;
 
     // Show notification
     notificationElement.classList.add('show-notification');
