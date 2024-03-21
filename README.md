@@ -8,8 +8,8 @@ Sometimes the navigation bar (introduced in v1.3) doesn't look centered. I am in
 Moved to https://seth.run/credits.
 <br><br>
 
-_All social media icons are not owned by me. Trademarks go to their representative owners._<br>
-_Icons are delivered by www.FontAwesome.com._
+_The social media icons (GitHub's Octocat, Twitter's Larry, Discord's Clyde) are not owned by me. Trademarks go to their representative owners._<br>
+_Icons are delivered by Dave Gandy._
 <br><br>
-_© 2022-2024 Seth Harlow - All rights reserved._<br>
+_© 2022-2024 seth.run - All rights reserved._<br>
 _www.seth.run/privacy_
