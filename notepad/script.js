@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function showNotification(title, message) {
-        notification.innerHTML = `<div class="notification-title">${title}</div>${message}`;
+        notification.innerHTML = `<div class="notification-title"><b>${title}</b></div>${message}`;
         notification.style.display = 'block';
         setTimeout(() => {
             notification.style.display = 'none';
