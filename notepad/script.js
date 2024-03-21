@@ -31,9 +31,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
             localStorage.setItem(uniqueCode, JSON.stringify(note));
             copyToClipboard(uniqueCode);
-            showNotification('ID Copied', `"${uniqueCode}" has been copied to your clipboard!`);
+            showNotification('Note saved', `"${uniqueCode}" has been copied to your clipboard!`);
         } else {
-            showNotification('Nothing to Save', 'There isn\'t anything to save yet, write something!');
+            showNotification('No content', 'There isn\'t anything to save yet, write something!');
         }
     }
 
@@ -48,9 +48,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 noteTitle.value = note.title;
                 noteContent.value = note.content;
                 updateWordCount();
-                showNotification('Note Loaded', 'Your note was loaded!');
+                showNotification('Note loaded', 'Your note loaded!');
             } else {
-                showNotification('ID Not Found', 'That note ID doesn\'t seem to exist!');
+                showNotification('Failed to load', 'That note ID doesn\'t seem to exist!');
             }
         } else {
             showNotification('Invalid ID', 'Please provide a valid note ID to load.');
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
         noteTitle.value = '';
         noteContent.value = '';
         updateWordCount();
-        showNotification('Note Deleted', 'The note has been successfully deleted.');
+        showNotification('Note deleted', 'The note and its ID has been permanently deleted.');
         hideConfirmationModal();
     }
 
