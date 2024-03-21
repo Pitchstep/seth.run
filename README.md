@@ -4,7 +4,7 @@ Hi, I'm Seth and this is my website. I update this from time to time.<br>
 **ISSUE NOTED:**<br>
 Sometimes the navigation bar (introduced in v1.3) doesn't look centered. I am investigating this issue and soon publishing a fix.<br>
 
-**CREDITS:**
+**CREDITS:**<br>
 Moved to https://seth.run/credits.
 <br><br>
 
