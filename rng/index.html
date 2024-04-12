@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>the rng button (alpha)</title>
-<meta name="description" content="chat is this real rng chat chat chat omg omgomgomgomg chat chat chat chat chat chat is this real chat chat is this chat chat rng game omg chat chat seth.run project chat chat chat omgl mgklfmskdmasdgreew">
-<meta name="author" content="seth.run games">
-<meta name="robots" content="index, nofollow">
-  <title>rng button</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>the rng button</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 </head>
 <body>
-  <div class="container">
-    <h1>the rng button (alpha)</h1>
-    <p>click the button below to generate a random number between 1 and 1000.<br>the lower the number, the better rarity!<br>more stuff coming soon...</p>
-    <button class="animated-button" id="generate-btn">
-        <span>generate</span>
-        <span></span>
-      </button>
-    <p id="result"></p>
-  </div>
+    <div class="container">
+        <h1>the rng button</h1>
+        <p>click the button below to generate a random number between 1 and 1000.<br>the lower the number, the better rarity!</p>
+        <button class="animated-button" id="generate-btn">
+            <span>Generate</span>
+            <span></span>
+        </button>
+        <p id="result"></p>
+    </div>
 
-  <footer><i>version 1.0</i></footer>
-  <script src="script.js"></script>
+    <footer><i>version 1.1<br>sounds by @haz3m_</i></footer>
+
+    <!-- Sound effects -->
+    <audio id="common-sound" src="common.mp3"></audio>
+    <audio id="uncommon-sound" src="uncommon.mp3"></audio>
+    <audio id="rare-sound" src="rare.mp3"></audio>
+    <audio id="epic-sound" src="epic.mp3"></audio>
+    <audio id="legendary-sound" src="legendary.mp3"></audio>
+    <audio id="mythical-sound" src="mythical.mp3"></audio>
+
+    <!-- Volume slider -->
+    <div class="volume-slider-container">
+        <div class="audio-symbol">🔊</div>
+        <div class="volume-label">SFX Volume</div>
+        <input type="range" min="0" max="100" value="50" class="volume-slider" id="volume-slider">
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
