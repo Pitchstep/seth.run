@@ -106,5 +106,5 @@ document.getElementById('generate-btn').addEventListener('click', function() {
 
 // Set the volume of all audio elements to 0.4 when the page loads
 window.addEventListener('load', function() {
-    changeVolume(0.05);
+    changeVolume(0.04);
 });
