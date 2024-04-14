@@ -78,7 +78,7 @@ document.getElementById('generate-btn').addEventListener('click', function() {
         rarity = 'RNGesus Incarnate';
         rarityColor = '#FA8CE6';
         playSound('rngesus-sound');
-    } else if (randomNumber <= 500) {
+    } else if (randomNumber <= 250) {
         rarity = 'Mythical';
         rarityColor = '#FF69B4';
         playSound('mythical-sound');
