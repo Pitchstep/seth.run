@@ -95,3 +95,4 @@ document.getElementById('generate-btn').addEventListener('click', function() {
       resultElement.appendChild(rarityElement);
     }, 500); // .5 sec delay for rarity popup
 });
+// update
