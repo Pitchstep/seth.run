@@ -70,7 +70,11 @@ document.getElementById('generate-btn').addEventListener('click', function() {
     // determine rarity based on the generated number
     var rarity;
     var rarityColor;
-    if (randomNumber <= 50) {
+    if (randomNumber <= 1) {
+        rarity = 'Mythical One';
+        rarityColor = '#FFD700';
+        playSound('mythicalone-sound');
+    } else if (randomNumber <= 50) {
         rarity = 'RNGesus Incarnate';
         rarityColor = '#FA8CE6';
         playSound('rngesus-sound');
