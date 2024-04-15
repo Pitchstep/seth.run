@@ -98,7 +98,7 @@ document.getElementById('generate-btn').addEventListener('click', function() {
         rarity = 'Too Common?';
         rarityColor = '#FFFFFF'; // white
         playSound('common-sound');
-    } else if (randomNumber >= NaN) {
+    } else if (randomNumber = 'NaN') {
         rarity = 'Hacker';
         rarityColor = '#2c4c3b';
         playSound('glitch-sound');
