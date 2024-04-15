@@ -71,43 +71,37 @@ document.getElementById('generate-btn').addEventListener('click', function() {
     var rarity;
     var rarityColor;
     if (randomNumber <= 1) {
-        rarity = 'Mythical One';
+        rarity = 'The Mythical One 👑';
         rarityColor = '#FFD700'; // lighter yellow (gold?)
         playSound('mythicalone-sound');
     } else if (randomNumber <= 50) {
-        rarity = 'RNGesus Incarnate';
+        rarity = 'RNGesus Incarnate 👁';
         rarityColor = '#FA8CE6'; // lighter pink
         playSound('rngesus-sound');
     } else if (randomNumber <= 250) {
-        rarity = 'Mythical';
+        rarity = 'Mythical 🎀';
         rarityColor = '#FF69B4'; // pink
         playSound('mythical-sound');
     } else if (randomNumber <= 1000) {
-        rarity = 'Legendary';
+        rarity = 'Legendary 🦧';
         rarityColor = '#FFD700'; // gold-ish
         playSound('legendary-sound');
     } else if (randomNumber <= 2500) {
-        rarity = 'Epic';
+        rarity = 'Epic 💜';
         rarityColor = '#800080'; // purple
         playSound('epic-sound');
     } else if (randomNumber <= 5000) {
-        rarity = 'Rare';
+        rarity = 'Rare 🌬';
         rarityColor = '#0000FF'; // dark blue
         playSound('rare-sound');
     } else if (randomNumber >= 10000) {
-        rarity = 'Too Common?';
+        rarity = 'Too Common? ⁉';
         rarityColor = '#FFFFFF'; // white
         playSound('common-sound');
     } else {
-        rarity = 'Common';
+        rarity = 'Common ⭐';
         rarityColor = '#FFFFFF'; // white again??
         playSound('common-sound');
-    }
-
-    if (command === nextNumber && value) {
-        rarity = 'Glitcj';
-        rarityColor = '#FFD700'; // lighter yellow (gold?)
-        playSound('glitch-sound');
     }
     
     // update text with rarity after a delay
