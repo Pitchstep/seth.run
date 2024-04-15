@@ -104,7 +104,7 @@ document.getElementById('generate-btn').addEventListener('click', function() {
         playSound('common-sound');
     }
 
-    if (nextNumber = 'NaN') {
+    if (command === nextNumber && value) {
         rarity = 'Glitcj';
         rarityColor = '#FFD700'; // lighter yellow (gold?)
         playSound('glitch-sound');
