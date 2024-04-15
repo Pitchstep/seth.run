@@ -94,7 +94,7 @@ document.getElementById('generate-btn').addEventListener('click', function() {
         rarity = 'Rare';
         rarityColor = '#0000FF'; // dark blue
         playSound('rare-sound');
-    } else if (randomNumber =< 10000) {
+    } else if (randomNumber >= 10000) {
         rarity = 'Too Common?';
         rarityColor = '#FFFFFF'; // white
         playSound('common-sound');
