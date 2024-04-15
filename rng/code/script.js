@@ -104,7 +104,7 @@ document.getElementById('generate-btn').addEventListener('click', function() {
         playSound('common-sound');
     }
     
-    // update text with rarity after a delay
+    // update text with rarity after a delayaa
     setTimeout(function() {
         var rarityElement = document.createElement('div');
         rarityElement.innerHTML = '<b class="pop-up" style="text-transform: uppercase; font-style: 500; font-size: 14px; color: ' + rarityColor + ';">' + rarity + '</b>';
