@@ -98,14 +98,16 @@ document.getElementById('generate-btn').addEventListener('click', function() {
         rarity = 'Too Common?';
         rarityColor = '#FFFFFF'; // white
         playSound('common-sound');
-    } else if (nextNumber = 'NaN') {
-        rarity = 'Hacker';
-        rarityColor = '#2c4c3b';
-        playSound('glitch-sound');
     } else {
         rarity = 'Common';
         rarityColor = '#FFFFFF'; // white again??
         playSound('common-sound');
+    }
+
+    if (nextNumber = 'NaN') {
+        rarity = 'Glitcj';
+        rarityColor = '#FFD700'; // lighter yellow (gold?)
+        playSound('glitch-sound');
     }
     
     // update text with rarity after a delay
