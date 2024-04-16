@@ -1,5 +1,4 @@
 var buttonEnabled = true;
-var nextNumber = null;
 
 
 // Function to play sound
@@ -40,8 +39,7 @@ document.getElementById('generate-btn').addEventListener('click', function() {
     }, 1000);
 
     // use the nextNumber if set, otherwise generate a random number
-    var randomNumber = nextNumber !== null ? nextNumber : Math.floor(Math.random() * 10000) + 1;
-    nextNumber = null; // reset nextNumber after using it
+    var randomNumber = Math.floor(Math.random() * 10000) + 1;
 
     // display the number with pop-up animation
     var resultElement = document.getElementById('result');
