@@ -1,22 +1,6 @@
 var buttonEnabled = true;
 var nextNumber = null;
 
-// custom console command
-function setNextNumber(number) {
-    nextNumber = parseInt(number);
-    console.log('next number set to ' + nextNumber);
-}
-
-// execute "setNextNumber" command console
-function executeCommand(input) {
-    var parts = input.split(' ');
-    var command = parts[0];
-    var value = parts[1];
-    
-    if (command === 'nextNumber' && value) {
-        setNextNumber(value);
-    }
-}
 
 // Function to play sound
 function playSound(soundId) {
