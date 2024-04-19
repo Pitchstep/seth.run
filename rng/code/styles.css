@@ -114,12 +114,6 @@ button:active {
   animation: pop-up 0.5s ease forwards;
 }
 
-@keyframes flash-background {
-  0% { background-color: transparent; }
-  50% { background-color: rgba(255, 255, 255, 0.2); }
-  100% { background-color: transparent; }
-}
-
 .shimmer {
   background-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
   background-size: 400% 400%;
