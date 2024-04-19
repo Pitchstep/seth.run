@@ -51,7 +51,7 @@ document.getElementById('generate-btn').addEventListener('click', function() {
     // disable the button to prevent multiple clicks
     buttonEnabled = false;
     setTimeout(function() {
-        buttonEnabled = true; // enable the button after 3 seconds
+        buttonEnabled = true; // enable the button after
     }, 1000);
 
     // use the nextNumber if set, otherwise generate a random number
@@ -109,8 +109,6 @@ document.getElementById('generate-btn').addEventListener('click', function() {
         // Define the RGB values of the rarity color
         var rgb = getRGBColor(rarityColor);
 
-        // Calculate the darker shade of the rarity color
-        var darkerColor = calculateDarkerColor(rgb);
 
 // Create a div element for the rarity text
 var rarityElement = document.createElement('div');
@@ -125,21 +123,12 @@ rarityElement.firstChild.classList.add('pop-up');
 
 resultElement.appendChild(rarityElement);
 
-
-        // Fade in background color
-        document.body.style.transition = 'none'; // Disable transitions for the initial setting
-        document.body.style.backgroundColor = darkerColor; // Set the darker shade as the background color
-
         // Reset background color after a short delay
         setTimeout(function() {
-            // Fade out background color
-            document.body.style.transition = 'background-color 0.5s';
-            document.body.style.backgroundColor = 'black'; // Reset the background color
-        }, 500); // Adjust the duration of the pulse effect (500ms = 0.5 seconds)
     }, 500); // .5 sec delay for displaying the number and rarity
 });
 
-// Set the volume of all audio elements to 0.4 when the page loads
+// Set the volume of all audio elements
 window.addEventListener('load', function() {
-    changeVolume(0.04);
+    changeVolume(0.03);
 });
