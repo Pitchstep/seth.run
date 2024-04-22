@@ -85,6 +85,10 @@ document.getElementById('generate-btn').addEventListener('click', function() {
         rarity = 'Too Common?';
         rarityColor = '#FFFFFF'; // white
         playSound('common-sound');
+    } else if (randomNumber >= 10001) {
+        rarity = 'Cheater! Cheater!';
+        rarityColor = '#FFFFFF'; // white
+        playSound('glitch-sound');
     } else {
         rarity = 'Common';
         rarityColor = '#FFFFFF'; // white again??
