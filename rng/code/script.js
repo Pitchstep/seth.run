@@ -1,4 +1,6 @@
 var buttonEnabled = true;
+var nextNumber = null;
+
 
 // Function to play sound
 function playSound(soundId) {
@@ -15,23 +17,6 @@ function changeVolume(volume) {
     audioElements.forEach(function(audio) {
         audio.volume = volume;
     });
-}
-
-// Function to convert hexadecimal color to RGB
-function getRGBColor(hexColor) {
-    var r = parseInt(hexColor.substring(1, 3), 16);
-    var g = parseInt(hexColor.substring(3, 5), 16);
-    var b = parseInt(hexColor.substring(5, 7), 16);
-    return { r: r, g: g, b: b };
-}
-
-// Function to calculate a darker shade of a color
-function calculateDarkerColor(rgb) {
-    var factor = 0.1; // Adjust this factor to control the darkness of the shade
-    var r = Math.round(rgb.r * factor);
-    var g = Math.round(rgb.g * factor);
-    var b = Math.round(rgb.b * factor);
-    return 'rgb(' + r + ',' + g + ',' + b + ')';
 }
 
 // listen for console input
@@ -51,11 +36,12 @@ document.getElementById('generate-btn').addEventListener('click', function() {
     // disable the button to prevent multiple clicks
     buttonEnabled = false;
     setTimeout(function() {
-        buttonEnabled = true; // enable the button after
+        buttonEnabled = true; // enable the button after 3 seconds
     }, 1000);
 
     // use the nextNumber if set, otherwise generate a random number
-    var randomNumber = Math.floor(Math.random() * 10000) + 1;
+    var randomNumber = nextNumber !== null ? nextNumber : Math.floor(Math.random() * 10000) + 1;
+    nextNumber = null; // reset nextNumber after using it
 
     // display the number with pop-up animation
     var resultElement = document.getElementById('result');
@@ -102,33 +88,15 @@ document.getElementById('generate-btn').addEventListener('click', function() {
         playSound('common-sound');
     }
     
-    // Update text with random number and rarity after a delay
+    // update text with rarity after a delayaa
     setTimeout(function() {
-        var resultElement = document.getElementById('result');
-
-        // Define the RGB values of the rarity color
-        var rgb = getRGBColor(rarityColor);
-
-
-// Create a div element for the rarity text
-var rarityElement = document.createElement('div');
-var rarityText = '';
-for (var i = 0; i < rarity.length; i++) {
-    rarityText += '<span style="color: ' + rarityColor + ';">' + rarity[i] + '</span>';
-}
-rarityElement.innerHTML = '<b style="text-transform: uppercase; font-style: 500; font-size: 14px;">' + rarityText + '</b>';
-
-// Add pop-up animation to the rarity text
-rarityElement.firstChild.classList.add('pop-up');
-
-resultElement.appendChild(rarityElement);
-
-        // Reset background color after a short delay
-        setTimeout(function() {
-    }, 500); // .5 sec delay for displaying the number and rarity
+        var rarityElement = document.createElement('div');
+        rarityElement.innerHTML = '<b class="pop-up" style="text-transform: uppercase; font-style: 500; font-size: 14px; color: ' + rarityColor + ';">' + rarity + '</b>';
+        resultElement.appendChild(rarityElement);
+    }, 500); // .5 sec delay for rarity popup
 });
 
-// Set the volume of all audio elements
+// Set the volume of all audio elements to 0.4 when the page loads
 window.addEventListener('load', function() {
-    changeVolume(0.03);
+    changeVolume(0.04);
 });
