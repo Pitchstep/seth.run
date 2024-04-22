@@ -1,1 +1,134 @@
-var _0x2b808f=_0x4d69;(function(_0x5a2e35,_0x4d9c6b){var _0x13d5da=_0x4d69,_0x2d3156=_0x5a2e35();while(!![]){try{var _0x418bf5=parseInt(_0x13d5da(0x19d))/0x1+parseInt(_0x13d5da(0x1c7))/0x2+parseInt(_0x13d5da(0x19b))/0x3*(-parseInt(_0x13d5da(0x1ba))/0x4)+-parseInt(_0x13d5da(0x1c4))/0x5+-parseInt(_0x13d5da(0x1ab))/0x6+-parseInt(_0x13d5da(0x1be))/0x7+parseInt(_0x13d5da(0x1c0))/0x8;if(_0x418bf5===_0x4d9c6b)break;else _0x2d3156['push'](_0x2d3156['shift']());}catch(_0xd61e0f){_0x2d3156['push'](_0x2d3156['shift']());}}}(_0x4abc,0xa4c93));function _0x4d69(_0x4e9a58,_0x392078){var _0x4abca8=_0x4abc();return _0x4d69=function(_0x4d69f7,_0x42ae90){_0x4d69f7=_0x4d69f7-0x197;var _0x955b44=_0x4abca8[_0x4d69f7];return _0x955b44;},_0x4d69(_0x4e9a58,_0x392078);}function _0x4abc(){var _0x20446c=['#FF69B4','getElementById','addEventListener','1577496mBsjnw','Legendary','pop-up','#800080','2310567pJiNrg','Enter','9893656YPclEa','epic-sound','common-sound','play','4810240mUYWxv','createElement','forEach','2633884tkpswt','load','generate-btn','round','classList','rngesus-sound','volume','legendary-sound','6gBJrzf','add','1018928XSdtyx','querySelectorAll','substring','</b>','result','<b\x20style=\x22text-transform:\x20uppercase;\x20font-style:\x20500;\x20font-size:\x2014px;\x22>','The\x20Mythical\x20One','mythicalone-sound','innerHTML','#0000FF','RNGesus\x20Incarnate','value','Epic','firstChild','4900422BOlwey','Too\x20Common?',';\x22>','console-input','#FFFFFF','appendChild','click','Rare','rgb(','#FFD700','length','floor'];_0x4abc=function(){return _0x20446c;};return _0x4abc();}var buttonEnabled=!![];function playSound(_0xe31ce2){var _0x4bc951=_0x4d69,_0x24797e=document[_0x4bc951(0x1b8)](_0xe31ce2);_0x24797e&&(_0x24797e['currentTime']=0x0,_0x24797e[_0x4bc951(0x1c3)]());}function changeVolume(_0x3188e5){var _0x557bf3=_0x4d69,_0x335661=document[_0x557bf3(0x19e)]('audio');_0x335661[_0x557bf3(0x1c6)](function(_0x40b631){var _0x3b6930=_0x557bf3;_0x40b631[_0x3b6930(0x199)]=_0x3188e5;});}function getRGBColor(_0x5e1cc9){var _0x5332b8=_0x4d69,_0x1b6862=parseInt(_0x5e1cc9[_0x5332b8(0x19f)](0x1,0x3),0x10),_0x19930f=parseInt(_0x5e1cc9[_0x5332b8(0x19f)](0x3,0x5),0x10),_0x4448d2=parseInt(_0x5e1cc9[_0x5332b8(0x19f)](0x5,0x7),0x10);return{'r':_0x1b6862,'g':_0x19930f,'b':_0x4448d2};}function calculateDarkerColor(_0x57a984){var _0x10a534=_0x4d69,_0x229081=0.1,_0x208f3a=Math[_0x10a534(0x1ca)](_0x57a984['r']*_0x229081),_0x19b37e=Math['round'](_0x57a984['g']*_0x229081),_0x5ad5bc=Math[_0x10a534(0x1ca)](_0x57a984['b']*_0x229081);return _0x10a534(0x1b3)+_0x208f3a+','+_0x19b37e+','+_0x5ad5bc+')';}window[_0x2b808f(0x1b9)]('keydown',function(_0x6c1577){var _0xb13e0b=_0x2b808f;if(_0x6c1577['key']===_0xb13e0b(0x1bf)){var _0x19d0c1=document['getElementById']('console-input')[_0xb13e0b(0x1a8)];executeCommand(_0x19d0c1),document[_0xb13e0b(0x1b8)](_0xb13e0b(0x1ae))[_0xb13e0b(0x1a8)]='';}}),document[_0x2b808f(0x1b8)](_0x2b808f(0x1c9))[_0x2b808f(0x1b9)](_0x2b808f(0x1b1),function(){var _0x27e2f8=_0x2b808f;if(!buttonEnabled)return;buttonEnabled=![],setTimeout(function(){buttonEnabled=!![];},0x3e8);var _0xa711a1=Math[_0x27e2f8(0x1b6)](Math['random']()*0x2710)+0x1,_0x57291a=document[_0x27e2f8(0x1b8)](_0x27e2f8(0x1a1));_0x57291a[_0x27e2f8(0x1a5)]='';var _0x153900=document['createElement']('b');_0x153900[_0x27e2f8(0x197)][_0x27e2f8(0x19c)](_0x27e2f8(0x1bc)),_0x153900['textContent']=_0xa711a1,_0x57291a[_0x27e2f8(0x1b0)](_0x153900);var _0x1addda,_0x19547a;if(_0xa711a1<=0x1)_0x1addda=_0x27e2f8(0x1a3),_0x19547a='#FFD700',playSound(_0x27e2f8(0x1a4));else{if(_0xa711a1<=0x32)_0x1addda=_0x27e2f8(0x1a7),_0x19547a='#FA8CE6',playSound(_0x27e2f8(0x198));else{if(_0xa711a1<=0xfa)_0x1addda='Mythical',_0x19547a=_0x27e2f8(0x1b7),playSound('mythical-sound');else{if(_0xa711a1<=0x3e8)_0x1addda=_0x27e2f8(0x1bb),_0x19547a=_0x27e2f8(0x1b4),playSound(_0x27e2f8(0x19a));else{if(_0xa711a1<=0x9c4)_0x1addda=_0x27e2f8(0x1a9),_0x19547a=_0x27e2f8(0x1bd),playSound(_0x27e2f8(0x1c1));else{if(_0xa711a1<=0x1388)_0x1addda=_0x27e2f8(0x1b2),_0x19547a=_0x27e2f8(0x1a6),playSound('rare-sound');else _0xa711a1>=0x2710?(_0x1addda=_0x27e2f8(0x1ac),_0x19547a=_0x27e2f8(0x1af),playSound(_0x27e2f8(0x1c2))):(_0x1addda='Common',_0x19547a=_0x27e2f8(0x1af),playSound(_0x27e2f8(0x1c2)));}}}}}setTimeout(function(){var _0x4835f5=_0x27e2f8,_0x34509f=document[_0x4835f5(0x1b8)](_0x4835f5(0x1a1)),_0x63ab05=getRGBColor(_0x19547a),_0x10db4f=document[_0x4835f5(0x1c5)]('div'),_0x497b22='';for(var _0x39427d=0x0;_0x39427d<_0x1addda[_0x4835f5(0x1b5)];_0x39427d++){_0x497b22+='<span\x20style=\x22color:\x20'+_0x19547a+_0x4835f5(0x1ad)+_0x1addda[_0x39427d]+'</span>';}_0x10db4f['innerHTML']=_0x4835f5(0x1a2)+_0x497b22+_0x4835f5(0x1a0),_0x10db4f[_0x4835f5(0x1aa)]['classList'][_0x4835f5(0x19c)](_0x4835f5(0x1bc)),_0x34509f['appendChild'](_0x10db4f),setTimeout(function(){},0x1f4);}),window[_0x27e2f8(0x1b9)](_0x27e2f8(0x1c8),function(){changeVolume(0.03);});});
+var buttonEnabled = true;
+
+// Function to play sound
+function playSound(soundId) {
+    var sound = document.getElementById(soundId);
+    if (sound) {
+        sound.currentTime = 0; // Reset sound to beginning
+        sound.play();
+    }
+}
+
+// Function to change the volume of all audio elements
+function changeVolume(volume) {
+    var audioElements = document.querySelectorAll('audio');
+    audioElements.forEach(function(audio) {
+        audio.volume = volume;
+    });
+}
+
+// Function to convert hexadecimal color to RGB
+function getRGBColor(hexColor) {
+    var r = parseInt(hexColor.substring(1, 3), 16);
+    var g = parseInt(hexColor.substring(3, 5), 16);
+    var b = parseInt(hexColor.substring(5, 7), 16);
+    return { r: r, g: g, b: b };
+}
+
+// Function to calculate a darker shade of a color
+function calculateDarkerColor(rgb) {
+    var factor = 0.1; // Adjust this factor to control the darkness of the shade
+    var r = Math.round(rgb.r * factor);
+    var g = Math.round(rgb.g * factor);
+    var b = Math.round(rgb.b * factor);
+    return 'rgb(' + r + ',' + g + ',' + b + ')';
+}
+
+// listen for console input
+window.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+        var input = document.getElementById('console-input').value;
+        executeCommand(input);
+        document.getElementById('console-input').value = ''; // Clear the input field
+    }
+});
+
+document.getElementById('generate-btn').addEventListener('click', function() {
+    if (!buttonEnabled) {
+        return; // do nothing if the button is disabled
+    }
+
+    // disable the button to prevent multiple clicks
+    buttonEnabled = false;
+    setTimeout(function() {
+        buttonEnabled = true; // enable the button after
+    }, 1000);
+
+    // use the nextNumber if set, otherwise generate a random number
+    var randomNumber = Math.floor(Math.random() * 10000) + 1;
+
+    // display the number with pop-up animation
+    var resultElement = document.getElementById('result');
+    resultElement.innerHTML = ''; // Clear previous content
+    var numberElement = document.createElement('b');
+    numberElement.classList.add('pop-up');
+    numberElement.textContent = randomNumber;
+    resultElement.appendChild(numberElement);
+    
+    // determine rarity based on the generated number
+    var rarity;
+    var rarityColor;
+    if (randomNumber <= 1) {
+        rarity = 'The Mythical One';
+        rarityColor = '#FFD700'; // lighter yellow (gold?)
+        playSound('mythicalone-sound');
+    } else if (randomNumber <= 50) {
+        rarity = 'RNGesus Incarnate';
+        rarityColor = '#FA8CE6'; // lighter pink
+        playSound('rngesus-sound');
+    } else if (randomNumber <= 250) {
+        rarity = 'Mythical';
+        rarityColor = '#FF69B4'; // pink
+        playSound('mythical-sound');
+    } else if (randomNumber <= 1000) {
+        rarity = 'Legendary';
+        rarityColor = '#FFD700'; // gold-ish
+        playSound('legendary-sound');
+    } else if (randomNumber <= 2500) {
+        rarity = 'Epic';
+        rarityColor = '#800080'; // purple
+        playSound('epic-sound');
+    } else if (randomNumber <= 5000) {
+        rarity = 'Rare';
+        rarityColor = '#0000FF'; // dark blue
+        playSound('rare-sound');
+    } else if (randomNumber >= 10000) {
+        rarity = 'Too Common?';
+        rarityColor = '#FFFFFF'; // white
+        playSound('common-sound');
+    } else {
+        rarity = 'Common';
+        rarityColor = '#FFFFFF'; // white again??
+        playSound('common-sound');
+    }
+    
+    // Update text with random number and rarity after a delay
+    setTimeout(function() {
+        var resultElement = document.getElementById('result');
+
+        // Define the RGB values of the rarity color
+        var rgb = getRGBColor(rarityColor);
+
+
+// Create a div element for the rarity text
+var rarityElement = document.createElement('div');
+var rarityText = '';
+for (var i = 0; i < rarity.length; i++) {
+    rarityText += '<span style="color: ' + rarityColor + ';">' + rarity[i] + '</span>';
+}
+rarityElement.innerHTML = '<b style="text-transform: uppercase; font-style: 500; font-size: 14px;">' + rarityText + '</b>';
+
+// Add pop-up animation to the rarity text
+rarityElement.firstChild.classList.add('pop-up');
+
+resultElement.appendChild(rarityElement);
+
+        // Reset background color after a short delay
+        setTimeout(function() {
+    }, 500); // .5 sec delay for displaying the number and rarity
+});
+
+// Set the volume of all audio elements
+window.addEventListener('load', function() {
+    changeVolume(0.03);
+});
