@@ -2,16 +2,16 @@ var buttonEnabled = true;
 var nextNumber = null;
 
 
-// Function to play sound
+// function to play sound
 function playSound(soundId) {
     var sound = document.getElementById(soundId);
     if (sound) {
-        sound.currentTime = 0; // Reset sound to beginning
+        sound.currentTime = 0; // reset sound to beginning (breaks on iPhone devices)
         sound.play();
     }
 }
 
-// Function to change the volume of all audio elements
+// function to change the volume of all audio elements
 function changeVolume(volume) {
     var audioElements = document.querySelectorAll('audio');
     audioElements.forEach(function(audio) {
@@ -24,7 +24,7 @@ window.addEventListener('keydown', function(e) {
     if (e.key === 'Enter') {
         var input = document.getElementById('console-input').value;
         executeCommand(input);
-        document.getElementById('console-input').value = ''; // Clear the input field
+        document.getElementById('console-input').value = ''; // clear the input field
     }
 });
 
@@ -43,9 +43,12 @@ document.getElementById('generate-btn').addEventListener('click', function() {
     var randomNumber = nextNumber !== null ? nextNumber : Math.floor(Math.random() * 10000) + 1;
     nextNumber = null; // reset nextNumber after using it
 
+    // nextNumber currently has no say since i removed the code for console command.
+    // technically, it still rolls a number if nextNumber is set, however there is no way to set it.
+    
     // display the number with pop-up animation
     var resultElement = document.getElementById('result');
-    resultElement.innerHTML = ''; // Clear previous content
+    resultElement.innerHTML = ''; // clear previous content
     var numberElement = document.createElement('b');
     numberElement.classList.add('pop-up');
     numberElement.textContent = randomNumber;
@@ -88,15 +91,15 @@ document.getElementById('generate-btn').addEventListener('click', function() {
         playSound('common-sound');
     }
     
-    // update text with rarity after a delayaa
+    // update text with rarity after a delay
     setTimeout(function() {
         var rarityElement = document.createElement('div');
-        rarityElement.innerHTML = '<b class="pop-up" style="text-transform: uppercase; font-style: 500; font-size: 14px; color: ' + rarityColor + ';">' + rarity + '</b>';
+        rarityElement.innerHTML = '<b class="pop-up" style="text-transform: uppercase; font-style: 680; font-size: 14px; color: ' + rarityColor + ';">' + rarity + '</b>';
         resultElement.appendChild(rarityElement);
-    }, 500); // .5 sec delay for rarity popup
+    }, 200); // .2 sec delay for rarity popup
 });
 
-// Set the volume of all audio elements to 0.4 when the page loads
+// set the volume of all audio elements to 0.04 when the page loads. sorry about that!
 window.addEventListener('load', function() {
     changeVolume(0.04);
 });
