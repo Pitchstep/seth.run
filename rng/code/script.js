@@ -103,3 +103,22 @@ document.getElementById('generate-btn').addEventListener('click', function() {
 window.addEventListener('load', function() {
     changeVolume(0.04);
 });
+
+// disables the hotkeys for inspect element & to simulate a right click without the mouse
+document.onkeydown = (e) => {
+    if (e.key == 123) {
+        e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && e.key == 'I') {
+        e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && e.key == 'C') {
+        e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && e.key == 'J') {
+        e.preventDefault();
+    }
+    if (e.ctrlKey && e.key == 'U') {
+        e.preventDefault();
+    }
+};
