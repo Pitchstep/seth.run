@@ -1,5 +1,5 @@
 var buttonEnabled = true;
-var nextNumber = null;
+
 
 // function to play sound
 function playSound(soundId) {
@@ -38,10 +38,21 @@ document.getElementById('generate-btn').addEventListener('click', function() {
         buttonEnabled = true; // enable the button after 3 seconds
     }, 1000);
 
-    // use the nextNumber if set, otherwise generate a random number
-    var randomNumber = nextNumber !== null ? nextNumber : Math.floor(Math.random() * 10000) + 1;
-    nextNumber = null; // reset nextNumber after using it
+    // RNG!!!!!
+    var randomNumber = Math.floor(Math.random() * 10000) + 1;
+    randomNumber = randomNumber !== null ? randomNumber : Math.floor(Math.random() * 10000) + 1;
 
+    // nextNumber currently has no say since i removed the code for console command.
+    // technically, it still rolls a number if nextNumber is set, however there is no way to set it.
+    
+    // display the number with pop-up animation
+    var resultElement = document.getElementById('result');
+    resultElement.innerHTML = ''; // clear previous content
+    var numberElement = document.createElement('b');
+    numberElement.classList.add('pop-up');
+    numberElement.textContent = randomNumber;
+    resultElement.appendChild(numberElement);
+    
     // determine rarity based on the generated number
     var rarity;
     var rarityColor;
@@ -82,76 +93,16 @@ document.getElementById('generate-btn').addEventListener('click', function() {
         rarityColor = '#FFFFFF'; // white again??
         playSound('common-sound');
     }
-
-    // Display the rolled number along with its rarity and apply the corresponding animation
-    displayResult(randomNumber, rarity);
+    
+    // update text with rarity after a delay
+    setTimeout(function() {
+        var rarityElement = document.createElement('div');
+        rarityElement.innerHTML = '<b class="pop-up" style="text-transform: uppercase; font-style: 680; font-size: 14px; color: ' + rarityColor + ';">' + rarity + '</b>';
+        resultElement.appendChild(rarityElement);
+    }, 200); // .2 sec delay for rarity popup
 });
 
-// Function to apply animation based on rarity
-function applyRarityAnimation(rarity) {
-    const resultElement = document.getElementById('result');
-    resultElement.className = 'result'; // Reset classes
-
-    switch(rarity) {
-        case 'The Mythical One':
-            resultElement.classList.add('mythicalone-animation');
-            break;
-        case 'RNGesus Incarnate':
-            resultElement.classList.add('rngesus-animation');
-            break;
-        case 'Mythical':
-            resultElement.classList.add('mythical-animation');
-            break;
-        case 'Legendary':
-            resultElement.classList.add('legendary-animation');
-            break;
-        case 'Epic':
-            resultElement.classList.add('epic-animation');
-            break;
-        case 'Rare':
-            resultElement.classList.add('rare-animation');
-            break;
-        case 'Too Common?':
-        case 'Cheater! Cheater!':
-        case 'Common':
-            resultElement.classList.add('common-animation');
-            break;
-        default:
-            break;
-    }
-}
-
-// Function to display the rolled number with rarity
-function displayResult(number, rarity) {
-    const resultElement = document.getElementById('result');
-    resultElement.innerHTML = ''; // Clear previous content
-    const numberElement = document.createElement('b');
-    numberElement.textContent = number;
-    resultElement.appendChild(numberElement);
-
-    applyRarityAnimation(rarity);
-}
-
-// Set the volume of all audio elements to 0.04 when the page loads.
+// set the volume of all audio elements to 0.04 when the page loads. sorry about that!
 window.addEventListener('load', function() {
     changeVolume(0.04);
 });
-
-// Disable hotkeys for inspect element & to simulate a right click without the mouse
-document.onkeydown = (e) => {
-    if (e.key == 123) {
-        e.preventDefault();
-    }
-    if (e.ctrlKey && e.shiftKey && e.key == 'I') {
-        e.preventDefault();
-    }
-    if (e.ctrlKey && e.shiftKey && e.key == 'C') {
-        e.preventDefault();
-    }
-    if (e.ctrlKey && e.shiftKey && e.key == 'J') {
-        e.preventDefault();
-    }
-    if (e.ctrlKey && e.key == 'U') {
-        e.preventDefault();
-    }
-};
