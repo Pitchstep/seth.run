@@ -127,21 +127,46 @@ document.onkeydown = (e) => {
     }
 };
 
-// Function to update volume based on slider value
-function updateVolume() {
-    const volumeSlider = document.getElementById('volume-slider');
-    changeVolume(parseFloat(volumeSlider.value));
-    updateVolumeTooltip(volumeSlider.value);
+// Apply animation based on rarity
+function applyRarityAnimation(rarity) {
+    const resultElement = document.getElementById('result');
+    resultElement.className = 'result'; // Reset classes
+
+    switch(rarity) {
+        case 'Common':
+            resultElement.classList.add('common-animation');
+            break;
+        case 'Rare':
+            resultElement.classList.add('rare-animation');
+            break;
+        case 'Epic':
+            resultElement.classList.add('epic-animation');
+            break;
+        case 'Legendary':
+            resultElement.classList.add('legendary-animation');
+            break;
+        case 'Mythical':
+            resultElement.classList.add('mythical-animation');
+            break;
+        case 'RNGesus Incarnate':
+            resultElement.classList.add('rngesus-animation');
+            break;
+        default:
+            break;
+    }
 }
 
-// Function to update volume tooltip text
-function updateVolumeTooltip(volume) {
-    const volumeTooltip = document.getElementById('volume-tooltip');
-    volumeTooltip.textContent = Math.round(volume * 100) + '%';
+// Function to display the rolled number with rarity
+function displayResult(number, rarity) {
+    const resultElement = document.getElementById('result');
+    resultElement.innerHTML = ''; // Clear previous content
+    const numberElement = document.createElement('b');
+    numberElement.textContent = number;
+    resultElement.appendChild(numberElement);
+
+    applyRarityAnimation(rarity);
 }
 
-// Event listener for volume slider change
-document.getElementById('volume-slider').addEventListener('input', updateVolume);
 
 
 
