@@ -23,6 +23,7 @@
     .item {
         border-bottom: 1px solid #333;
         padding: 10px 0;
+        cursor: pointer;
     }
     .item:last-child {
         border-bottom: none;
@@ -38,6 +39,13 @@
         font-size: 0.9em;
         margin-top: 5px;
     }
+    .item-details {
+        display: none;
+        padding: 10px 0;
+    }
+    .item-details.active {
+        display: block;
+    }
 </style>
 </head>
 <body>
@@ -47,18 +55,39 @@
         <div class="item-name">Sword</div>
         <div class="item-rarity">Common</div>
         <div class="item-description">A basic weapon for close combat.</div>
+        <div class="item-details">
+            <p>Damage: 10</p>
+        </div>
     </div>
     <div class="item">
         <div class="item-name">Potion</div>
         <div class="item-rarity">Rare</div>
         <div class="item-description">Restores health points when consumed.</div>
+        <div class="item-details">
+            <p>Effect: Restores 50 HP</p>
+        </div>
     </div>
     <div class="item">
         <div class="item-name">Scroll of Fireball</div>
         <div class="item-rarity">Legendary</div>
         <div class="item-description">Unleashes a powerful fireball spell upon use.</div>
+        <div class="item-details">
+            <p>Damage: 100</p>
+            <p>Area of Effect: 5 meters</p>
+        </div>
     </div>
 </div>
+
+<script>
+    const items = document.querySelectorAll('.item');
+
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            const details = item.querySelector('.item-details');
+            details.classList.toggle('active');
+        });
+    });
+</script>
 
 </body>
 </html>
