@@ -127,23 +127,15 @@ document.onkeydown = (e) => {
     }
 };
 
-// Function to toggle the settings popup
-function toggleSettingsPopup() {
-    const settingsPopup = document.getElementById('settings-popup');
-    settingsPopup.style.display = settingsPopup.style.display === 'block' ? 'none' : 'block';
+// Function to update volume based on slider value
+function updateVolume() {
+    const volumeSlider = document.getElementById('volume-slider');
+    changeVolume(parseFloat(volumeSlider.value));
 }
 
-// Function to close the settings popup
-function closeSettingsPopup() {
-    const settingsPopup = document.getElementById('settings-popup');
-    settingsPopup.style.display = 'none';
-}
+// Event listener for volume slider change
+document.getElementById('volume-slider').addEventListener('input', updateVolume);
 
-// Event listener for the settings button
-document.getElementById('settings-btn').addEventListener('click', toggleSettingsPopup);
-
-// Event listener for the close button
-document.getElementById('close-btn').addEventListener('click', closeSettingsPopup);
 
 
 
