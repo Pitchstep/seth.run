@@ -152,10 +152,10 @@ function unlockAchievement(achievementId) {
 // Function to track progress and unlock achievements
 function trackProgress(rolledNumber) {
     // Check for specific conditions and unlock achievements accordingly
-    if (rolledNumber <= 100) {
+    if (randomNumber <= 100) {
         unlockAchievement(1); // Lucky Roll achievement
     }
-    if (rolledNumber <= 2500) {
+    if (randomNumber <= 2500) {
         unlockAchievement(2); // Epic Roller achievement
     }
     // Add more conditions to unlock other achievements
