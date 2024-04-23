@@ -1,20 +1,16 @@
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif; /* load font */
   background-color: black;
-  color: white;
+  color: white; /* text color */
   text-align: center;
-}
-
-h1 {
-  background-image: url("https://seth.run/rng/pics/rngbutton_logo.png");
 }
 
 .container {
   margin-top: 50px;
-  position: relative; /* Add position relative */
+  position: relative; /* add position relative */
 }
 
-footer {
+footer { /* footer stuffs */
   font-style: light;
   position: fixed;
   left: 0;
@@ -99,12 +95,12 @@ button:active {
 }
 
 @keyframes pop-up {
-  0% { transform: scale(0.5); opacity: 0; }
+  0% { transform: scale(0.2); opacity: 0; }
   100% { transform: scale(1); opacity: 1; }
 }
 
 .pop-up {
-  animation: pop-up 0.5s ease forwards;
+  animation: pop-up 0.8s ease forwards;
 }
 
 #result {
@@ -112,59 +108,6 @@ button:active {
   font-weight: black !important;
   margin-top: 20px !important;
   animation: pop-up 0.5s ease forwards;
-}
-
-.shimmer {
-  background-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
-  background-size: 400% 400%;
-  animation: shimmer 2s infinite;
-  display: inline-block;
-}
-
-@keyframes shimmer {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
-}
-
-/* Common */
-@keyframes common-animation {
-    0% { background-color: transparent; }
-    50% { background-color: #FFFFFF; }
-    100% { background-color: transparent; }
-}
-
-/* Rare */
-@keyframes rare-animation {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
-
-/* Epic */
-@keyframes epic-animation {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Legendary */
-@keyframes legendary-animation {
-    0% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.8); }
-    50% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); }
-    100% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.8); }
-}
-
-/* Mythical */
-@keyframes mythical-animation {
-    0% { border-color: #FF69B4; }
-    50% { border-color: #FFFFFF; }
-    100% { border-color: #FF69B4; }
-}
-
-/* RNGesus Incarnate */
-@keyframes rngesus-animation {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
 }
 
 
