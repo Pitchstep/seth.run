@@ -127,19 +127,23 @@ document.onkeydown = (e) => {
     }
 };
 
-// Function to toggle sound effects
-function toggleSoundEffects() {
-    const soundToggle = document.getElementById('sound-toggle');
-    if (soundToggle.checked) {
-        // Enable sound effects
-        changeVolume(0.04); // Set volume back to default
-    } else {
-        // Disable sound effects
-        changeVolume(0); // Mute all sounds
-    }
+// Function to toggle the settings popup
+function toggleSettingsPopup() {
+    const settingsPopup = document.getElementById('settings-popup');
+    settingsPopup.style.display = settingsPopup.style.display === 'block' ? 'none' : 'block';
 }
 
-// Event listener for sound toggle
-document.getElementById('sound-toggle').addEventListener('change', toggleSoundEffects);
+// Function to close the settings popup
+function closeSettingsPopup() {
+    const settingsPopup = document.getElementById('settings-popup');
+    settingsPopup.style.display = 'none';
+}
+
+// Event listener for the settings button
+document.getElementById('settings-btn').addEventListener('click', toggleSettingsPopup);
+
+// Event listener for the close button
+document.getElementById('close-btn').addEventListener('click', closeSettingsPopup);
+
 
 
