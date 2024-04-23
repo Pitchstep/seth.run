@@ -141,18 +141,30 @@ button:active {
     height: 32px;
 }
 
-/* Style for the settings popup */
+/* Update the background color of the settings popup */
 #settings-popup {
     display: none;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: rgba(50, 50, 50, 0.9); /* Updated to light-dark-grey-ish color */
+    padding: 40px; /* Increased padding */
+    border-radius: 15px; /* Increased border radius */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Added box shadow for depth */
+    animation: popup-animation 0.3s ease-in; /* Added pop-up animation */
 }
+
+/* Keyframes for the pop-up animation */
+@keyframes popup-animation {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
 
 #settings-content {
     position: relative;
