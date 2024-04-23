@@ -131,10 +131,18 @@ document.onkeydown = (e) => {
 function updateVolume() {
     const volumeSlider = document.getElementById('volume-slider');
     changeVolume(parseFloat(volumeSlider.value));
+    updateVolumeTooltip(volumeSlider.value);
+}
+
+// Function to update volume tooltip text
+function updateVolumeTooltip(volume) {
+    const volumeTooltip = document.getElementById('volume-tooltip');
+    volumeTooltip.textContent = Math.round(volume * 100) + '%';
 }
 
 // Event listener for volume slider change
 document.getElementById('volume-slider').addEventListener('input', updateVolume);
+
 
 
 
