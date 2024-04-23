@@ -132,6 +132,7 @@ button:active {
     top: 20px;
     right: 20px;
     width: 150px;
+    position: relative; /* Added relative positioning */
 }
 
 /* Style for the volume slider */
@@ -162,7 +163,38 @@ button:active {
     background: #4CAF50;
     cursor: pointer;
     border-radius: 50%;
+    position: relative; /* Added relative positioning */
 }
+
+/* Style for the filled-in part of the volume slider */
+#volume-slider::-moz-range-progress {
+    background-color: #4CAF50;
+}
+
+#volume-slider::-webkit-slider-runnable-track {
+    background-color: #4CAF50;
+}
+
+/* Style for the volume tooltip */
+#volume-tooltip {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+#volume-slider-container:hover #volume-tooltip {
+    opacity: 1;
+}
+
 
 
 
