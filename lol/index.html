@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Game Inventory</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Montserrat', sans-serif;
+        background-color: #000;
+    }
+    .inventory {
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #111;
+        border-radius: 10px;
+        padding: 20px;
+        color: #fff;
+    }
+    .item {
+        border-bottom: 1px solid #333;
+        padding: 10px 0;
+    }
+    .item:last-child {
+        border-bottom: none;
+    }
+    .item-name {
+        font-weight: 700;
+    }
+    .item-rarity {
+        font-style: italic;
+        color: #5eff47;
+    }
+    .item-description {
+        font-size: 0.9em;
+        margin-top: 5px;
+    }
+</style>
+</head>
+<body>
+
+<div class="inventory">
+    <div class="item">
+        <div class="item-name">Sword</div>
+        <div class="item-rarity">Common</div>
+        <div class="item-description">A basic weapon for close combat.</div>
+    </div>
+    <div class="item">
+        <div class="item-name">Potion</div>
+        <div class="item-rarity">Rare</div>
+        <div class="item-description">Restores health points when consumed.</div>
+    </div>
+    <div class="item">
+        <div class="item-name">Scroll of Fireball</div>
+        <div class="item-rarity">Legendary</div>
+        <div class="item-description">Unleashes a powerful fireball spell upon use.</div>
+    </div>
+</div>
+
+</body>
+</html>
