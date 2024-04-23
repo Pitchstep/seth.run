@@ -125,3 +125,24 @@ button:active {
   0% { background-position: 0% 50%; }
   100% { background-position: 100% 50%; }
 }
+
+#settings-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#settings-menu h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+#sound-toggle {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
