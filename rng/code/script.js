@@ -126,3 +126,50 @@ document.onkeydown = (e) => {
         e.preventDefault();
     }
 };
+
+// Define achievements
+const achievements = [
+    { id: 1, name: 'Lucky Roll', description: 'Roll a number below 100.' },
+    { id: 2, name: 'Epic Roller', description: 'Roll an epic rarity number.' },
+    // Add more achievements as needed
+];
+
+// Initialize user's achievements
+let userAchievements = {};
+
+// Function to check if an achievement is unlocked
+function isAchievementUnlocked(achievementId) {
+    return userAchievements.hasOwnProperty(achievementId);
+}
+
+// Function to unlock an achievement
+function unlockAchievement(achievementId) {
+    userAchievements[achievementId] = true;
+    // Update UI to reflect the unlocked achievement
+    displayAchievement(achievementId);
+}
+
+// Function to track progress and unlock achievements
+function trackProgress(rolledNumber) {
+    // Check for specific conditions and unlock achievements accordingly
+    if (rolledNumber <= 100) {
+        unlockAchievement(1); // Lucky Roll achievement
+    }
+    if (rolledNumber <= 2500) {
+        unlockAchievement(2); // Epic Roller achievement
+    }
+    // Add more conditions to unlock other achievements
+}
+
+// Function to display unlocked achievements in the UI
+function displayAchievement(achievementId) {
+    const achievement = achievements.find(a => a.id === achievementId);
+    if (achievement) {
+        // Display the achievement in the UI (e.g., add it to a list of earned achievements)
+        const achievementList = document.getElementById('achievement-list');
+        const achievementItem = document.createElement('li');
+        achievementItem.textContent = `${achievement.name}: ${achievement.description}`;
+        achievementList.appendChild(achievementItem);
+    }
+}
+
