@@ -5,88 +5,151 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Game Inventory</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <style>
     body {
         margin: 0;
         padding: 0;
         font-family: 'Montserrat', sans-serif;
         background-color: #000;
-    }
-    .inventory {
-        max-width: 600px;
-        margin: 50px auto;
-        background-color: #111;
-        border-radius: 10px;
-        padding: 20px;
         color: #fff;
     }
-    .item {
-        border-bottom: 1px solid #333;
-        padding: 10px 0;
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+    }
+    .page {
+        display: none;
+    }
+    .page.active {
+        display: block;
+    }
+    .input-field {
+        margin-bottom: 10px;
+    }
+    .button {
+        padding: 10px 20px;
+        background-color: #333;
+        border: none;
+        color: #fff;
         cursor: pointer;
     }
-    .item:last-child {
-        border-bottom: none;
-    }
-    .item-name {
-        font-weight: 700;
-    }
-    .item-rarity {
-        font-style: italic;
-        color: #5eff47;
-    }
-    .item-description {
-        font-size: 0.9em;
-        margin-top: 5px;
-    }
-    .item-details {
-        display: none;
-        padding: 10px 0;
-    }
-    .item-details.active {
-        display: block;
+    .button:hover {
+        background-color: #555;
     }
 </style>
 </head>
 <body>
 
-<div class="inventory">
-    <div class="item">
-        <div class="item-name">Sword</div>
-        <div class="item-rarity">Common</div>
-        <div class="item-description">A basic weapon for close combat.</div>
-        <div class="item-details">
-            <p>Damage: 10</p>
+<div class="container">
+
+    <!-- Login Page -->
+    <div id="login" class="page active">
+        <h1>Login</h1>
+        <div class="input-field">
+            <input type="text" id="username" placeholder="Username">
+        </div>
+        <div class="input-field">
+            <input type="password" id="password" placeholder="Password">
+        </div>
+        <button id="loginBtn" class="button">Login</button>
+    </div>
+
+    <!-- Dashboard Page -->
+    <div id="dashboard" class="page">
+        <h1>Welcome, <span id="loggedInUser"></span>!</h1>
+        <h2>Your Inventory</h2>
+        <div id="inventory">
+            <!-- Inventory items will be loaded here -->
         </div>
     </div>
-    <div class="item">
-        <div class="item-name">Potion</div>
-        <div class="item-rarity">Rare</div>
-        <div class="item-description">Restores health points when consumed.</div>
-        <div class="item-details">
-            <p>Effect: Restores 50 HP</p>
+
+    <!-- Item Shop Page -->
+    <div id="item-shop" class="page">
+        <h1>Item Shop</h1>
+        <div id="shopItems">
+            <!-- Shop items will be loaded here -->
         </div>
     </div>
-    <div class="item">
-        <div class="item-name">Scroll of Fireball</div>
-        <div class="item-rarity">Legendary</div>
-        <div class="item-description">Unleashes a powerful fireball spell upon use.</div>
-        <div class="item-details">
-            <p>Damage: 100</p>
-            <p>Area of Effect: 5 meters</p>
-        </div>
-    </div>
+
 </div>
 
 <script>
-    const items = document.querySelectorAll('.item');
+    // Simulated user data
+    const users = [
+        { username: "user1", password: "password1", inventory: ["Sword", "Potion"] },
+        { username: "user2", password: "password2", inventory: ["Bow", "Scroll of Fireball"] }
+    ];
 
-    items.forEach(item => {
-        item.addEventListener('click', () => {
-            const details = item.querySelector('.item-details');
-            details.classList.toggle('active');
-        });
+    // Simulated item data
+    const items = [
+        { name: "Sword", rarity: "Common", description: "A basic weapon for close combat." },
+        { name: "Potion", rarity: "Rare", description: "Restores health points when consumed." },
+        // Add more items here...
+    ];
+
+    // Login functionality
+    const loginBtn = document.getElementById("loginBtn");
+    loginBtn.addEventListener("click", function() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        const user = users.find(u => u.username === username && u.password === password);
+        if (user) {
+            // Display dashboard
+            document.getElementById("login").classList.remove("active");
+            document.getElementById("dashboard").classList.add("active");
+            document.getElementById("loggedInUser").textContent = user.username;
+
+            // Load user's inventory
+            const inventoryContainer = document.getElementById("inventory");
+            inventoryContainer.innerHTML = "";
+            user.inventory.forEach(itemName => {
+                const item = items.find(i => i.name === itemName);
+                const itemElement = document.createElement("div");
+                itemElement.innerHTML = `
+                    <div>
+                        <h3>${item.name}</h3>
+                        <p>Rarity: ${item.rarity}</p>
+                        <p>${item.description}</p>
+                    </div>
+                `;
+                inventoryContainer.appendChild(itemElement);
+            });
+
+            // Start item shop timer
+            setInterval(updateItemShop, 600000); // Update every 10 minutes
+            updateItemShop();
+        } else {
+            alert("Invalid username or password");
+        }
     });
+
+    // Simulated item shop functionality
+    function updateItemShop() {
+        const shopItems = document.getElementById("shopItems");
+        shopItems.innerHTML = "";
+        // Display random items from the items list
+        for (let i = 0; i < 5; i++) {
+            const randomItem = items[Math.floor(Math.random() * items.length)];
+            const itemElement = document.createElement("div");
+            itemElement.innerHTML = `
+                <div>
+                    <h3>${randomItem.name}</h3>
+                    <p>Rarity: ${randomItem.rarity}</p>
+                    <p>${randomItem.description}</p>
+                    <button class="button" onclick="purchaseItem('${randomItem.name}')">Purchase</button>
+                </div>
+            `;
+            shopItems.appendChild(itemElement);
+        }
+    }
+
+    // Simulated purchase item functionality
+    function purchaseItem(itemName) {
+        alert(`You have purchased ${itemName}`);
+    }
 </script>
 
 </body>
