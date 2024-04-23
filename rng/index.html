@@ -31,25 +31,11 @@
         <p id="result"></p>
 
         <footer>
-<!-- Update the button with the new gear icon -->
-<button id="settings-btn" title="Settings">
-    <img src="https://seth.run/rng/pics/svg/gear.svg" alt="Settings">
-</button>
-
-<!-- Update the settings popup menu -->
-<div id="settings-popup">
-    <div id="settings-content">
-        <span id="close-btn">&times;</span>
-        <h2>Settings</h2>
-        <label>
-            <input type="checkbox" id="sound-toggle">
-            Enable Sound Effects
-        </label>
-    </div>
+<!-- Replace the settings button with a volume slider -->
+<div id="volume-slider-container">
+    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.04">
 </div>
-
-
-            
+          
             <a href="https://disc.gg/rng" target="_blank">
                 <button>
                     <span>Discord Server</span>
