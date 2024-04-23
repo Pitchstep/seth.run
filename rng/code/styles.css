@@ -138,14 +138,10 @@ button:active {
 /* Style for the volume slider */
 #volume-slider {
     width: 100%;
-    -webkit-appearance: none;
-    appearance: none;
     height: 5px;
     background: linear-gradient(to right, #777, #777);
     outline: none;
     opacity: 0.7;
-    -webkit-transition: opacity 0.2s;
-    transition: opacity 0.2s;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -164,6 +160,7 @@ button:active {
     cursor: pointer;
     border-radius: 50%;
     position: relative; /* Added relative positioning */
+    z-index: 1; /* Ensure thumb is above the tooltip */
 }
 
 /* Style for the filled-in part of the volume slider */
@@ -194,6 +191,7 @@ button:active {
 #volume-slider-container:hover #volume-tooltip {
     opacity: 1;
 }
+
 
 
 
