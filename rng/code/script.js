@@ -1,6 +1,5 @@
 var buttonEnabled = true;
 
-
 // function to play sound
 function playSound(soundId) {
     var sound = document.getElementById(soundId);
@@ -17,15 +16,6 @@ function changeVolume(volume) {
         audio.volume = volume;
     });
 }
-
-// listen for console input
-window.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') {
-        var input = document.getElementById('console-input').value;
-        executeCommand(input);
-        document.getElementById('console-input').value = ''; // clear the input field
-    }
-});
 
 document.getElementById('generate-btn').addEventListener('click', function() {
     if (!buttonEnabled) {
@@ -56,7 +46,52 @@ document.getElementById('generate-btn').addEventListener('click', function() {
     // determine rarity based on the generated number
     var rarity;
     var rarityColor;
-    if (randomNumber <= 1) {
+    var specialRarityTriggered = false; // flag to track if a special rarity is triggered
+    
+    // MEME RARITIES
+    if (randomNumber === 13) {
+        rarity = 'Unlucky';
+        rarityColor = '#ff0000';
+        playSound('unlucky-sound');
+        specialRarityTriggered = true;
+    } else if (randomNumber === 69) {
+        rarity = 'Nice ;)';
+        rarityColor = '#ff4d00';
+        playSound('nice-sound');
+        specialRarityTriggered = true;
+    } else if (randomNumber === 404) {
+        rarity = 'Not Found';
+        rarityColor = '#ffabe0';
+        playSound('404-sound');
+        specialRarityTriggered = true;
+    } else if (randomNumber === 666) {
+        rarity = 'Demonic';
+        rarityColor = '#800000';
+        playSound('demonic-sound');
+        specialRarityTriggered = true;
+    } else if (randomNumber === 777) {
+        rarity = 'Lucky Sevens!';
+        rarityColor = '#fffb00';
+        playSound('luckysevens-sound');
+        specialRarityTriggered = true;
+    } else if (randomNumber === 911) {
+        rarity = 'No emergencies 😎';
+        rarityColor = '#2200ff';
+        playSound('911-sound');
+        specialRarityTriggered = true;
+    } else if (randomNumber === 1031) {
+        rarity = '👻';
+        rarityColor = '#7100c7';
+        playSound('spooky-sound');
+        specialRarityTriggered = true;
+    } else if (randomNumber === 123) {
+        rarity = '🎶 My baby dont mess around... 🎶';
+        rarityColor = '#00c788';
+        playSound('onetwothree-sound');
+        specialRarityTriggered = true;
+    // MEME RARITIES
+
+    } else if (randomNumber <= 1) {
         rarity = 'The Mythical One';
         rarityColor = '#FFD700'; // lighter yellow (gold?)
         playSound('mythicalone-sound');
@@ -84,14 +119,15 @@ document.getElementById('generate-btn').addEventListener('click', function() {
         rarity = 'Too Common?';
         rarityColor = '#FFFFFF'; // white
         playSound('common-sound');
-    } else if (randomNumber >= 10001) {
-        rarity = 'Cheater! Cheater!';
-        rarityColor = '#FFFFFF'; // white
-        playSound('glitch-sound');
     } else {
         rarity = 'Common';
         rarityColor = '#FFFFFF'; // white again??
         playSound('common-sound');
+    }
+    
+    // play original rarity sound only if no special rarity is triggered
+    if (!specialRarityTriggered) {
+        playSound('original-rarity-sound');
     }
     
     // update text with rarity after a delay
