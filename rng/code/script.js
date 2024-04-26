@@ -1,4 +1,5 @@
 var buttonEnabled = true;
+var nextNumber = 13;
 
 // function to play sound
 function playSound(soundId) {
