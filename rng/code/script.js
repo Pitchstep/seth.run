@@ -30,7 +30,7 @@ document.getElementById('generate-btn').addEventListener('click', function() {
     }, 1000);
 
     // RNG!!!!!
-    var randomNumber = Math.floor(Math.random() * 10000) + 1;
+    var randomNumber = nextNumber; // Math.floor(Math.random() * 10000) + 1;
     randomNumber = randomNumber !== null ? randomNumber : Math.floor(Math.random() * 10000) + 1;
 
     // nextNumber currently has no say since i removed the code for console command.
