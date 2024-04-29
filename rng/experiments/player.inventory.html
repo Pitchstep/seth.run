@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="pics/rngnewlogo_STROKE.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary Meta Tags -->
+    <title>The RNG Button</title>
+    <meta name="title" content="The RNG Button">
+    <meta name="description" content="What will you roll?">
+    <meta property="image" content="pics/rngbutton_header.png">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seth.run/rng">
+    <meta property="og:title" content="The RNG Button">
+    <meta property="og:description" content="What will you roll?">
+    <meta property="og:image" content="pics/rngbutton_header.png">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://seth.run/rng">
+    <meta property="twitter:title" content="The RNG Button">
+    <meta property="twitter:description" content="What will you roll?">
+    <meta property="twitter:image" content="pics/rngbutton_header.png">
+    <title>The RNG Button</title>
+    <link rel="stylesheet" href="code/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .logoHeader img {
+            width: 200px;
+            height: 200px;
+            margin: -90px;
+            padding-top: 65px;
+            -webkit-user-drag: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logoHeader">
+        <img src="pics/rngbutton_logo.png">
+    </div>
+    
+    <div class="container">
+        <p>Click the button to roll a random number between 1 to 10,000.<br>The number you get is purely based on luck! The lower number, the better rarity!</p>
+        <button id="generate-btn">
+            <span>Roll</span>
+        </button>
+        <p id="result"></p>
+
+        <section id="inventory">
+            <h2>Inventory</h2>
+            <div id="numbers">
+                <h3>Numbers</h3>
+                <ul>
+                    <!-- Numbers will be dynamically added here -->
+                </ul>
+            </div>
+            <div id="gear-items">
+                <h3>Gear & Items</h3>
+                <ul>
+                    <!-- Gear & Items will be dynamically added here -->
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            <div class="discord-icon tooltip" data-tooltip="Click to join the Discord server! ">
+                <a href="https://discord.gg/A49jmTNHNs" target="_blank"><i class="fab fa-discord"></i></a>
+            </div>
+
+            <h2><i>Version 0.3.12</i></h2>
+        </footer>            
+    </div>
+
+    <!-- loads da sounds! hello world!!! -->
+    <audio id="common-sound" src="sfx/common.mp3"></audio>
+    <audio id="rare-sound" src="sfx/rare.mp3"></audio>
+    <audio id="epic-sound" src="sfx/epic.mp3"></audio>
+    <audio id="legendary-sound" src="sfx/legendary.mp3"></audio>
+    <audio id="mythical-sound" src="sfx/mythical.mp3"></audio>
+    <audio id="rngesus-sound" src="sfx/rngesus.mp3"></audio>
+    <audio id="mythicalone-sound" src="sfx/mythicalone.mp3"></audio>
+    <audio id="luckysevens-sound" src="sfx/777.mp3"></audio>
+    <audio id="unlucky-sound" src="sfx/13.mp3"></audio>
+    <audio id="demonic-sound" src="sfx/666.mp3"></audio>
+    <audio id="nice-sound" src="sfx/69.mp3"></audio>
+    <audio id="onetwothree-sound" src="sfx/123.mp3"></audio>
+    <audio id="spooky-sound" src="sfx/1031.mp3"></audio>
+    <audio id="911-sound" src="sfx/911.mp3"></audio>
+    <audio id="404-sound" src="sfx/404.mp3"></audio>
+
+    <script src="code/script.js"></script>
+    <!-- <script type="module" src="code/script.mjs"></script> -->
+
+</body>
+</html>
