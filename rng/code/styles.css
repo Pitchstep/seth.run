@@ -129,6 +129,24 @@ button:active {
   color: #ffffff;
 }
 
+.alpha-icon {
+    display: inline-block;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.alpha-icon a {
+  font-size: 30px;
+  color: #90EE90;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.alpha-icon:hover a {
+  color: #ffffff;
+}
+
 .tooltip {
   position: relative;
   display: inline-block;
