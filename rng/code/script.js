@@ -79,6 +79,11 @@ document.getElementById('generate-btn').addEventListener('click', function() {
         rarityColor = '#2200ff';
         playSound('911-sound');
         specialRarityTriggered = true;
+    } else if (randomNumber === 6969) {
+        rarity = 'Super Nice';
+        rarityColor = '#2200ff';
+        playSound('nice-sound');
+        specialRarityTriggered = true;
     } else if (randomNumber === 1031) {
         rarity = '👻';
         rarityColor = '#7100c7';
