@@ -9,24 +9,9 @@ I saw that most Roblox experiences nowadays are all based around RNG. Some examp
 ### What are the odds?
 It's quite simple. Every time you click the "ROLL" button, the website generates a completely random number from 1 to 10,000. There isn't really any point of adding rarities considering all the numbers are technically the same odds. Read more about rarities below.
 
-### Rarities
-Rarities are as followed:
-
-**Cheater! Cheater!** - 10,001 or above.<br>
-**Too Common?** - 10,000.<br>
-**Common** - 10,000 or below.<br>
-**Rare** - 5,000 or below.<br>
-**Epic** - 2,500 or below.<br>
-**Legendary** - 1,000 or below<br>
-**Mythical** - 250 or below.<br>
-**RNGesus Incarnate** - 100 or below.<br>
-**Mythical One** - 1.
-
 ### Assets and stuff
 
-Font: Montserrat (Google Fonts)<br>
-Sound Effects: Hazem (PLS DONATE)<br>
-GFX: Seth Harlow (seth.run)
+Font: Montserrat (Google Fonts)
 
 ### Boring stuff
-© 2024 Seth Harlow
+© 2023-2024 Pitchstep
