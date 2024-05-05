@@ -11,7 +11,10 @@ It's quite simple. Every time you click the "ROLL" button, the website generates
 
 ### Assets and stuff
 
-Font: Montserrat (Google Fonts)
+Font: Montserrat (Google Fonts)<br>
+Icons: Font Awesome (https://fontawesome.com)<br><br>
+
+Some icons like the Discord logo are not owned by me!
 
 ### Boring stuff
 © 2023-2024 Pitchstep
