@@ -11,7 +11,7 @@ It's quite simple. Every time you click the "ROLL" button, the website generates
 
 ### Assets and stuff
 
-Font: Montserrat (Google Fonts)<br>
+Font: Montserrat (https://fonts.google.com)<br>
 Icons: Font Awesome (https://fontawesome.com)<br><br>
 
 Some icons like the Discord logo are not owned by me!
