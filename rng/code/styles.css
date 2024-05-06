@@ -150,8 +150,7 @@ body {
   }
   
   .tooltip {
-    position: relative;
-    display: inline-block;
+    position: auto;
   }
   
   .tooltip::before {
