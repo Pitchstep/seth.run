@@ -26,7 +26,7 @@ document.getElementById('generate-btn').addEventListener('click', function() {
     buttonEnabled = false;
     setTimeout(function() {
         buttonEnabled = true; // enable the button after 3 seconds
-    }, 0);
+    }, 600);
 
     // RNG!!!!!
     var randomNumber = Math.floor(Math.random() * 10000) + 1;
