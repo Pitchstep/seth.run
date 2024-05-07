@@ -30,7 +30,7 @@ document.getElementById('generate-btn').addEventListener('click', function() {
 
     // RNG!!!!!
     var randomNumber = Math.floor(Math.random() * 10000) + 1;
-    randomNumber = randomNumber !== null ? randomNumber : Math.floor(Math.random() * 10000) + 1;
+    randomNumber !== null ? randomNumber : Math.floor(Math.random() * 10000) + 1;
 
     // nextNumber currently has no say since i removed the code for console command.
     // technically, it still rolls a number if nextNumber is set, however there is no way to set it.
@@ -54,6 +54,14 @@ document.getElementById('generate-btn').addEventListener('click', function() {
         rarityColor = '#ff0000';
         playSound('unlucky-sound');
         specialRarityTriggered = true;
+    
+    } else if (randomNumber === 7) {
+        rarity = 'Fidison Incarnate';
+        rarityColor = '#FA8CE6';
+        playSound('drip');
+        specialRarityTriggered = true;
+
+
     } else if (randomNumber === 69) {
         rarity = 'Nice ;)';
         rarityColor = '#ff4d00';
