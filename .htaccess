@@ -1,2 +1,2 @@
-ErrorDocument 404 err/duck.gif
+ErrorDocument 404 /err/duck.gif
 Options -Indexes
