@@ -1,5 +1,4 @@
 var buttonEnabled = true;
-
 // function to play sound
 function playSound(soundId) {
     var sound = document.getElementById(soundId);
@@ -54,14 +53,11 @@ document.getElementById('generate-btn').addEventListener('click', function() {
         rarityColor = '#ff0000';
         playSound('unlucky-sound');
         specialRarityTriggered = true;
-    
     } else if (randomNumber === 7) {
         rarity = 'Fidison Incarnate';
         rarityColor = '#FA8CE6';
         playSound('drip');
         specialRarityTriggered = true;
-
-
     } else if (randomNumber === 69) {
         rarity = 'Nice ;)';
         rarityColor = '#ff4d00';
@@ -105,29 +101,35 @@ document.getElementById('generate-btn').addEventListener('click', function() {
     // MEME RARITIES
 
     } else if (randomNumber <= 1) {
-        rarity = 'The Mythical One';
+        rarity = 'Ultra Mythical';
         rarityColor = '#FFD700'; // lighter yellow (gold?)
-        playSound('mythicalone-sound');
+        playSound('ultra-sound');
+
     } else if (randomNumber <= 50) {
-        rarity = 'RNGesus Incarnate';
+        rarity = 'Super Mythical';
         rarityColor = '#FA8CE6'; // lighter pink
-        playSound('rngesus-sound');
+        playSound('super-sound');
+
     } else if (randomNumber <= 250) {
-        rarity = 'Mythical';
+        rarity = 'Mystical';
         rarityColor = '#FF69B4'; // pink
-        playSound('mythical-sound');
+        playSound('mystical-sound');
+
     } else if (randomNumber <= 1000) {
         rarity = 'Legendary';
         rarityColor = '#FFD700'; // gold-ish
         playSound('legendary-sound');
+
     } else if (randomNumber <= 2500) {
         rarity = 'Epic';
         rarityColor = '#800080'; // purple
         playSound('epic-sound');
+
     } else if (randomNumber <= 5000) {
         rarity = 'Rare';
         rarityColor = '#0000FF'; // dark blue
         playSound('rare-sound');
+
     } else if (randomNumber >= 10000) {
         rarity = 'Too Common?';
         rarityColor = '#FFFFFF'; // white
