@@ -4,42 +4,42 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="pics/rngnewlogo_STROKE.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- HTML Meta Tags -->
-<title>The RNG Button</title>
-<meta name="description" content="What will you roll?
-Test your luck and discover your inner RNGesus in The RNG Button!">
+    <!-- HTML Meta Tags -->
+    <title>The RNG Button</title>
+    <meta name="description" content="What will you roll? Test your luck and discover your inner RNGesus in The RNG Button!">
 
-<!-- Google / Search Engine Tags -->
-<meta itemprop="name" content="The RNG Button">
-<meta itemprop="description" content="What will you roll?
-Test your luck and discover your inner RNGesus in The RNG Button!">
-<meta itemprop="image" content="https://seth.run/rng/pics/rngbutton_header.png">
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="The RNG Button">
+    <meta itemprop="description" content="What will you roll? Test your luck and discover your inner RNGesus in The RNG Button!">
+    <meta itemprop="image" content="https://seth.run/rng/pics/rngbutton_header.png">
 
-<!-- Facebook Meta Tags -->
-<meta property="og:url" content="https://seth.run/rng">
-<meta property="og:type" content="website">
-<meta property="og:title" content="The RNG Button">
-<meta property="og:description" content="What will you roll?
-Test your luck and discover your inner RNGesus in The RNG Button!">
-<meta property="og:image" content="https://seth.run/rng/pics/rngbutton_header.png">
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://seth.run/rng">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="The RNG Button">
+    <meta property="og:description" content="What will you roll? Test your luck and discover your inner RNGesus in The RNG Button!">
+    <meta property="og:image" content="https://seth.run/rng/pics/rngbutton_header.png">
 
-<!-- Twitter Meta Tags -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The RNG Button">
-<meta name="twitter:description" content="What will you roll?
-Test your luck and discover your inner RNGesus in The RNG Button!">
-<meta name="twitter:image" content="https://seth.run/rng/pics/rngbutton_header.png">
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The RNG Button">
+    <meta name="twitter:description" content="What will you roll? Test your luck and discover your inner RNGesus in The RNG Button!">
+    <meta name="twitter:image" content="https://seth.run/rng/pics/rngbutton_header.png">
 
     <link rel="stylesheet" href="code/styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <script src="https://kit.fontawesome.com/60e2c62d95.js" crossorigin="anonymous"></script>
     <style>
+
+        h1 {
+            font-weight: 300;
+        }
         .logoHeader img {
             width: 200px;
             height: 200px;
             margin: -90px;
             padding-top: 65px;
             -webkit-user-drag: none;
+            -webkit-user-select: none;
         }
     </style>
 </head>
@@ -52,12 +52,11 @@ Test your luck and discover your inner RNGesus in The RNG Button!">
     <div class="container">
         <p>Click the button to roll a number between 1 to 10,000. The lower number, the better rarity!</p>
         <button id="generate-btn">
-            <span>Roll!!!</span>
+            <span>ROLL</span>
         </button>
         <p id="result"></p>
 
         <footer>
-
             <div class="discord-icon tooltip" data-tooltip="Discord Server (new tab)">
                 <a href="https://discord.gg/A49jmTNHNs" target="_blank"><i class="fa-brands fa-discord"></i></a>
             </div>
@@ -66,18 +65,20 @@ Test your luck and discover your inner RNGesus in The RNG Button!">
                 <a href="https://alpha.seth.run" target="_blank"><i class="fa-solid fa-vial-virus"></i></a>
             </div>
 
-            <h2><i><br>Version 0.3.131</i></h2>
+            <div class="footer">
+                <h1><br>Update Seasonal: Part 1 (v0.3.2)<br><br>&copy; 2024 Pitchstep Development</h1>
+            </div>
         </footer>            
     </div>
 
     <!-- load sound effects-->
-    <audio id="common-sound" src="sfx/common.mp3"></audio> <!-- common sfx -->
-    <audio id="rare-sound" src="sfx/rare.mp3"></audio> <!-- rare sfx -->
-    <audio id="epic-sound" src="sfx/epic.mp3"></audio> <!-- epic sfx -->
-    <audio id="legendary-sound" src="sfx/legendary.mp3"></audio> <!-- legendary sfx -->
-    <audio id="mythical-sound" src="sfx/mythical.mp3"></audio> <!-- mythical sfx -->
-    <audio id="rngesus-sound" src="sfx/rngesus.mp3"></audio> <!-- rngesus incarnate sfx -->
-    <audio id="mythicalone-sound" src="sfx/mythicalone.mp3"></audio> <!-- mythical one sfx -->
+    <audio id="common-sound" src="sfx/common.ogg"></audio> <!-- common sfx -->
+    <audio id="rare-sound" src="sfx/rare.ogg"></audio> <!-- rare sfx -->
+    <audio id="epic-sound" src="sfx/epic.ogg"></audio> <!-- epic sfx -->
+    <audio id="legendary-sound" src="sfx/legendary.ogg"></audio> <!-- legendary sfx -->
+    <audio id="mystical-sound" src="sfx/mystical.ogg"></audio> <!-- mystical sfx -->
+    <audio id="super-sound" src="sfx/super.ogg"></audio> <!-- rngesus incarnate sfx -->
+    <audio id="ultra-sound" src="sfx/ultra.ogg"></audio> <!-- mythical one sfx -->
     
     <audio id="luckysevens-sound" src="sfx/777.mp3"></audio> <!--  -->
     <audio id="unlucky-sound" src="sfx/13.mp3"></audio> <!--  -->
