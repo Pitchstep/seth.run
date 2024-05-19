@@ -1,10 +1,9 @@
 var buttonEnabled = true;
+
 // function to play sound
 function playSound(soundId) {
     var sound = document.getElementById(soundId);
-    if (sound) {
-        sound.currentTime = 0; // reset sound to beginning (breaks on iPhone devices)
-        sound.play();
+        sound.Play();
     }
 }
 
