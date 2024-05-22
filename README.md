@@ -10,11 +10,10 @@ I saw that most Roblox experiences nowadays are all based around RNG. Some examp
 It's quite simple. Every time you click the "ROLL" button, the website generates a completely random number from 1 to 10,000. There isn't really any point of adding rarities considering all the numbers are technically the same odds. Read more about rarities below.
 
 ### Assets and stuff
-
-Font: Montserrat (https://fonts.google.com)<br>
+Font: Clash (Supercell)<br>
 Icons: Font Awesome (https://fontawesome.com)<br><br>
 
 Some icons like the Discord logo are not owned by me!
 
 ### Boring stuff
-© 2023-2024 Pitchstep
+© 2023-2024 Pitchstep Development
