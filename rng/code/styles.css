@@ -169,6 +169,25 @@ body {
   .alpha-icon:hover a {
     color: #ffffff;
   }
+
+  .limited-icon {
+      margin: 10px;
+      display: inline-block;
+      margin-bottom: 10px;
+      position: relative;
+  }
+  
+  .limited-icon a {
+    font-size: 30px;
+    color: #ff0000;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+  }
+  
+  .limited-icon:hover a {
+    color: #ffffff;
+  }
   
   .tooltip {
     position: auto;
