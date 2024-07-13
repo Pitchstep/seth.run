@@ -36,7 +36,7 @@ document.getElementById('generate-btn').addEventListener('click', function() {
     
     // display the number with pop-up animation
     var resultElement = document.getElementById('result');
-    resultElement.innerHTML = '...'; // clear previous content
+    resultElement.innerHTML = ''; // clear previous content
     var numberElement = document.createElement('b');
     numberElement.classList.add('pop-up');
     numberElement.textContent = randomNumber;
