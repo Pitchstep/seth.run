@@ -153,7 +153,7 @@ document.getElementById('generate-btn').addEventListener('click', function() {
     }, 200); // .2 sec delay for rarity popup
 });
 
-// set the volume of all audio elements to 0.04 when the page loads. sorry about that!
+// set the volume of all audio elements to 0.04 when the page loads. sorry about that!!
 window.addEventListener('load', function() {
     changeVolume(0.04);
 });
