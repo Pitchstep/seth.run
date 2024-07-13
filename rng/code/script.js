@@ -8,7 +8,7 @@ function playSound(soundId) {
     }
 }
 
-// function to change the volume of all audio elements
+// function to change the volume of all audio elementss
 function changeVolume(volume) {
     var audioElements = document.querySelectorAll('audio');
     audioElements.forEach(function(audio) {
