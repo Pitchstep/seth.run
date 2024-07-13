@@ -28,15 +28,15 @@ document.getElementById('generate-btn').addEventListener('click', function() {
     }, 1200);
 
     // RNG!!!!!
-    var randomNumber = Math.floor(Math.random() * 10000) + 1;
-    randomNumber !== null ? randomNumber : Math.floor(Math.random() * 10000) + 1;
+    var randomNumber = Math.floor(Math.random() * 100000) + 1;
+    randomNumber !== null ? randomNumber : Math.floor(Math.random() * 100000) + 1;
 
     // nextNumber currently has no say since i removed the code for console command.
     // technically, it still rolls a number if nextNumber is set, however there is no way to set it.
     
     // display the number with pop-up animation
     var resultElement = document.getElementById('result');
-    resultElement.innerHTML = ''; // clear previous content
+    resultElement.innerHTML = '...'; // clear previous content
     var numberElement = document.createElement('b');
     numberElement.classList.add('pop-up');
     numberElement.textContent = randomNumber;
@@ -105,32 +105,32 @@ document.getElementById('generate-btn').addEventListener('click', function() {
         rarityColor = '#FFD700'; // lighter yellow (gold?)
         playSound('ultra-sound');
 
-    } else if (randomNumber <= 50) {
+    } else if (randomNumber <= 250) {
         rarity = 'Super Mythical';
         rarityColor = '#FA8CE6'; // lighter pink
         playSound('super-sound');
 
-    } else if (randomNumber <= 250) {
+    } else if (randomNumber <= 2500) {
         rarity = 'Mystical';
         rarityColor = '#FF69B4'; // pink
         playSound('mystical-sound');
 
-    } else if (randomNumber <= 1000) {
+    } else if (randomNumber <= 10000) {
         rarity = 'Legendary';
         rarityColor = '#FFD700'; // gold-ish
         playSound('legendary-sound');
 
-    } else if (randomNumber <= 2500) {
+    } else if (randomNumber <= 25000) {
         rarity = 'Epic';
         rarityColor = '#800080'; // purple
         playSound('epic-sound');
 
-    } else if (randomNumber <= 5000) {
+    } else if (randomNumber <= 50000) {
         rarity = 'Rare';
         rarityColor = '#0000FF'; // dark blue
         playSound('rare-sound');
 
-    } else if (randomNumber >= 10000) {
+    } else if (randomNumber >= 100000) {
         rarity = 'Too Common?';
         rarityColor = '#FFFFFF'; // white
         playSound('common-sound');
