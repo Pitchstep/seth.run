@@ -28,8 +28,8 @@ document.getElementById('generate-btn').addEventListener('click', function() {
     }, 1200);
 
     // RNG!!!!!
-    var randomNumber = Math.floor(Math.random() * 100000) + 1;
-    randomNumber !== null ? randomNumber : Math.floor(Math.random() * 100000) + 1;
+    var randomNumber = Math.floor(Math.random() * 10000) + 1;
+    randomNumber !== null ? randomNumber : Math.floor(Math.random() * 10000) + 1;
 
     // nextNumber currently has no say since i removed the code for console command.
     // technically, it still rolls a number if nextNumber is set, however there is no way to set it.
@@ -53,84 +53,49 @@ document.getElementById('generate-btn').addEventListener('click', function() {
         rarityColor = '#ff0000';
         playSound('unlucky-sound');
         specialRarityTriggered = true;
-    } else if (randomNumber === 7) {
-        rarity = 'Fidison Incarnate';
-        rarityColor = '#FA8CE6';
-        playSound('drip');
-        specialRarityTriggered = true;
-    } else if (randomNumber === 69) {
-        rarity = 'Nice ;)';
-        rarityColor = '#ff4d00';
-        playSound('nice-sound');
-        specialRarityTriggered = true;
     } else if (randomNumber === 404) {
         rarity = 'Not Found';
         rarityColor = '#ffabe0';
         playSound('404-sound');
         specialRarityTriggered = true;
-    } else if (randomNumber === 666) {
-        rarity = 'Demonic';
-        rarityColor = '#800000';
-        playSound('demonic-sound');
-        specialRarityTriggered = true;
     } else if (randomNumber === 777) {
-        rarity = 'Lucky Sevens!';
+        rarity = 'Triple Seven';
         rarityColor = '#fffb00';
         playSound('luckysevens-sound');
-        specialRarityTriggered = true;
-    } else if (randomNumber === 911) {
-        rarity = 'No emergencies 😎';
-        rarityColor = '#2200ff';
-        playSound('911-sound');
-        specialRarityTriggered = true;
-    } else if (randomNumber === 6969) {
-        rarity = 'Super Nice';
-        rarityColor = '#2200ff';
-        playSound('nice-sound');
-        specialRarityTriggered = true;
-    } else if (randomNumber === 1031) {
-        rarity = '👻';
-        rarityColor = '#7100c7';
-        playSound('spooky-sound');
-        specialRarityTriggered = true;
-    } else if (randomNumber === 123) {
-        rarity = '🎶 My baby dont mess around... 🎶';
-        rarityColor = '#00c788';
-        playSound('onetwothree-sound');
         specialRarityTriggered = true;
     // MEME RARITIES
 
     } else if (randomNumber <= 1) {
-        rarity = 'Ultra Mythical';
+        rarity = 'RNGesus Incarnate';
         rarityColor = '#FFD700'; // lighter yellow (gold?)
         playSound('ultra-sound');
 
-    } else if (randomNumber <= 250) {
-        rarity = 'Super Mythical';
+    } else if (randomNumber <= 100) {
+        rarity = 'Glorious';
         rarityColor = '#FA8CE6'; // lighter pink
         playSound('super-sound');
 
-    } else if (randomNumber <= 2500) {
-        rarity = 'Mystical';
+    } else if (randomNumber <= 300) {
+        rarity = 'Mythic';
         rarityColor = '#FF69B4'; // pink
         playSound('mystical-sound');
 
-    } else if (randomNumber <= 10000) {
+    } else if (randomNumber <= 500) {
         rarity = 'Legendary';
         rarityColor = '#FFD700'; // gold-ish
         playSound('legendary-sound');
 
-    } else if (randomNumber <= 25000) {
+    } else if (randomNumber <= 1000) {
         rarity = 'Epic';
         rarityColor = '#800080'; // purple
         playSound('epic-sound');
 
-    } else if (randomNumber <= 50000) {
+    } else if (randomNumber <= 5000) {
         rarity = 'Rare';
         rarityColor = '#0000FF'; // dark blue
         playSound('rare-sound');
 
-    } else if (randomNumber >= 100000) {
+    } else if (randomNumber >= 10001) {
         rarity = 'Too Common?';
         rarityColor = '#FFFFFF'; // white
         playSound('common-sound');
@@ -151,9 +116,4 @@ document.getElementById('generate-btn').addEventListener('click', function() {
         rarityElement.innerHTML = '<b class="pop-up" style="text-transform: uppercase; font-style: 680; font-size: 14px; color: ' + rarityColor + ';">' + rarity + '</b>';
         resultElement.appendChild(rarityElement);
     }, 200); // .2 sec delay for rarity popup
-});
-
-// set the volume of all audio elements to 0.04 when the page loads. sorry about that!!
-window.addEventListener('load', function() {
-    changeVolume(0.04);
 });
