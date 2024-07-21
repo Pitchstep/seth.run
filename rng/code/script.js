@@ -85,7 +85,7 @@ document.getElementById('generate-btn').addEventListener('click', function() {
         rarityColor = '#FFD700'; // gold-ish
         playSound('legendary-sound');
 
-    } else if (randomNumber <= 1000) {
+    } else if (randomNumber <= 2500) {
         rarity = 'Epic';
         rarityColor = '#800080'; // purple
         playSound('epic-sound');
