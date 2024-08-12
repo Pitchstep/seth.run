@@ -1,38 +1,198 @@
-<title>Jailbreak Limited</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jailbreak Limited Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Brush Script MT', cursive;
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .card {
+            background-color: #1f1f1f;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .card h3 {
+            margin: 10px 0;
+        }
+        .countdown {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            color: #ff4c4c;
+        }
+    </style>
+</head>
+<body>
 
-<h1 style="text-align: center;">SCORPION</h1>
-<h3 style="text-align: center;"><em>by Plasmazillah</em></h3>
-<h4 style="text-align: center;"><img src="https://tr.rbxcdn.com/c8a01e5c0c207e97a7d859f8440dbb86/768/432/Image/Webp" /></h4>
-<p style="text-align: center;">Goes limited in:</p>
-<h1 id="demo" style="text-align: center;">LOADING</h1>
+    <h1>Jailbreak Limited Gallery (Sorted by most recent)</h1>
+    <p><i>THE VEHICLES LISTED ARE ONES THAT WERE SOLD FOR A LIMITED TIME. SEASONALS AND RETIRED VEHICLES ARE NOT IN THIS LIST.</i></p>
+    <div class="gallery">
+        <!-- Card 1 -->
+        <div class="card">
+            <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/1/15/ScorpionFront.png/revision/latest/scale-to-width-down/1000?cb=20240803000848" alt="SOCRP" />
+            <h3>SCORPION</h3>
+            <em>Price: $2,000,000<br></em>
+            <em>Modeller: Plasmazillah</em>
+            <p>Goes limited in:</p>
+            <div class="countdown" id="demo1">LOADING</div>
+        </div>
 
-<script>
-// Set the date we're counting down to
-var countDownDate = new Date("Aug 12, 2024 18:00:00").getTime();
+        <!-- Card 2 -->
+        <div class="card">
+            <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/2/21/CarbonaraFront.png/revision/latest/scale-to-width-down/1000?cb=20240107073256" alt="CARB" />
+            <h3>CARBONARA</h3>
+            <em>Price: $800,000<br></em>
+            <em>Modeller: Plasmazillah</em>
+            <p>Went limited:</p>
+            <div class="countdown">DEC 27th, 2023</div>
+        </div>
 
-// Update the count down every 1 second
-var x = setInterval(function() {
+        <div class="card">
+          <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/5/55/Evofrontnew.png/revision/latest/scale-to-width-down/1000?cb=20230812215658" alt="APER" />
+          <h3>APERTURE</h3>
+          <em>Price: $899,000<br></em>
+          <em>Modeller: Sealth_Llama</em>
+          <p>Went limited:</p>
+          <div class="countdown">AUG 11th, 2023</div>
+      </div>
 
-  // Get today's date and time
-  var now = new Date().getTime();
+      <div class="card">
+        <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/f/f2/FrontViewofParisian.png/revision/latest/scale-to-width-down/1000?cb=20240115151128" alt="PARI" />
+        <h3>PARISIAN</h3>
+        <em>Price: $720,000<br></em>
+        <em>Modeller: Zewo_Tsu</em>
+        <p>Went limited:</p>
+        <div class="countdown">FEB 21st, 2023</div>
+    </div>
 
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
+    <div class="card">
+      <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/5/50/JavelinFront.png/revision/latest/scale-to-width-down/1000?cb=20221106132900" alt="JAV" />
+      <h3>JAVELIN</h3>
+      <em>Price: $929,929<br></em>
+      <em>Modeller: oof_ed</em>
+      <p>Went limited:</p>
+      <div class="countdown">NOV 4th, 2022</div>
+  </div>
 
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  <div class="card">
+    <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/f/f1/Snake_Front.png/revision/latest/scale-to-width-down/1000?cb=20220703222133" alt="SNAKE" />
+    <h3>SNAKE</h3>
+    <em>Price: $649,000<br></em>
+    <em>Modeller: oof_ed</em>
+    <p>Went limited:</p>
+    <div class="countdown">JUL 11th, 2022</div>
+</div>
 
-  // Display the result in the element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
+<div class="card">
+  <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/a/a6/RobloxScreenShot20210904_080350374.png/revision/latest/scale-to-width-down/1000?cb=20210904142329" alt="TORERO" />
+  <h3>TORERO</h3>
+  <em>Price: $599,000<br></em>
+  <em>Modeller: Badimo</em>
+  <p>Went limited:</p>
+  <div class="countdown">SEP 12th, 2021</div>
+</div>
 
-  // If the count down is finished, write some text
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "Vehicle RETIRED! Now unobtainable!";
-  }
-}, 1000);
-</script>
+<div class="card">
+  <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/9/95/AgentFrontView.png/revision/latest?cb=20210508234217" alt="AGENT" />
+  <h3>AGENT</h3>
+  <em>Price: $600,000<br></em>
+  <em>Modeller: Zewo_Tsu</em>
+  <p>Went limited:</p>
+  <div class="countdown">MAY 7th, 2021</div>
+</div>
+
+<div class="card">
+  <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/d/da/FrontM12.jpg/revision/latest?cb=20220902234652" alt="M12" />
+  <h3>M12 Molten</h3>
+  <em>Price: $599,000<br></em>
+  <em>Modeller: RallySubbie</em>
+  <p>Went limited:</p>
+  <div class="countdown">OCT 14th, 2020</div>
+</div>
+    </div>
+
+    <script>
+        // Countdown for Card 1
+        var countDownDate1 = new Date("Aug 12, 2024 18:00:00").getTime();
+
+        // Update the count down every 1 second
+        var x1 = setInterval(function() {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance1 = countDownDate1 - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days1 = Math.floor(distance1 / (1000 * 60 * 60 * 24));
+            var hours1 = Math.floor((distance1 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes1 = Math.floor((distance1 % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds1 = Math.floor((distance1 % (1000 * 60)) / 1000);
+
+            // Display the result in the element with id="demo1"
+            document.getElementById("demo1").innerHTML = days1 + "d " + hours1 + "h "
+            + minutes1 + "m " + seconds1 + "s ";
+
+            // If the count down is finished, write some text
+            if (distance1 < 0) {
+                clearInterval(x1);
+                document.getElementById("demo1").innerHTML = "Vehicle RETIRED! Now unobtainable!";
+            }
+        }, 1000);
+
+        // Repeat the above script for additional cards (Card 2, Card 3, etc.)
+        // Countdown for Card 2
+        var countDownDate2 = new Date("Aug 20, 2024 12:00:00").getTime();
+
+        var x2 = setInterval(function() {
+            var now = new Date().getTime();
+            var distance2 = countDownDate2 - now;
+            var days2 = Math.floor(distance2 / (1000 * 60 * 60 * 24));
+            var hours2 = Math.floor((distance2 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes2 = Math.floor((distance2 % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds2 = Math.floor((distance2 % (1000 * 60)) / 1000);
+            document.getElementById("demo2").innerHTML = days2 + "d " + hours2 + "h "
+            + minutes2 + "m " + seconds2 + "s ";
+            if (distance2 < 0) {
+                clearInterval(x2);
+                document.getElementById("demo2").innerHTML = "Vehicle RETIRED! Now unobtainable!";
+            }
+        }, 1000);
+    </script>
+    
+</body>
+</html>
