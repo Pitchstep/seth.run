@@ -11,7 +11,7 @@
     <style>
         @font-face {
             font-family: 'Badang';
-            src: url('Badang.ttf') format('truetype');
+            src: url('badang.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
@@ -60,7 +60,7 @@
         .card img {
             width: 100%; /* Make the image take up the full width of the card */
             height: 200px; /* Set a fixed height */
-            object-fit: cover; /* Ensures the image is cropped to fill the area without distorting */
+            object-fit:contain; /* Ensures the image is cropped to fill the area without distorting */
             border-radius: 8px;
             margin-bottom: 15px;
         }
