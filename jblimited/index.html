@@ -3,11 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jailbreak Limited Gallery</title>
+    <title>JB Limited Gallery</title>
+    <!-- Link to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Luckiest+Guy&family=Source+Sans+3:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
+        @font-face {
+            font-family: 'Badang';
+            src: url('badang.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         body {
             margin: 0;
-            font-family: Verdana, 'sans-serif';
+            font-family: 'Source Sans 3', 'sans-serif';
             background-color: #121212;
             color: #ffffff;
             display: flex;
@@ -20,13 +31,20 @@
         h1 {
             margin-bottom: 20px;
             font-size: 2.5rem;
+            font-family: 'Badang', sans-serif;
+            font-weight: normal;
         }
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 20px;
             width: 100%;
             max-width: 1200px;
+        }
+        a.card {
+            text-decoration: none; /* Remove underline */
+            color: inherit; /* Inherit text color */
+            display: block; /* Make the link take up the entire card area */
         }
         .card {
             background-color: #1f1f1f;
@@ -40,159 +58,129 @@
             transform: translateY(-5px);
         }
         .card img {
-            max-width: 100%;
-            height: auto;
+            width: 100%; /* Make the image take up the full width of the card */
+            height: 200px; /* Set a fixed height */
+            object-fit: cover; /* Ensures the image is cropped to fill the area without distorting */
             border-radius: 8px;
             margin-bottom: 15px;
         }
         .card h3 {
+            font-size: 40px;
             margin: 10px 0;
+            font-family: 'Badang', sans-serif;
+            font-style: light;
+            font-weight: normal;
+        }
+        .card em {
+            font-family: 'Source Sans 3', sans-serif;
+        }
+        .card p {
+            font-style: normal;
+            font-family: 'Luckiest Guy', sans-serif;
         }
         .countdown {
             font-size: 1.5rem;
             margin-top: 10px;
             color: #ff4c4c;
+            font-family: 'Fredoka One', sans-serif;
         }
     </style>
 </head>
 <body>
 
-    <h1>Jailbreak Limited Gallery (Sorted by most recent)</h1>
-    <p><i>THE VEHICLES LISTED ARE ONES THAT WERE SOLD FOR A LIMITED TIME. SEASONALS AND RETIRED VEHICLES ARE NOT IN THIS LIST.</i></p>
+    <h1>Jailbreak Limited Gallery</h1>
+    <p><em><b>THE VEHICLES LISTED ARE ONES THAT WERE SOLD FOR A LIMITED TIME. SEASONAL & RETIRED VEHICLES ARE NOT IN THIS LIST!</b></em></p>
     <div class="gallery">
         <!-- Card 1 -->
-        <div class="card">
-            <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/1/15/ScorpionFront.png" alt="SCORP" />
+        <a href="https://jailbreak.fandom.com/wiki/Scorpion" class="card">
+            <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/a/ab/Scorpion.png" alt="SCORP" />
             <h3>SCORPION</h3>
             <em>Original Price: $2,000,000<br></em>
             <em>Modeller: Plasmazillah</em>
             <p>Went limited:</p>
             <div class="countdown">AUG 12th, 2024</div>
-        </div>
+        </a>
 
         <!-- Card 2 -->
-        <div class="card">
-            <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/2/21/CarbonaraFront.png" alt="CARB" />
+        <a href="https://jailbreak.fandom.com/wiki/Carbonara" class="card">
+            <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/f/fc/ItalianDude.png" alt="CARB" />
             <h3>CARBONARA</h3>
             <em>Original Price: $800,000<br></em>
             <em>Modeller: Plasmazillah</em>
             <p>Went limited:</p>
             <div class="countdown">DEC 27th, 2023</div>
-        </div>
+        </a>
 
-        <div class="card">
-          <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/5/55/Evofrontnew.png" alt="APER" />
-          <h3>APERTURE</h3>
-          <em>Original Price: $899,000<br></em>
-          <em>Modeller: Sealth_Llama</em>
-          <p>Went limited:</p>
-          <div class="countdown">AUG 11th, 2023</div>
-      </div>
+        <!-- Card 3 -->
+        <a href="https://jailbreak.fandom.com/wiki/Aperture" class="card">
+            <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/3/36/Chimera.png" alt="APER" />
+            <h3>APERTURE</h3>
+            <em>Original Price: $899,000<br></em>
+            <em>Modeller: Sealth_Llama</em>
+            <p>Went limited:</p>
+            <div class="countdown">AUG 11th, 2023</div>
+        </a>
 
-      <div class="card">
-        <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/f/f2/FrontViewofParisian.png" alt="PARI" />
-        <h3>PARISIAN</h3>
-        <em>Original Price: $720,000<br></em>
-        <em>Modeller: Zewo_Tsu</em>
-        <p>Went limited:</p>
-        <div class="countdown">FEB 21st, 2023</div>
+        <!-- Card 4 -->
+        <a href="https://jailbreak.fandom.com/wiki/Parisian" class="card">
+            <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/1/1b/Parisian_Icon_2023.png" alt="PARI" />
+            <h3>PARISIAN</h3>
+            <em>Original Price: $720,000<br></em>
+            <em>Modeller: Zewo_Tsu</em>
+            <p>Went limited:</p>
+            <div class="countdown">FEB 21st, 2023</div>
+        </a>
+
+        <!-- Card 5 -->
+        <a href="https://jailbreak.fandom.com/wiki/Javelin" class="card">
+            <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/d/df/JavelinMain.png" alt="JAV" />
+            <h3>JAVELIN</h3>
+            <em>Original Price: $929,929<br></em>
+            <em>Modeller: oof_ed</em>
+            <p>Went limited:</p>
+            <div class="countdown">NOV 4th, 2022</div>
+        </a>
+
+        <!-- Card 6 -->
+        <a href="https://jailbreak.fandom.com/wiki/Snake" class="card">
+            <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/6/62/Snake_Main.png" alt="SNAKE" />
+            <h3>SNAKE</h3>
+            <em>Original Price: $649,000<br></em>
+            <em>Modeller: oof_ed</em>
+            <p>Went limited:</p>
+            <div class="countdown">JUL 11th, 2022</div>
+        </a>
+
+        <!-- Card 7 -->
+        <a href="https://jailbreak.fandom.com/wiki/Torero" class="card">
+            <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/7/7d/ToreroHD.png" alt="TORERO" />
+            <h3>TORERO</h3>
+            <em>Original Price: $599,000<br></em>
+            <em>Modeller: asimo3089</em>
+            <p>Went limited:</p>
+            <div class="countdown">SEP 12th, 2021</div>
+        </a>
+
+        <!-- Card 8 -->
+        <a href="https://jailbreak.fandom.com/wiki/Agent" class="card">
+            <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/c/ca/Agentnoback.png" alt="AGENT" />
+            <h3>AGENT</h3>
+            <em>Original Price: $600,000<br></em>
+            <em>Modeller: Zewo_Tsu</em>
+            <p>Went limited:</p>
+            <div class="countdown">MAY 7th, 2021</div>
+        </a>
+
+        <!-- Card 9 -->
+        <a href="https://jailbreak.fandom.com/wiki/M12_Molten" class="card">
+            <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/3/37/MoltenHD.png" alt="M12" />
+            <h3>M12 Molten</h3>
+            <em>Original Price: $599,000<br></em>
+            <em>Modeller: RallySubbie</em>
+            <p>Went limited:</p>
+            <div class="countdown">OCT 14th, 2020</div>
+        </a>
     </div>
-
-    <div class="card">
-      <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/5/50/JavelinFront.png" alt="JAV" />
-      <h3>JAVELIN</h3>
-      <em>Original Price: $929,929<br></em>
-      <em>Modeller: oof_ed</em>
-      <p>Went limited:</p>
-      <div class="countdown">NOV 4th, 2022</div>
-  </div>
-
-  <div class="card">
-    <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/f/f1/Snake_Front.png" alt="SNAKE" />
-    <h3>SNAKE</h3>
-    <em>Original Price: $649,000<br></em>
-    <em>Modeller: oof_ed</em>
-    <p>Went limited:</p>
-    <div class="countdown">JUL 11th, 2022</div>
-</div>
-
-<div class="card">
-  <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/a/a6/RobloxScreenShot20210904_080350374.png" alt="TORERO" />
-  <h3>TORERO</h3>
-  <em>Original Price: $599,000<br></em>
-  <em>Modeller: asimo3089</em>
-  <p>Went limited:</p>
-  <div class="countdown">SEP 12th, 2021</div>
-</div>
-
-<div class="card">
-  <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/9/95/AgentFrontView.png" alt="AGENT" />
-  <h3>AGENT</h3>
-  <em>Original Price: $600,000<br></em>
-  <em>Modeller: Zewo_Tsu</em>
-  <p>Went limited:</p>
-  <div class="countdown">MAY 7th, 2021</div>
-</div>
-
-<div class="card">
-  <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/d/da/FrontM12.jpg" alt="M12" />
-  <h3>M12 Molten</h3>
-  <em>Original Price: $599,000<br></em>
-  <em>Modeller: RallySubbie</em>
-  <p>Went limited:</p>
-  <div class="countdown">OCT 14th, 2020</div>
-</div>
-    </div>
-
-    <script>
-        // Countdown for Card 1
-        var countDownDate1 = new Date("Aug 12, 2024 18:00:00").getTime();
-
-        // Update the count down every 1 second
-        var x1 = setInterval(function() {
-
-            // Get today's date and time
-            var now = new Date().getTime();
-
-            // Find the distance between now and the count down date
-            var distance1 = countDownDate1 - now;
-
-            // Time calculations for days, hours, minutes and seconds
-            var days1 = Math.floor(distance1 / (1000 * 60 * 60 * 24));
-            var hours1 = Math.floor((distance1 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes1 = Math.floor((distance1 % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds1 = Math.floor((distance1 % (1000 * 60)) / 1000);
-
-            // Display the result in the element with id="demo1"
-            document.getElementById("demo1").innerHTML = days1 + "d " + hours1 + "h "
-            + minutes1 + "m " + seconds1 + "s ";
-
-            // If the count down is finished, write some text
-            if (distance1 < 0) {
-                clearInterval(x1);
-                document.getElementById("demo1").innerHTML = "Vehicle RETIRED! Now unobtainable!";
-            }
-        }, 1000);
-
-        // Repeat the above script for additional cards (Card 2, Card 3, etc.)
-        // Countdown for Card 2
-        var countDownDate2 = new Date("Aug 20, 2024 12:00:00").getTime();
-
-        var x2 = setInterval(function() {
-            var now = new Date().getTime();
-            var distance2 = countDownDate2 - now;
-            var days2 = Math.floor(distance2 / (1000 * 60 * 60 * 24));
-            var hours2 = Math.floor((distance2 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes2 = Math.floor((distance2 % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds2 = Math.floor((distance2 % (1000 * 60)) / 1000);
-            document.getElementById("demo2").innerHTML = days2 + "d " + hours2 + "h "
-            + minutes2 + "m " + seconds2 + "s ";
-            if (distance2 < 0) {
-                clearInterval(x2);
-                document.getElementById("demo2").innerHTML = "Vehicle RETIRED! Now unobtainable!";
-            }
-        }, 1000);
-    </script>
     
 </body>
 </html>
