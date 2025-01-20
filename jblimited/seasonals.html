@@ -1,1 +1,274 @@
-Content
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JB Limited Gallery</title>
+    <link rel="icon" type="image/x-icon" href="./img/Favicon.png">
+    <!-- Link to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Luckiest+Guy&family=Source+Sans+3:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Badang';
+            src: url('Badang.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Source Sans 3', 'sans-serif';
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            font-family: 'Badang', sans-serif;
+            font-weight: normal;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+        a.card {
+            text-decoration: none; /* Remove underline */
+            color: inherit; /* Inherit text color */
+            display: block; /* Make the link take up the entire card area */
+        }
+        .card {
+            background-color: #1f1f1f;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card img {
+            width: 100%; /* Make the image take up the full width of the card */
+            height: 200px; /* Set a fixed height */
+            object-fit:contain; /* Ensures the image is cropped to fill the area without distorting */
+            border-radius: 8px;
+            margin-bottom: 15px;
+            zoom: 0%;
+        }
+        .card h3 {
+            font-size: 40px;
+            margin: 10px 0;
+            font-family: 'Badang', sans-serif;
+            font-style: light;
+            font-weight: normal;
+        }
+        .card em {
+            font-family: 'Source Sans 3', sans-serif;
+        }
+        .card p {
+            font-style: normal;
+            font-family: 'Luckiest Guy', sans-serif;
+        }
+        .countdown {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            color: #00FFFF;
+            font-family: 'Fredoka One', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Jailbreak Limited Gallery</h1>
+    <p><em><b>THE VEHICLES LISTED ARE ONES THAT WERE SOLD FOR A LIMITED TIME. SEASONAL & RETIRED VEHICLES ARE NOT IN THIS LIST!</b></em></p>
+    <div class="gallery">
+        <a class="card">
+            <img src="./img/noFilter.png"/>
+            <h3>STORMCHASER</h3>
+            <em>Modeller: asimo3089</em>
+            <p>Obtainable in</p>
+            <div class="countdown">SEASON 24: Winter Rally</div>
+        </a>
+        <a class="card">
+            <img src="./img/noFilter.png"/>
+            <h3>WEDGE</h3>
+            <em>Modeller: asimo3089</em>
+            <p>Obtainable in</p>
+            <div class="countdown">SEASON 23: To The 80's</div>
+        </a>
+        <a class="card">
+            <img src="./img/noFilter.png"/>
+            <h3>MAVERICK</h3>
+            <em>Modeller: asimo3089</em>
+            <p>Obtainable in</p>
+            <div class="countdown">SEASON 22: Visiting America</div>
+        </a>
+        <a class="card">
+            <img src="./img/noFilter.png"/>
+            <h3>OG MONSTER TRUCK</h3>
+            <em>Modeller: asimo3089</em>
+            <p>Obtainable in</p>
+            <div class="countdown">SEASON 21: Rewind</div>
+        </a>
+        <a class="card">
+            <img src="./img/noFilter.png"/>
+            <h3>STRIKER</h3>
+            <em>Modeller: asimo3089</em>
+            <p>Obtainable in</p>
+            <div class="countdown">SEASON 20: Apocalypse</div>
+        </a>
+        <a class="card">
+            <img src="./img/noFilter.png"/>
+            <h3>FROST CRAWLER</h3>
+            <em>Modeller: asimo3089</em>
+            <p>Obtainable in</p>
+            <div class="countdown">SEASON 19: Freezing Cold</div>
+        </a>
+        <a class="card">
+            <img src="./img/noFilter.png"/>
+            <h3>LONGHORN</h3>
+            <em>Modeller: asimo3089</em>
+            <p>Obtainable in</p>
+            <div class="countdown">SEASON 18: The Wild West</div>
+        </a>
+        <a class="card">
+            <img src="./img/noFilter.png"/>
+            <h3>POWER-1</h3>
+            <em>Modeller: asimo3089</em>
+            <p>Obtainable in</p>
+            <div class="countdown">SEASON 17: Exploring Europe</div>
+        </a>
+        <a class="card">
+            <img src="./img/noFilter.png"/>
+            <h3>POSEIDON</h3>
+            <em>Modeller: asimo3089</em>
+            <p>Obtainable in</p>
+            <div class="countdown">SEASON 16: Summer Beach Party</div>
+        </a>
+        <a class="card">
+            <img src="./img/noFilter.png"/>
+            <h3>SHOGUN</h3>
+            <em>Modeller: asimo3089</em>
+            <p>Obtainable in</p>
+            <div class="countdown">SEASON 15: Drift To Japan</div>
+        </a>
+        <a class="card">
+            <img src="./img/noFilter.png"/>
+            <h3>PROTO-8</h3>
+            <em>Modeller: asimo3089</em>
+            <p>Obtainable in</p>
+            <div class="countdown">SEASON 14: For The Champions</div>
+        </a>
+        <a class="card">
+            <img src="./img/noFilter.png"/>
+            <h3>BANDIT</h3>
+            <em>Modeller: asimo3089</em>
+            <p>Obtainable in</p>
+            <div class="countdown">SEASON 13: Become A Supervillain</div>
+        </a>
+        <a class="card">
+            <img src="./img/noFilter.png"/>
+            <h3>GOLIATH</h3>
+            <em>Modeller: asimo3089</em>
+            <p>Obtainable in</p>
+            <div class="countdown">SEASON 12: Bring in The Military</div>
+        </a>
+        <a class="card">
+            <img src="./img/noFilter.png"/>
+            <h3>BLOXY</h3>
+            <em>Modeller: asimo3089</em>
+            <p>Obtainable in</p>
+            <div class="countdown">SEASON 11: Toys & Collectibles</div>
+        </a>
+        <a class="card">
+            <img src="./img/noFilter.png"/>
+            <h3>TINY TOY</h3>
+            <em>Modeller: asimo3089</em>
+            <p>Obtainable in</p>
+            <div class="countdown">SEASON 11: Toys & Collectibles</div>
+        </a>
+        <a class="card">
+            <img src="./img/noFilter.png"/>
+            <h3>MACARON</h3>
+            <em>Modeller: asimo3089</em>
+            <p>Obtainable in</p>
+            <div class="countdown">SEASON 10: Rich and Famous</div>
+        </a>
+        <a class="card">
+            <img src="./img/noFilter.png"/>
+            <h3>JACKRABBIT</h3>
+            <em>Modeller: asimo3089</em>
+            <p>Obtainable in</p>
+            <div class="countdown">SEASON 9: A New Journey</div>
+        </a>
+        <a class="card">
+            <img src="./img/noFilter.png"/>
+            <h3>CELSIOR</h3>
+            <em>Modeller: asimo3089</em>
+            <p>Obtainable in</p>
+            <div class="countdown">SEASON 8: Looking To The Future</div>
+        </a>
+        <a class="card">
+            <img src="./img/noFilter.png"/>
+            <h3>ICEBREAKER</h3>
+            <em>Modeller: asimo3089</em>
+            <p>Obtainable in</p>
+            <div class="countdown">SEASON 7: Ice Cold</div>
+        </a>
+        <a class="card">
+            <img src="./img/noFilter.png"/>
+            <h3>BEIGNET</h3>
+            <em>Modeller: asimo3089</em>
+            <p>Obtainable in</p>
+            <div class="countdown">SEASON 6: Race To The Top</div>
+        </a>
+        <a class="card">
+            <img src="./img/noFilter.png"/>
+            <h3>BANANA CAR</h3>
+            <em>Modeller: asimo3089</em>
+            <p>Obtainable in</p>
+            <div class="countdown">SEASON 5: Let The Memes Begin</div>
+        </a>
+        <a class="card">
+            <img src="./img/noFilter.png"/>
+            <h3>RATTLER</h3>
+            <em>Modeller: asimo3089</em>
+            <p>Obtainable in</p>
+            <div class="countdown">SEASON 4: Epic Adventures</div>
+        </a>
+        <a class="card">
+            <img src="./img/noFilter.png"/>
+            <h3>VOLT 4X4</h3>
+            <em>Modeller: asimo3089</em>
+            <p>Obtainable in</p>
+            <div class="countdown">SEASON 3: Looking Back</div>
+        </a>
+        <a class="card">
+            <img src="./img/noFilter.png"/>
+            <h3>CREW CAPSULE</h3>
+            <em>Modeller: asimo3089</em>
+            <p>Obtainable in</p>
+            <div class="countdown">SEASON 2: Out of This World</div>
+        </a>
+        <a class="card">
+            <img src="./img/noFilter.png"/>
+            <h3>BEAM HYBRID</h3>
+            <em>Modeller: asimo3089</em>
+            <p>Obtainable in</p>
+            <div class="countdown">SEASON 1: New Beginnings</div>
+        </a>
+    </div>
+    
+</body>
+</html>
