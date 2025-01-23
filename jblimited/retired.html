@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JB Limited Gallery</title>
+    <link rel="icon" type="image/x-icon" href="./img/Favicon.png">
+    <!-- Link to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Luckiest+Guy&family=Source+Sans+3:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Badang';
+            src: url('Badang.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Source Sans 3', 'sans-serif';
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            font-family: 'Badang', sans-serif;
+            font-weight: normal;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+        a.card {
+            text-decoration: none; /* Remove underline */
+            color: inherit; /* Inherit text color */
+            display: block; /* Make the link take up the entire card area */
+        }
+        .card {
+            background-color: #1f1f1f;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card img {
+            width: 100%; /* Make the image take up the full width of the card */
+            height: 200px; /* Set a fixed height */
+            object-fit:contain; /* Ensures the image is cropped to fill the area without distorting */
+            border-radius: 8px;
+            margin-bottom: 15px;
+            zoom: 0%;
+        }
+        .card h3 {
+            font-size: 40px;
+            margin: 10px 0;
+            font-family: 'Badang', sans-serif;
+            font-style: light;
+            font-weight: normal;
+        }
+        .card em {
+            font-family: 'Source Sans 3', sans-serif;
+        }
+        .card p {
+            font-style: normal;
+            font-family: 'Luckiest Guy', sans-serif;
+        }
+        .countdown {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            color: #ff4c4c;
+            font-family: 'Fredoka One', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Jailbreak Retired Gallery</h1>
+    <p><em><b>THE VEHICLES LISTED ARE ONES THAT WERE ON-SALE BUT WERE REMOVED LATER. THEY CAN ONLY BE OBTAINED BY TRADING NOW!</b></em></p>
+    <div class="gallery">
+        <a href="https://jailbreak.fandom.com/wiki/Airtail" class="card">
+            <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/7/77/Airtail_Icon_2023.png" alt="AIR" />
+            <h3>AIRTAIL</h3>
+            <em>Original Price: $600,000<br></em>
+            <em>Modeller: asimo3089</em>
+            <p>Retired:</p>
+            <div class="countdown">JAN 9th, 2022</div>
+        </a>
+        <a href="https://jailbreak.fandom.com/wiki/Brulee" class="card">
+            <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/3/30/Bugatti_Icon_2023.png" alt="BRU" />
+            <h3>BRULEE / BUGATTI</h3>
+            <em>Original Price: $500,000<br></em>
+            <em>Modeller: asimo3089</em>
+            <p>Retired:</p>
+            <div class="countdown">MAR 8th, 2020</div>
+        </a>
+        <!-- Card 3 -->
+        <a href="https://jailbreak.fandom.com/wiki/Classic" class="card">
+            <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/8/88/Classic_Icon.png" alt="CLA" />
+            <h3>CLASSIC</h3>
+            <em>Original Price: $50,000<br></em>
+            <em>Modeller: asimo3089</em>
+            <p>Reitred:</p>
+            <div class="countdown">JAN 9th, 2022</div>
+        </a>
+
+        <!-- Card 4 -->
+        <a href="https://jailbreak.fandom.com/wiki/Megalodon" class="card">
+            <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/f/f9/McLaren_Icon_2023.png" alt="MEG" />
+            <h3>MEGALODON / MCLAREN</h3>
+            <em>Original Price: $300,000<br></em>
+            <em>Modeller: asimo3089</em>
+            <p>Retired:</p>
+            <div class="countdown">JUL 12th, 2020</div>
+        </a>
+
+        <!-- Card 5 -->
+        <a href="https://jailbreak.fandom.com/wiki/Mighty" class="card">
+            <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/a/a2/Mini_Icon_2023.png" alt="MC" />
+            <h3>MIGHTY / MINI-COOPER</h3>
+            <em>Original Price: $25,000<br></em>
+            <em>Modeller: asimo3089</em>
+            <p>Retired:</p>
+            <div class="countdown">MAY 30th, 2021</div>
+        </a>
+
+        <!-- Card 6 -->
+        <a href="https://jailbreak.fandom.com/wiki/Posh" class="card">
+            <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/c/ca/Porsche_Icon_2023.png" alt="SNAKE" />
+            <h3>POSH / PORSCHE</h3>
+            <em>Original Price: $70,000<br></em>
+            <em>Modeller: asimo3089</em>
+            <p>Retired:</p>
+            <div class="countdown">NOV 8th, 2020</div>
+        </a>
+
+        <!-- Card 7 -->
+        <a href="https://jailbreak.fandom.com/wiki/Steed" class="card">
+            <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/0/09/Mustang_Icon_2023.png" alt="MUSTANG" />
+            <h3>STEED / MUSTANG</h3>
+            <em>Original Price: $50,000<br></em>
+            <em>Modeller: asimo3089</em>
+            <p>Retired:</p>
+            <div class="countdown">MAR 8th, 2020</div>
+        </a>
+        <!-- Card 9 -->
+        <a href="https://jailbreak.fandom.com/wiki/SUV" class="card">
+            <img src="https://static.wikia.nocookie.net/rblx-jailbreak/images/8/8c/FinalSUVIGiveUp.png" alt="SUV" />
+            <h3>SUV</h3>
+            <em>Original Price: $40,000<br></em>
+            <em>Modeller: asimo3089</em>
+            <p>Retired:</p>
+            <div class="countdown">JUL 12th, 2020</div>
+        </a>
+    </div>
+    
+</body>
+</html>
